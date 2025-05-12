@@ -285,7 +285,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				72BAA31A2DD1DB03005E7B23 /* Preview Assets.xcassets in Resources */,
-				72BAA32C2DD1DCEF005E7B23 /* .gitignore in Resources */,
 				72BAA31B2DD1DB03005E7B23 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
