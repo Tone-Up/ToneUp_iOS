@@ -16,7 +16,7 @@ jobs:
       # certificate
       ENCRYPTED_CERT_FILE_PATH: .github/secrets/myCertificate.p12.gpg
       DECRYPTED_CERT_FILE_PATH: .github/secrets/myCertificate.p12
-      CERT_ENCRYPTION_KEY: ${{ secrets.CERT_ENCRYPTION_PWD }}
+      CERT_ENCRYPTION_KEY: ${{ secrets.CERTS_ENCRYPTION_PWD }}
 
       # provisioning
       ENCRYPTED_PROVISION_FILE_PATH: .github/secrets/myProfile.mobileprovision.gpg
