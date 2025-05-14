@@ -24,6 +24,8 @@ platform :ios do
 
   desc "🔥 TestFlight 배포용 베타 lane"
   lane :beta do
+     puts "✅ [DEBUG] Authorization ENV: #{ENV["MATCH_GIT_BASIC_AUTHORIZATION"] ? "SET" : "❌ EMPTY"}"
+
     match(type: "appstore") # 인증서 & 프로파일 관리
 
     # version_number는 별도 lane(set_version)으로 사전에 설정한다고 가정
