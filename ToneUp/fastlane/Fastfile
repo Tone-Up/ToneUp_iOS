@@ -13,21 +13,26 @@
 # Uncomment the line if you want fastlane to automatically update itself
 # update_fastlane
 
+# fastlane/Fastfile
+
 default_platform(:ios)
 
 platform :ios do
+  # 프로젝트 설정
+  PROJECT_NAME = "ToneUp.xcodeproj"
+  TARGET_NAME = "ToneUp"
 
   desc "🔥 TestFlight 배포용 베타 lane"
   lane :beta do
     match(type: "appstore") # 인증서 & 프로파일 관리
-    increment_version_number(
-      version_number: "1.0.0" # 필요 시 override 가능
-    )
+
+    # version_number는 별도 lane(set_version)으로 사전에 설정한다고 가정
     increment_build_number(
-      build_number: latest_testflight_build_number + 1
+      xcodeproj: PROJECT_NAME
     )
+
     build_app(
-      scheme: "ToneUp"
+      scheme: TARGET_NAME
     )
     upload_to_testflight
   end
@@ -35,14 +40,23 @@ platform :ios do
   desc "🚀 App Store 정식 릴리즈"
   lane :release do
     match(type: "appstore")
-    build_app(scheme: "ToneUp")
+
+    build_app(
+      scheme: TARGET_NAME
+    )
     upload_to_app_store
   end
 
   desc "🛠 버전/빌드 설정 후 git 태그 생성"
   lane :set_version do |options|
     version = options[:version]
-    increment_version_number(version_number: version)
+
+    increment_version_number(
+      version_number: version,
+      xcodeproj: PROJECT_NAME,
+      target: TARGET_NAME
+    )
+
     commit_version_bump(message: "🔖 Version bump to #{version}")
     push_to_git_remote
     add_git_tag(tag: "v#{version}")
@@ -52,5 +66,5 @@ platform :ios do
   error do |lane, exception, options|
     UI.error("💥 [#{lane}]에서 에러 발생: #{exception.message}")
   end
-
 end
+
