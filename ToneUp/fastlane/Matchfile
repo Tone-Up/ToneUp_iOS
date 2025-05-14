@@ -1,14 +1,9 @@
-git_url("git@github.com:Tone-Up/toneup-certificates.git")
-
-git_basic_authorization("ENV[MATCH_GIT_BASIC_AUTHORIZATION]")
-
+git_url("https://github.com/Tone-Up/toneup-certificates.git")
 storage_mode("git")
-
-type("appstore") # 또는 필요에 따라 development, adhoc 등
-
-app_identifier("com.jun.ToneUp") # 👉 실제 앱의 번들 ID
-
-username("eeot28@naver.com") # 👉 Apple Developer 계정 이메일
+type("appstore")
+git_basic_authorization(ENV["GIT_BASIC_AUTHORIZATION"])
+app_identifier("com.jun.ToneUp")
+username("eeot28@naver.com")
 
 # For all available options run `fastlane match --help`
 # Remove the # in the beginning of the line to enable the other options
