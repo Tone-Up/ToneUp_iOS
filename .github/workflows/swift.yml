@@ -21,7 +21,12 @@ jobs:
           ruby-version: '3.2'
           bundler-cache: true
 
-      # 3. 인증서 설치 및 빌드, TestFlight 업로드
+      # 3. bundle install 추가
+      - name: Install bundle
+        working-directory: ToneUp
+        run: bundle install
+
+      # 4. 인증서 설치 및 빌드, TestFlight 업로드
       - name: Deploy to TestFlight
         working-directory: ToneUp
         run: bundle exec fastlane beta
