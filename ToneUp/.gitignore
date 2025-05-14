@@ -6,6 +6,13 @@ GoogleService-Info.plist
 APIKey.swift
 *.xcconfig
 
+# fastlane 임시 및 인증 파일
+fastlane/tmp
+*.p12
+*.cer
+*.mobileprovision
+*.key
+
 ### Swift ###
 # Xcode
 #
