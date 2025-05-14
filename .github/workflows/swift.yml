@@ -61,8 +61,18 @@ jobs:
 
       - name: Archive & Export
         run: |
-          xcodebuild archive -project ToneUp.xcodeproj -scheme ToneUp -configuration Release -archivePath $XC_ARCHIVE -allowProvisioningUpdates
-          xcodebuild -exportArchive -archivePath $XC_ARCHIVE -exportOptionsPlist ExportOptions.plist -exportPath "$XC_EXPORT_PATH" -allowProvisioningUpdates
+          ls -R  # <-- 프로젝트 구조 확인용
+          xcodebuild archive \
+            -project ToneUp/ToneUp.xcodeproj \
+            -scheme ToneUp \
+            -configuration Release \
+            -archivePath $XC_ARCHIVE \
+            -allowProvisioningUpdates
+          xcodebuild -exportArchive \
+            -archivePath $XC_ARCHIVE \
+            -exportOptionsPlist ExportOptions.plist \
+            -exportPath "$XC_EXPORT_PATH" \
+            -allowProvisioningUpdates
 
 
       - name: Check Exported Files
