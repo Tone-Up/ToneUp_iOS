@@ -3,39 +3,35 @@ name: iOS CI/CD
 on:
   push:
     branches: ["main"]
-    
+
 jobs:
   build:
-    name: Build and Deploy Appknot Portal
+    name: Build and Deploy ToneUp App
     runs-on: macos-15
-    env:
-      XC_ARCHIVE: ${{ 'ToneUp-iOS.xcarchive' }}
-      XC_EXPORT_PATH: ${{ './artifacts' }}
-      KEYCHAIN: ${{ 'toneup-temp.keychain' }}
-    
-      # certificate
-      ENCRYPTED_CERT_FILE_PATH: ${{ github.workspace }}/ToneUp/.github/secrets/myCertificate.p12.gpg
-      DECRYPTED_CERT_FILE_PATH: ${{ github.workspace }}/ToneUp/.github/secrets/myCertificate.p12
-      CERT_ENCRYPTION_KEY: ${{ secrets.CERTS_ENCRYPTION_PWD }}
 
-  # provisioning
-      ENCRYPTED_PROVISION_FILE_PATH: ${{ github.workspace }}/ToneUp/.github/secrets/myProfile.mobileprovision.gpg
-      DECRYPTED_PROVISION_FILE_PATH: ${{ github.workspace }}/ToneUp/.github/secrets/myProfile.mobileprovision
-      PROVISIONING_ENCRYPTION_KEY: ${{ secrets.PROVISION_ENCRYPTION_PWD }}
-    
-      # certificate export password (export 시 사용한 비번)
+    env:
+      XC_ARCHIVE: ToneUp-iOS.xcarchive
+      XC_EXPORT_PATH: ./artifacts
+      KEYCHAIN: toneup-temp.keychain
+
+      # Certificate
+      ENCRYPTED_CERT_FILE_PATH: .github/secrets/myCertificate.p12.gpg
+      DECRYPTED_CERT_FILE_PATH: .github/secrets/myCertificate.p12
+      CERT_ENCRYPTION_KEY: ${{ secrets.CERTS_ENCRYPTION_PWD }}
       CERT_EXPORT_KEY: ${{ secrets.CERT_EXPORT_PWD }}
 
-    steps:
-      #최신 xcode 선택
-      - name: Select latest Xcode
-        run: "sudo xcode-select -s /Applications/Xcode_16.2.0.app/Contents/Developer"
+      # Provisioning
+      ENCRYPTED_PROVISION_FILE_PATH: .github/secrets/myProfile.mobileprovision.gpg
+      DECRYPTED_PROVISION_FILE_PATH: .github/secrets/myProfile.mobileprovision
+      PROVISIONING_ENCRYPTION_KEY: ${{ secrets.PROVISION_ENCRYPTION_PWD }}
 
-      # 러너가 레포 체크아웃
-      - name: Checkout
+    steps:
+      - name: Select Xcode 16.2
+        run: sudo xcode-select -s /Applications/Xcode_16.2.0.app/Contents/Developer
+
+      - name: Checkout Source Code
         uses: actions/checkout@v3
 
-      # 키체인 초기화 - 임시 키체인 생성
       - name: Configure Keychain
         run: |
           security create-keychain -p "" "$KEYCHAIN"
@@ -44,41 +40,31 @@ jobs:
           security unlock-keychain -p "" "$KEYCHAIN"
           security set-keychain-settings
 
-      # 인증서 복호화 및 설치
-      - name: Configure Code Signing # Corrected indentation
+      - name: Decrypt and Import Certificates
         run: |
-          gpg -d -o "$DECRYPTED_CERT_FILE_PATH" --pinentry-mode=loopback --passphrase "$CERT_ENCRYPTION_KEY" "$ENCRYPTED_CERT_FILE_PATH"
-          gpg -d -o "$DECRYPTED_PROVISION_FILE_PATH" --pinentry-mode=loopback --passphrase "$PROVISIONING_ENCRYPTION_KEY" "$ENCRYPTED_PROVISION_FILE_PATH"
-          # Appclip
-          gpg -d -o "$DECRYPTED_CLIP_PROVISION_FILE_PATH" --pinentry-mode=loopback --passphrase "$PROVISIONING_ENCRYPTION_KEY" "$ENCRYPTED_CLIP_PROVISION_FILE_PATH"
+          gpg -d --pinentry-mode=loopback --passphrase "$CERT_ENCRYPTION_KEY" "$ENCRYPTED_CERT_FILE_PATH" > "$DECRYPTED_CERT_FILE_PATH"
+          gpg -d --pinentry-mode=loopback --passphrase "$PROVISIONING_ENCRYPTION_KEY" "$ENCRYPTED_PROVISION_FILE_PATH" > "$DECRYPTED_PROVISION_FILE_PATH"
 
           security import "$DECRYPTED_CERT_FILE_PATH" -k "$KEYCHAIN" -P "$CERT_EXPORT_KEY" -A
           security set-key-partition-list -S apple-tool:,apple: -s -k "" "$KEYCHAIN"
 
-          # Xcode에서 찾을 수 있는 프로비저닝 프로필 설치하기 위해 우선 프로비저닝 디렉토리를 생성
           mkdir -p "$HOME/Library/MobileDevice/Provisioning Profiles"
-            # 모든 프로비저닝 프로파일을 rename 하고 위에서 만든 디렉토리로 복사하는 과정
-            for PROVISION in `ls .github/secrets/*.mobileprovision`
-            do
-              echo ALVIN PRIVISION DEBUG
-              UUID=`/usr/libexec/PlistBuddy -c 'Print :UUID' /dev/stdin <<< $(security cms -D -i ./$PROVISION)`
-            cp "./$PROVISION" "$HOME/Library/MobileDevice/Provisioning Profiles/$UUID.mobileprovision"
-          done
+          UUID=$(/usr/libexec/PlistBuddy -c 'Print :UUID' /dev/stdin <<< $(security cms -D -i "$DECRYPTED_PROVISION_FILE_PATH"))
+          cp "$DECRYPTED_PROVISION_FILE_PATH" "$HOME/Library/MobileDevice/Provisioning Profiles/$UUID.mobileprovision"
 
-      #Archive & Export
       - name: Archive & Export
         run: |
           pod install
-          xcodebuild archive -workspace AppknotPortal.xcworkspace -scheme AppknotPortal-iOS -configuration release -archivePath $XC_ARCHIVE
+          xcodebuild archive -workspace ToneUp.xcworkspace -scheme ToneUp -configuration Release -archivePath $XC_ARCHIVE
           xcodebuild -exportArchive -archivePath $XC_ARCHIVE -exportOptionsPlist ExportOptions.plist -exportPath "$XC_EXPORT_PATH" -allowProvisioningUpdates
 
-      #TestFlight 업로드
-      - name: Upload app to TestFlight
+      - name: Check Exported Files
+        run: ls -R ./artifacts
+
+      - name: Upload to TestFlight
         uses: apple-actions/upload-testflight-build@v1
         with:
           app-path: "./artifacts/ToneUp.ipa"
           issuer-id: ${{ secrets.APP_STORE_CONNECT_API_ISSUER_ID }}
           api-key-id: ${{ secrets.APP_STORE_CONNECT_API_KEY_ID }}
           api-private-key: ${{ secrets.APP_STORE_CONNECT_API_KEY_CONTENT }}
-
-
