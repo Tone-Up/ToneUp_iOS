@@ -14,7 +14,6 @@
 		72BAA3202DD1DB08005E7B23 /* ToneUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BAA31E2DD1DB08005E7B23 /* ToneUpTests.swift */; };
 		72BAA3242DD1DB0C005E7B23 /* ToneUpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BAA3212DD1DB0C005E7B23 /* ToneUpUITests.swift */; };
 		72BAA3252DD1DB0C005E7B23 /* ToneUpUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BAA3222DD1DB0C005E7B23 /* ToneUpUITestsLaunchTests.swift */; };
-		72BAA32C2DD1DCEF005E7B23 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 72BAA32B2DD1DCEF005E7B23 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -489,7 +488,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Jun.ToneUp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jun.ToneUp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -523,7 +522,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Jun.ToneUp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jun.ToneUp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
