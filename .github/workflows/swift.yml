@@ -1,6 +1,3 @@
-# This workflow will build a Swift project
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-swift
-
 name: iOS CI/CD
 
 on:
@@ -12,20 +9,22 @@ jobs:
     runs-on: macos-15
 
     steps:
+      # 1. 소스코드 체크아웃
       - uses: actions/checkout@v4
 
-      - name: Select Xcode
-        run: sudo xcode-select -s /Applications/Xcode_16.2.app/Contents/Developer
+      - name: Select Xcode 16.2
+        run: sudo xcode-select -s /Applications/Xcode_16.2.0.app/Contents/Developer
 
+      # 2. Ruby 설치 및 Fastlane 설정
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.1'
+          ruby-version: '3.2'
           bundler-cache: true
 
-      - name: Install dependencies
-        run: |
-          gem install bundler
-          bundle install
+      # 3. bundle install 추가
+      - name: Install bundle
+        working-directory: ToneUp
+        run: bundle install
 
       - name: Create & Unlock Keychain
         run: |
@@ -34,7 +33,9 @@ jobs:
           security unlock-keychain -p "${{ secrets.KEYCHAIN_PASSWORD }}" "${{ secrets.KEYCHAIN_NAME }}"
           security set-keychain-settings -lut 21600 "${{ secrets.KEYCHAIN_NAME }}"
 
+      # 4. 인증서 설치 및 빌드, TestFlight 업로드
       - name: Deploy to TestFlight
+        working-directory: ToneUp
         run: bundle exec fastlane beta
         env:
           MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
@@ -44,5 +45,3 @@ jobs:
           APP_STORE_CONNECT_API_KEY_CONTENT: ${{ secrets.APP_STORE_CONNECT_API_KEY_CONTENT }}
           KEYCHAIN_NAME: ${{ secrets.KEYCHAIN_NAME }}
           KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
-
-
