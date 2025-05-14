@@ -1,0 +1,41 @@
+# This workflow will build a Swift project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-swift
+
+name: iOS CI/CD
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  build-and-deploy:
+    runs-on: macos-latest
+
+    steps:
+      # 1. 소스코드 체크아웃
+      - uses: actions/checkout@v4
+
+      # 2. Ruby 설치 및 Fastlane 설정
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+
+      # 3. bundle install 추가
+      - name: Install bundle
+        working-directory: ToneUp
+        run: bundle install
+
+      # 4. 인증서 설치 및 빌드, TestFlight 업로드
+      - name: Deploy to TestFlight
+        working-directory: ToneUp
+        run: bundle exec fastlane beta
+        env:
+          MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+          GIT_BASIC_AUTHORIZATION: ${{ secrets.GIT_BASIC_AUTHORIZATION }}
+          APP_STORE_CONNECT_API_KEY_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ID }}
+          APP_STORE_CONNECT_API_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_API_ISSUER_ID }}
+          APP_STORE_CONNECT_API_KEY_CONTENT: ${{ secrets.APP_STORE_CONNECT_API_KEY_CONTENT }}
+          KEYCHAIN_NAME: ${{ secrets.KEYCHAIN_NAME }}
+          KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
+
