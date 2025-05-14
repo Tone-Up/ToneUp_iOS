@@ -18,34 +18,42 @@
 default_platform(:ios)
 
 platform :ios do
-  # 프로젝트 설정
   PROJECT_NAME = "ToneUp.xcodeproj"
   TARGET_NAME = "ToneUp"
 
+  # ✅ App Store Connect API Key 정의
+  def app_store_connect_api_key
+    app_store_connect_api_key(
+      key_id: ENV["APP_STORE_CONNECT_API_KEY_ID"],
+      issuer_id: ENV["APP_STORE_CONNECT_API_ISSUER_ID"],
+      key_content: ENV["APP_STORE_CONNECT_API_KEY_CONTENT"],
+      is_key_content_base64: true
+    )
+  end
+
   desc "🔥 TestFlight 배포용 베타 lane"
   lane :beta do
-     puts "✅ [DEBUG] Authorization ENV: #{ENV["MATCH_GIT_BASIC_AUTHORIZATION"] ? "SET" : "❌ EMPTY"}"
+    puts "✅ [DEBUG] Authorization ENV: #{ENV["MATCH_GIT_BASIC_AUTHORIZATION"] ? "SET" : "❌ EMPTY"}"
 
-    match(type: "appstore") # 인증서 & 프로파일 관리
-
-    # version_number는 별도 lane(set_version)으로 사전에 설정한다고 가정
-    increment_build_number(
-      xcodeproj: PROJECT_NAME
+    match(
+      type: "appstore",
+      api_key: app_store_connect_api_key # ✅ 이 줄 추가!
     )
 
-    build_app(
-      scheme: TARGET_NAME
-    )
+    increment_build_number(xcodeproj: PROJECT_NAME)
+
+    build_app(scheme: TARGET_NAME)
     upload_to_testflight
   end
 
   desc "🚀 App Store 정식 릴리즈"
   lane :release do
-    match(type: "appstore")
-
-    build_app(
-      scheme: TARGET_NAME
+    match(
+      type: "appstore",
+      api_key: app_store_connect_api_key # ✅ 릴리즈에도 적용!
     )
+
+    build_app(scheme: TARGET_NAME)
     upload_to_app_store
   end
 
