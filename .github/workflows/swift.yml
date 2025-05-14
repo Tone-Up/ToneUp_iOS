@@ -21,13 +21,7 @@ jobs:
           ruby-version: '3.2'
           bundler-cache: true
 
-      # 3. CocoaPods 설치 (필요한 경우만)
-      - name: Install CocoaPods
-        working-directory: ToneUp
-        run: pod install
-
-
-      # 4. 인증서 설치 및 빌드, TestFlight 업로드
+      # 3. 인증서 설치 및 빌드, TestFlight 업로드
       - name: Deploy to TestFlight
         working-directory: ToneUp
         run: bundle exec fastlane beta
