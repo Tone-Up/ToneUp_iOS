@@ -42,15 +42,20 @@ end
 
     increment_build_number(xcodeproj: PROJECT_NAME)
 
-    build_app(
+build_app(
   scheme: TARGET_NAME,
-  export_method: "app-store", # 명시적으로 설정
+  configuration: "Release", # ✅ Release 모드 강제
+  export_method: "app-store",
   export_options: {
     provisioningProfiles: {
       "com.jun.ToneUp" => "match AppStore com.jun.ToneUp"
-    }
+    },
+    signingStyle: "manual",
+    signingCertificate: "Apple Distribution",
+    teamID: "QQN262X7KM"
   }
 )
+
 
     upload_to_testflight
   end
