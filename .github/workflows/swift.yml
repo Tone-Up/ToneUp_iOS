@@ -61,7 +61,6 @@ jobs:
 
       - name: Archive & Export
         run: |
-          pod install
           xcodebuild archive -workspace ToneUp.xcworkspace -scheme ToneUp -configuration Release -archivePath $XC_ARCHIVE
           xcodebuild -exportArchive -archivePath $XC_ARCHIVE -exportOptionsPlist ExportOptions.plist -exportPath "$XC_EXPORT_PATH" -allowProvisioningUpdates
 
