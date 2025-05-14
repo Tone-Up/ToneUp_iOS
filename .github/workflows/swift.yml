@@ -15,12 +15,12 @@ jobs:
     
       # certificate
       ENCRYPTED_CERT_FILE_PATH: ${{ '/ToneUp/.github/secrets/myCertificate.p12.gpg' }}
-	    DECRYPTED_CERT_FILE_PATH: ${{ '/ToneUp/.github/secrets/myCertificate.p12' }}
+      DECRYPTED_CERT_FILE_PATH: ${{ '/ToneUp/.github/secrets/myCertificate.p12' }}
       CERT_ENCRYPTION_KEY: ${{ secrets.CERT_ENCRYPTION_PWD }}
 
-  # provisioning
+      # provisioning
       ENCRYPTED_PROVISION_FILE_PATH: ${{ '/ToneUp/.github/secrets/myProfile.mobileprovision.gpg' }}
-	    DECRYPTED_PROVISION_FILE_PATH: ${{ '/ToneUp/.github/secrets/myProfile.mobileprovision' }}
+      DECRYPTED_PROVISION_FILE_PATH: ${{ '/ToneUp/.github/secrets/myProfile.mobileprovision' }}
       PROVISIONING_ENCRYPTION_KEY: ${{ secrets.PROVISION_ENCRYPTION_PWD }}
     
       # certificate export password (export 시 사용한 비번)
