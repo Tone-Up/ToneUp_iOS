@@ -1,0 +1,56 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+
+  desc "🔥 TestFlight 배포용 베타 lane"
+  lane :beta do
+    match(type: "appstore") # 인증서 & 프로파일 관리
+    increment_version_number(
+      version_number: "1.0.0" # 필요 시 override 가능
+    )
+    increment_build_number(
+      build_number: latest_testflight_build_number + 1
+    )
+    build_app(
+      scheme: "ToneUp"
+    )
+    upload_to_testflight
+  end
+
+  desc "🚀 App Store 정식 릴리즈"
+  lane :release do
+    match(type: "appstore")
+    build_app(scheme: "ToneUp")
+    upload_to_app_store
+  end
+
+  desc "🛠 버전/빌드 설정 후 git 태그 생성"
+  lane :set_version do |options|
+    version = options[:version]
+    increment_version_number(version_number: version)
+    commit_version_bump(message: "🔖 Version bump to #{version}")
+    push_to_git_remote
+    add_git_tag(tag: "v#{version}")
+    push_git_tags
+  end
+
+  error do |lane, exception, options|
+    UI.error("💥 [#{lane}]에서 에러 발생: #{exception.message}")
+  end
+
+end
