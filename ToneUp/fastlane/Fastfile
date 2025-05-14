@@ -22,14 +22,14 @@ platform :ios do
   TARGET_NAME = "ToneUp"
 
   # ✅ App Store Connect API Key 정의
-  def app_store_connect_api_key
-    app_store_connect_api_key(
-      key_id: ENV["APP_STORE_CONNECT_API_KEY_ID"],
-      issuer_id: ENV["APP_STORE_CONNECT_API_ISSUER_ID"],
-      key_content: ENV["APP_STORE_CONNECT_API_KEY_CONTENT"],
-      is_key_content_base64: true
-    )
-  end
+  def my_api_key
+  app_store_connect_api_key(
+    key_id: ENV["APP_STORE_CONNECT_API_KEY_ID"],
+    issuer_id: ENV["APP_STORE_CONNECT_API_ISSUER_ID"],
+    key_content: ENV["APP_STORE_CONNECT_API_KEY_CONTENT"],
+    is_key_content_base64: true
+  )
+end
 
   desc "🔥 TestFlight 배포용 베타 lane"
   lane :beta do
@@ -37,7 +37,7 @@ platform :ios do
 
     match(
       type: "appstore",
-      api_key: app_store_connect_api_key # ✅ 이 줄 추가!
+      api_key: my_api_key # ✅ 이 줄 추가!
     )
 
     increment_build_number(xcodeproj: PROJECT_NAME)
