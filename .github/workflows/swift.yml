@@ -3,38 +3,3 @@ name: iOS CI/CD
 on:
   push:
     branches: ["main"]
-
-jobs:
-  build-and-deploy:
-    runs-on: macos-15
-
-    steps:
-      # 1. 소스코드 체크아웃
-      - uses: actions/checkout@v4
-
-      - name: Select Xcode 16.2
-        run: sudo xcode-select -s /Applications/Xcode_16.2.0.app/Contents/Developer
-
-      # 2. Ruby 설치 및 Fastlane 설정
-      - uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.2'
-          bundler-cache: true
-
-      # 3. bundle install 추가
-      - name: Install bundle
-        working-directory: ToneUp
-        run: bundle install
-
-      # 4. 인증서 설치 및 빌드, TestFlight 업로드
-      - name: Deploy to TestFlight
-        working-directory: ToneUp
-        run: bundle exec fastlane beta
-        env:
-          MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
-          MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.MATCH_GIT_BASIC_AUTHORIZATION }}
-          APP_STORE_CONNECT_API_KEY_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ID }}
-          APP_STORE_CONNECT_API_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_API_ISSUER_ID }}
-          APP_STORE_CONNECT_API_KEY_CONTENT: ${{ secrets.APP_STORE_CONNECT_API_KEY_CONTENT }}
-          KEYCHAIN_NAME: ${{ secrets.KEYCHAIN_NAME }}
-          KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
