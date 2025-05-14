@@ -18,27 +18,22 @@ jobs:
       # 2. Ruby 설치 및 Fastlane 설정
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.2' # 필요에 따라 버전 조정
+          ruby-version: '3.2'
           bundler-cache: true
 
-      # 3. SSH 키 설정 (match 레포 접근용)
-      - name: Setup SSH Keys
-        uses: shimataro/ssh-key-action@v2
-        with:
-          key: ${{ secrets.SSH_KEY }}
-          known_hosts: github.com
-
-      # 4. Xcode 관련 종속성 설치 (필요시)
+      # 3. CocoaPods 설치 (필요한 경우만)
       - name: Install CocoaPods
         run: pod install
 
-      # 5. 인증서 설치 및 빌드 + TestFlight 업로드
+      # 4. 인증서 설치 및 빌드, TestFlight 업로드
       - name: Deploy to TestFlight
         run: bundle exec fastlane beta
         env:
           MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+          GIT_BASIC_AUTHORIZATION: ${{ secrets.GIT_BASIC_AUTHORIZATION }}
           APP_STORE_CONNECT_API_KEY_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ID }}
           APP_STORE_CONNECT_API_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_API_ISSUER_ID }}
           APP_STORE_CONNECT_API_KEY_CONTENT: ${{ secrets.APP_STORE_CONNECT_API_KEY_CONTENT }}
           KEYCHAIN_NAME: ${{ secrets.KEYCHAIN_NAME }}
           KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
+
