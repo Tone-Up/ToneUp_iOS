@@ -60,10 +60,11 @@ jobs:
           cp "$DECRYPTED_PROVISION_FILE_PATH" "$HOME/Library/MobileDevice/Provisioning Profiles/$UUID.mobileprovision"
 
       - name: Archive & Export
+        working-directory: ToneUp
         run: |
-          pod install
-          xcodebuild archive -workspace ToneUp.xcworkspace -scheme ToneUp -configuration Release -archivePath $XC_ARCHIVE
+          xcodebuild archive -project ToneUp.xcodeproj -scheme ToneUp -configuration Release -archivePath $XC_ARCHIVE
           xcodebuild -exportArchive -archivePath $XC_ARCHIVE -exportOptionsPlist ExportOptions.plist -exportPath "$XC_EXPORT_PATH" -allowProvisioningUpdates
+
 
       - name: Check Exported Files
         run: ls -R ./artifacts
