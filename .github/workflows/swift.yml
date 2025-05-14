@@ -42,12 +42,19 @@ jobs:
 
       - name: Decrypt and Import Certificates
         run: |
+          # 복호화 전에 디렉토리 존재 확인 및 생성
+          mkdir -p "$(dirname "$DECRYPTED_CERT_FILE_PATH")"
+          mkdir -p "$(dirname "$DECRYPTED_PROVISION_FILE_PATH")"
+
+          # 인증서, 프로비저닝 복호화
           gpg -d --pinentry-mode=loopback --passphrase "$CERT_ENCRYPTION_KEY" "$ENCRYPTED_CERT_FILE_PATH" > "$DECRYPTED_CERT_FILE_PATH"
           gpg -d --pinentry-mode=loopback --passphrase "$PROVISIONING_ENCRYPTION_KEY" "$ENCRYPTED_PROVISION_FILE_PATH" > "$DECRYPTED_PROVISION_FILE_PATH"
 
+          # 인증서 설치
           security import "$DECRYPTED_CERT_FILE_PATH" -k "$KEYCHAIN" -P "$CERT_EXPORT_KEY" -A
           security set-key-partition-list -S apple-tool:,apple: -s -k "" "$KEYCHAIN"
 
+          # 프로비저닝 복사
           mkdir -p "$HOME/Library/MobileDevice/Provisioning Profiles"
           UUID=$(/usr/libexec/PlistBuddy -c 'Print :UUID' /dev/stdin <<< $(security cms -D -i "$DECRYPTED_PROVISION_FILE_PATH"))
           cp "$DECRYPTED_PROVISION_FILE_PATH" "$HOME/Library/MobileDevice/Provisioning Profiles/$UUID.mobileprovision"
