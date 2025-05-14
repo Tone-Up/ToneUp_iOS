@@ -26,20 +26,6 @@ jobs:
         working-directory: ToneUp
         run: bundle install
 
-      - name: Create & Unlock Keychain
-        run: |
-          KEYCHAIN_PATH="$HOME/Library/Keychains/${{ secrets.KEYCHAIN_NAME }}"
-          if [ -f "$KEYCHAIN_PATH-db" ]; then
-            echo "🔁 기존 키체인 삭제: $KEYCHAIN_PATH-db"
-            security delete-keychain "$KEYCHAIN_PATH-db"
-          fi
-
-          security create-keychain -p "${{ secrets.KEYCHAIN_PASSWORD }}" "${{ secrets.KEYCHAIN_NAME }}"
-          security default-keychain -s "${{ secrets.KEYCHAIN_NAME }}"
-          security unlock-keychain -p "${{ secrets.KEYCHAIN_PASSWORD }}" "${{ secrets.KEYCHAIN_NAME }}"
-          security set-keychain-settings -lut 21600 "${{ secrets.KEYCHAIN_NAME }}"
-
-
       # 4. 인증서 설치 및 빌드, TestFlight 업로드
       - name: Deploy to TestFlight
         working-directory: ToneUp
