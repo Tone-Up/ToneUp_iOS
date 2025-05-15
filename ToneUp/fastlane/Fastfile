@@ -42,13 +42,11 @@ platform :ios do
     )
 
     update_project_provisioning(
-  xcodeproj: "ToneUp.xcodeproj",
-  target_filter: "ToneUp",
-  profile: ENV["sigh_com.jun.ToneUp_appstore_profile-path"],
-  code_signing_identity: "Apple Distribution"
-)
-
-
+      xcodeproj: "ToneUp.xcodeproj",
+      target_filter: "ToneUp",
+      profile: ENV["sigh_com.jun.ToneUp_appstore_profile-path"],
+      code_signing_identity: "Apple Distribution"
+    )
 
     # 앱 빌드
     build_app(
