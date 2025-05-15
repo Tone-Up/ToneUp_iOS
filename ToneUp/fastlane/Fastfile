@@ -48,7 +48,12 @@ platform :ios do
       clean: true,
       export_method: "app-store",
       output_directory: "./build",
-      include_bitcode: false
+      include_bitcode: false,
+      export_options: {
+        provisioningProfiles: {
+          "com.jun.ToneUp" => "match AppStore com.jun.ToneUp 1747305583"
+        }
+      }
     )
 
     # TestFlight 업로드
