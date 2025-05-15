@@ -43,7 +43,7 @@ platform :ios do
 
     # 앱 빌드
     build_app(
-      workspace: "ToneUp.xcodeproj",
+      project: "ToneUp.xcodeproj",
       scheme: "ToneUp",
       clean: true,
       export_method: "app-store",
