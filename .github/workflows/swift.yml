@@ -48,7 +48,8 @@ jobs:
 
       # 7. fastlane 실행
       - name: Run Fastlane
-        run: fastlane {LANE_NAME}
+        run: fastlane beta
+        working-directory: ToneUp
         env:
           MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
           FASTLANE_USER: ${{ secrets.FASTLANE_USER }}
