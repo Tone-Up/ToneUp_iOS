@@ -15,18 +15,6 @@ platform :ios do
       lock_when_sleeps: false
     )
 
-    # 🔑 keychain 권한 설정
-    set_keychain_settings(
-      timeout: 3600,
-      lock_when_sleeps: false
-    )
-
-    # 🔑. keychain 접근 권한 수정
-    update_project_team(
-      path: "ToneUp.xcodeproj",
-      teamid: "QQN262X7KM" # ← Apple 개발자 계정 팀 ID
-    )
-
     # App Store Connect API 인증
     app_store_connect_api_key(
       key_id: ENV["APP_STORE_CONNECT_API_KEY_ID"],
@@ -55,17 +43,12 @@ platform :ios do
 
     # 앱 빌드
     build_app(
-      project: "ToneUp.xcodeproj",
+      workspace: "ToneUp.xcodeproj",
       scheme: "ToneUp",
       clean: true,
       export_method: "app-store",
       output_directory: "./build",
       include_bitcode: false,
-      export_options: {
-        provisioningProfiles: {
-          "com.jun.ToneUp" => "match AppStore com.jun.ToneUp 1747305583"
-        }
-      }
     )
 
     # TestFlight 업로드
