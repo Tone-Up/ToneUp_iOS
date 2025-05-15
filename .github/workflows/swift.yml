@@ -6,82 +6,19 @@ on:
 
 jobs:
   build:
-    name: Build and Deploy ToneUp App
     runs-on: macos-15
 
-    env:
-      XC_ARCHIVE: ToneUp-iOS.xcarchive
-      XC_EXPORT_PATH: ./artifacts
-      KEYCHAIN: toneup-temp.keychain
-
-      # Certificate
-      ENCRYPTED_CERT_FILE_PATH: .github/secrets/myCertificate.p12.gpg
-      DECRYPTED_CERT_FILE_PATH: .github/secrets/myCertificate.p12
-      CERT_ENCRYPTION_KEY: ${{ secrets.CERTS_ENCRYPTION_PWD }}
-      CERT_EXPORT_KEY: ${{ secrets.CERT_EXPORT_PWD }}
-
-      # Provisioning
-      ENCRYPTED_PROVISION_FILE_PATH: .github/secrets/myProfile.mobileprovision.gpg
-      DECRYPTED_PROVISION_FILE_PATH: .github/secrets/myProfile.mobileprovision
-      PROVISIONING_ENCRYPTION_KEY: ${{ secrets.PROVISION_ENCRYPTION_PWD }}
-
     steps:
+      #1. Git Repository Checkout
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      #2. 프로젝트 build를 수행할 Xcode의 버전 설정
       - name: Select Xcode 16.2
         run: sudo xcode-select -s /Applications/Xcode_16.2.0.app/Contents/Developer
 
-      - name: Checkout Source Code
-        uses: actions/checkout@v3
-
-      - name: Configure Keychain
-        run: |
-          security create-keychain -p "" "$KEYCHAIN"
-          security list-keychains -s "$KEYCHAIN"
-          security default-keychain -s "$KEYCHAIN"
-          security unlock-keychain -p "" "$KEYCHAIN"
-          security set-keychain-settings
-
-      - name: Decrypt and Import Certificates
-        run: |
-          # 복호화 전에 디렉토리 존재 확인 및 생성
-          mkdir -p "$(dirname "$DECRYPTED_CERT_FILE_PATH")"
-          mkdir -p "$(dirname "$DECRYPTED_PROVISION_FILE_PATH")"
-
-          # 인증서, 프로비저닝 복호화
-          gpg -d --pinentry-mode=loopback --passphrase "$CERT_ENCRYPTION_KEY" "$ENCRYPTED_CERT_FILE_PATH" > "$DECRYPTED_CERT_FILE_PATH"
-          gpg -d --pinentry-mode=loopback --passphrase "$PROVISIONING_ENCRYPTION_KEY" "$ENCRYPTED_PROVISION_FILE_PATH" > "$DECRYPTED_PROVISION_FILE_PATH"
-
-          # 인증서 설치
-          security import "$DECRYPTED_CERT_FILE_PATH" -k "$KEYCHAIN" -P "$CERT_EXPORT_KEY" -A
-          security set-key-partition-list -S apple-tool:,apple: -s -k "" "$KEYCHAIN"
-
-          # 프로비저닝 복사
-          mkdir -p "$HOME/Library/MobileDevice/Provisioning Profiles"
-          UUID=$(/usr/libexec/PlistBuddy -c 'Print :UUID' /dev/stdin <<< $(security cms -D -i "$DECRYPTED_PROVISION_FILE_PATH"))
-          cp "$DECRYPTED_PROVISION_FILE_PATH" "$HOME/Library/MobileDevice/Provisioning Profiles/$UUID.mobileprovision"
-
-      - name: Archive & Export
-        run: |
-          ls -R  # <-- 프로젝트 구조 확인용
-          xcodebuild archive \
-            -project ToneUp/ToneUp.xcodeproj \
-            -scheme ToneUp \
-            -configuration Release \
-            -archivePath $XC_ARCHIVE \
-            -allowProvisioningUpdates
-          xcodebuild -exportArchive \
-            -archivePath $XC_ARCHIVE \
-            -exportOptionsPlist ExportOptions.plist \
-            -exportPath "$XC_EXPORT_PATH" \
-            -allowProvisioningUpdates
-
-
-      - name: Check Exported Files
-        run: ls -R ./artifacts
-
-      - name: Upload to TestFlight
-        uses: apple-actions/upload-testflight-build@v1
+      #3. 
+      - uses: ruby/setup-ruby@v1
         with:
-          app-path: "./artifacts/ToneUp.ipa"
-          issuer-id: ${{ secrets.APP_STORE_CONNECT_API_ISSUER_ID }}
-          api-key-id: ${{ secrets.APP_STORE_CONNECT_API_KEY_ID }}
-          api-private-key: ${{ secrets.APP_STORE_CONNECT_API_KEY_CONTENT }}
+          ruby-version: '3.2'
+          bundler-cache: true
