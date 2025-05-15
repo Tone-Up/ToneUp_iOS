@@ -41,6 +41,14 @@ platform :ios do
       xcodeproj: "ToneUp.xcodeproj"
     )
 
+    update_project_provisioning(
+      xcodeproj: "ToneUp.xcodeproj",
+      target_filter: "ToneUp", # 정확한 target 이름
+      profile: "match AppStore com.jun.ToneUp 1747305583",
+      code_signing_identity: "Apple Distribution"
+    )
+
+
     # 앱 빌드
     build_app(
       project: "ToneUp.xcodeproj",
