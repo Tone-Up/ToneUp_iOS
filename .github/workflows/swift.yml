@@ -17,8 +17,17 @@ jobs:
       - name: Select Xcode 16.2
         run: sudo xcode-select -s /Applications/Xcode_16.2.0.app/Contents/Developer
 
-      #3. 
+      #3. GitHub Actions 환경에 Ruby 3.2를 설치
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
           bundler-cache: true
+          
+      # 4. Build Project using xcodebuild
+      - name: Build Project
+        run: |
+          xcodebuild \
+            -project ToneUp/ToneUp.xcodeproj \
+            -scheme ToneUp \
+            -destination "platform=iOS Simulator,name=iPhone 16,OS=17.0" \
+            -verbose clean build
