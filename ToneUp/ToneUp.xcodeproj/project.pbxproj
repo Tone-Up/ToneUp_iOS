@@ -9,12 +9,18 @@
 /* Begin PBXBuildFile section */
 		72BAA31A2DD1DB03005E7B23 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72BAA3142DD1DB03005E7B23 /* Preview Assets.xcassets */; };
 		72BAA31B2DD1DB03005E7B23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72BAA3162DD1DB03005E7B23 /* Assets.xcassets */; };
-		72BAA31C2DD1DB03005E7B23 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BAA3172DD1DB03005E7B23 /* ContentView.swift */; };
 		72BAA31D2DD1DB03005E7B23 /* ToneUpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BAA3182DD1DB03005E7B23 /* ToneUpApp.swift */; };
 		72BAA3202DD1DB08005E7B23 /* ToneUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BAA31E2DD1DB08005E7B23 /* ToneUpTests.swift */; };
 		72BAA3242DD1DB0C005E7B23 /* ToneUpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BAA3212DD1DB0C005E7B23 /* ToneUpUITests.swift */; };
 		72BAA3252DD1DB0C005E7B23 /* ToneUpUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BAA3222DD1DB0C005E7B23 /* ToneUpUITestsLaunchTests.swift */; };
 		72BAA3942DD70903005E7B23 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 72BAA3932DD70903005E7B23 /* ComposableArchitecture */; };
+		72BAA3A72DD747E6005E7B23 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BAA3A62DD747E6005E7B23 /* OnboardingView.swift */; };
+		72BAA3DD2DD74CAB005E7B23 /* CommonButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BAA3DC2DD74CAB005E7B23 /* CommonButton.swift */; };
+		72BAA3E02DD753FE005E7B23 /* CommonText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BAA3DF2DD753FE005E7B23 /* CommonText.swift */; };
+		72BAA3E32DD75AD4005E7B23 /* CustomFontModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BAA3E22DD75AD4005E7B23 /* CustomFontModifier.swift */; };
+		72BAA3E62DD75C20005E7B23 /* AppText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BAA3E52DD75C20005E7B23 /* AppText.swift */; };
+		72BAA3EA2DD75E11005E7B23 /* Image+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BAA3E92DD75E11005E7B23 /* Image+Extension.swift */; };
+		72BAA3EC2DD76037005E7B23 /* ButtonTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BAA3EB2DD76037005E7B23 /* ButtonTitle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,13 +46,19 @@
 		72BAA3012DD1DAEF005E7B23 /* ToneUpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToneUpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		72BAA3142DD1DB03005E7B23 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		72BAA3162DD1DB03005E7B23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		72BAA3172DD1DB03005E7B23 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		72BAA3182DD1DB03005E7B23 /* ToneUpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToneUpApp.swift; sourceTree = "<group>"; };
 		72BAA31E2DD1DB08005E7B23 /* ToneUpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToneUpTests.swift; sourceTree = "<group>"; };
 		72BAA3212DD1DB0C005E7B23 /* ToneUpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToneUpUITests.swift; sourceTree = "<group>"; };
 		72BAA3222DD1DB0C005E7B23 /* ToneUpUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToneUpUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		72BAA32B2DD1DCEF005E7B23 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		72BAA35F2DD51484005E7B23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		72BAA3A62DD747E6005E7B23 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		72BAA3DC2DD74CAB005E7B23 /* CommonButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButton.swift; sourceTree = "<group>"; };
+		72BAA3DF2DD753FE005E7B23 /* CommonText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonText.swift; sourceTree = "<group>"; };
+		72BAA3E22DD75AD4005E7B23 /* CustomFontModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFontModifier.swift; sourceTree = "<group>"; };
+		72BAA3E52DD75C20005E7B23 /* AppText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppText.swift; sourceTree = "<group>"; };
+		72BAA3E92DD75E11005E7B23 /* Image+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extension.swift"; sourceTree = "<group>"; };
+		72BAA3EB2DD76037005E7B23 /* ButtonTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTitle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -161,7 +173,10 @@
 			children = (
 				72BAA3952DD716DE005E7B23 /* Features */,
 				72BAA3972DD7170C005E7B23 /* Services */,
-				72BAA3172DD1DB03005E7B23 /* ContentView.swift */,
+				72BAA3DA2DD74C8E005E7B23 /* Components */,
+				72BAA3E42DD75C05005E7B23 /* Util */,
+				72BAA3E82DD75DE9005E7B23 /* Extension */,
+				72BAA3E12DD75AC1005E7B23 /* Modifier */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -185,6 +200,7 @@
 		72BAA3962DD716EE005E7B23 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				72BAA3A62DD747E6005E7B23 /* OnboardingView.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -194,6 +210,64 @@
 			children = (
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		72BAA3DA2DD74C8E005E7B23 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				72BAA3DE2DD753DE005E7B23 /* Text */,
+				72BAA3DB2DD74C96005E7B23 /* Button */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		72BAA3DB2DD74C96005E7B23 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				72BAA3DC2DD74CAB005E7B23 /* CommonButton.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		72BAA3DE2DD753DE005E7B23 /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				72BAA3DF2DD753FE005E7B23 /* CommonText.swift */,
+			);
+			path = Text;
+			sourceTree = "<group>";
+		};
+		72BAA3E12DD75AC1005E7B23 /* Modifier */ = {
+			isa = PBXGroup;
+			children = (
+				72BAA3E22DD75AD4005E7B23 /* CustomFontModifier.swift */,
+			);
+			path = Modifier;
+			sourceTree = "<group>";
+		};
+		72BAA3E42DD75C05005E7B23 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				72BAA3E72DD75C24005E7B23 /* Enum */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		72BAA3E72DD75C24005E7B23 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				72BAA3E52DD75C20005E7B23 /* AppText.swift */,
+				72BAA3EB2DD76037005E7B23 /* ButtonTitle.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		72BAA3E82DD75DE9005E7B23 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				72BAA3E92DD75E11005E7B23 /* Image+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,7 +415,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72BAA31C2DD1DB03005E7B23 /* ContentView.swift in Sources */,
+				72BAA3E02DD753FE005E7B23 /* CommonText.swift in Sources */,
+				72BAA3E32DD75AD4005E7B23 /* CustomFontModifier.swift in Sources */,
+				72BAA3EA2DD75E11005E7B23 /* Image+Extension.swift in Sources */,
+				72BAA3A72DD747E6005E7B23 /* OnboardingView.swift in Sources */,
+				72BAA3EC2DD76037005E7B23 /* ButtonTitle.swift in Sources */,
+				72BAA3DD2DD74CAB005E7B23 /* CommonButton.swift in Sources */,
+				72BAA3E62DD75C20005E7B23 /* AppText.swift in Sources */,
 				72BAA31D2DD1DB03005E7B23 /* ToneUpApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
