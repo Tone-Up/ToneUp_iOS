@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+enum AppText {
+    
+    enum Logo: String {
+        case title = "TONE UP"
+    }
+    
+    enum Onboarding: String {
+        case subTitle = "나만의 스타일로 시작해 보세요"
+    }
+}
