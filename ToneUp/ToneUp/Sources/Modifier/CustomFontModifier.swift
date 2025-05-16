@@ -10,10 +10,9 @@ import SwiftUI
 struct CustomFontModifier: ViewModifier {
     
     let fontType: FontType
-
+    
     func body(content: Content) -> some View {
-        content
-            .font(Font(fontType.font))
+        content.font(fontType.swiftUIFont)
     }
     
 }
