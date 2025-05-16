@@ -14,6 +14,7 @@
 		72BAA3202DD1DB08005E7B23 /* ToneUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BAA31E2DD1DB08005E7B23 /* ToneUpTests.swift */; };
 		72BAA3242DD1DB0C005E7B23 /* ToneUpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BAA3212DD1DB0C005E7B23 /* ToneUpUITests.swift */; };
 		72BAA3252DD1DB0C005E7B23 /* ToneUpUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BAA3222DD1DB0C005E7B23 /* ToneUpUITestsLaunchTests.swift */; };
+		72BAA3942DD70903005E7B23 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 72BAA3932DD70903005E7B23 /* ComposableArchitecture */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72BAA3942DD70903005E7B23 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +159,8 @@
 		72BAA3272DD1DB65005E7B23 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				72BAA3952DD716DE005E7B23 /* Features */,
+				72BAA3972DD7170C005E7B23 /* Services */,
 				72BAA3172DD1DB03005E7B23 /* ContentView.swift */,
 			);
 			path = Sources;
@@ -168,6 +172,28 @@
 				72BAA3182DD1DB03005E7B23 /* ToneUpApp.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		72BAA3952DD716DE005E7B23 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				72BAA3962DD716EE005E7B23 /* Onboarding */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		72BAA3962DD716EE005E7B23 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		72BAA3972DD7170C005E7B23 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,6 +217,7 @@
 			);
 			name = ToneUp;
 			packageProductDependencies = (
+				72BAA3932DD70903005E7B23 /* ComposableArchitecture */,
 			);
 			productName = ToneUp;
 			productReference = 72BAA2E72DD1DAED005E7B23 /* ToneUp.app */;
@@ -268,6 +295,9 @@
 			);
 			mainGroup = 72BAA2DE2DD1DAED005E7B23;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				72BAA3922DD70903005E7B23 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 72BAA2E82DD1DAED005E7B23 /* Products */;
 			projectDirPath = "";
@@ -676,6 +706,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		72BAA3922DD70903005E7B23 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.19.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		72BAA3932DD70903005E7B23 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 72BAA3922DD70903005E7B23 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 72BAA2DF2DD1DAED005E7B23 /* Project object */;
 }
