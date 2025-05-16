@@ -8,11 +8,19 @@
 import SwiftUI
 
 struct CommonText: View {
+    
+    let text: String
+    var font: FontType = .regular12
+    var color: Color = .black
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text(text)
+            .customFont(font)
+            .foregroundColor(color)
     }
+    
 }
 
 #Preview {
-    CommonText()
+    CommonText(text: "ToneUp")
 }
