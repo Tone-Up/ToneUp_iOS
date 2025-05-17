@@ -17,6 +17,7 @@ struct CommonButton: View {
     let symbolColor: Color? //로고 색상
     let cornerRadius: CGFloat //모서리
     var isEnabled: Bool = true
+    var hasBorder: Bool = false
     var action: () -> Void
     
     var body: some View {
@@ -43,6 +44,10 @@ struct CommonButton: View {
             .frame(maxWidth: .infinity)
             .background(isEnabled ? backgroundColor : (disabledBackgroundColor ?? backgroundColor))
             .cornerRadius(cornerRadius)
+            .overlay(
+                RoundedRectangle(cornerRadius: cornerRadius)
+                    .stroke(hasBorder ? Color.black : Color.clear, lineWidth: 1)
+            )
         }
         .disabled(!isEnabled)
     }
