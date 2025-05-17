@@ -6,12 +6,17 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 @main
 struct ToneUpApp: App {
     var body: some Scene {
         WindowGroup {
-            OnboardingView()
+            OnboardingView(
+                store: Store(initialState: Onboarding.State()) {
+                    Onboarding()
+                }
+            )
         }
     }
 }
