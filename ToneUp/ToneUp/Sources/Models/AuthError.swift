@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+enum AuthError: Error {
+    case network(Error)
+    case unknown
+}

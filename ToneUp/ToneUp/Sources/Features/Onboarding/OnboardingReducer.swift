@@ -6,13 +6,49 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
-struct OnboardingReducer: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+struct Onboarding: Reducer {
+    
+    @ObservableState
+    struct State {
+        var isLoginSheetPresented = false
     }
-}
 
-#Preview {
-    OnboardingReducer()
+    enum Action: BindableAction {
+        case binding(BindingAction<State>)
+        case loginButtonTapped
+        case loginOptionSelected(LoginOption)
+        case loginResponse(Result<User, AuthError>)
+    }
+
+    @Dependency(\.authClient) var authClient
+
+    var body: some ReducerOf<Self> {
+        BindingReducer()
+
+        Reduce { state, action in
+            switch action {
+            case .loginButtonTapped:
+                state.isLoginSheetPresented = true
+                return .none
+
+            case .loginOptionSelected(let option):
+                return .run { send in
+                    do {
+                        let user = try await authClient.login(option)
+                        await send(.loginResponse(.success(user)))
+                    } catch {
+                        await send(.loginResponse(.failure(.network(error))))
+                    }
+                }
+
+            case .loginResponse:
+                return .none
+
+            case .binding:
+                return .none
+            }
+        }
+    }
 }

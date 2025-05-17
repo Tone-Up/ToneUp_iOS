@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+enum LoginOption: Equatable {
+    case kakao
+    case google
+    case apple
+}
