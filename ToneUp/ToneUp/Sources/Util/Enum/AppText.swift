@@ -16,4 +16,8 @@ enum AppText {
     enum Onboarding: String {
         case subTitle = "나만의 스타일로 시작해 보세요"
     }
+    
+    enum NavigationText: String {
+        case home = "Tone Up_"
+    }
 }
