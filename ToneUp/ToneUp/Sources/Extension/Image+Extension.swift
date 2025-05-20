@@ -19,4 +19,8 @@ extension Image {
     static var naverLogoImage: Image {
         Image("naverLogo")
     }
+    
+    static var color4: Image {
+        Image("color4")
+    }
 }
