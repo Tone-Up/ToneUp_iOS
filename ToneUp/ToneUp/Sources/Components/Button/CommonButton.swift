@@ -12,12 +12,13 @@ struct CommonButton: View {
     let icon: Image? //글자만 있는 버튼도 사용할 수 있도록
     let backgroundColor: Color //배경색
     let disabledBackgroundColor: Color? = .gray// disabled일때 배경색상
-    let text: ButtonTitle //글자
+    let text: ButtonTitle? //글자
     let textColor: Color //글자색상
     let symbolColor: Color? //로고 색상
     let cornerRadius: CGFloat //모서리
     var isEnabled: Bool = true
     var hasBorder: Bool = false
+    var hasInternalPadding: Bool = true
     var action: () -> Void
     
     var body: some View {
@@ -35,12 +36,13 @@ struct CommonButton: View {
                         .foregroundStyle(symbolColor ?? .primary)
                 }
                 
-                Text(text.rawValue)
-                    .font(.headline)
-                    .foregroundStyle(textColor.opacity(0.85))
-                
+                if let text = text {
+                    Text(text.rawValue)
+                        .font(.headline)
+                        .foregroundStyle(textColor.opacity(0.85))
+                }
             }
-            .padding()
+            .padding(hasInternalPadding ? 12 : 0)
             .frame(maxWidth: .infinity)
             .background(isEnabled ? backgroundColor : (disabledBackgroundColor ?? backgroundColor))
             .cornerRadius(cornerRadius)
