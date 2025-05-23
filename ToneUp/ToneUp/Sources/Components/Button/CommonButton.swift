@@ -16,6 +16,9 @@ struct CommonButton: View {
     let textColor: Color //글자색상
     let symbolColor: Color? //로고 색상
     let cornerRadius: CGFloat //모서리
+    var font: FontType? = .headline
+    var minWidth: CGFloat? = nil
+    var height: CGFloat? = nil
     var isEnabled: Bool = true
     var hasBorder: Bool = false
     var hasInternalPadding: Bool = true
@@ -38,12 +41,13 @@ struct CommonButton: View {
                 
                 if let text = text {
                     Text(text.rawValue)
-                        .font(.headline)
+                        .customFont(font ?? .headline)
                         .foregroundStyle(textColor.opacity(0.85))
                 }
             }
             .padding(hasInternalPadding ? 12 : 0)
-            .frame(maxWidth: .infinity)
+            .applyFrame(minWidth: minWidth,
+                        height: height)
             .background(isEnabled ? backgroundColor : (disabledBackgroundColor ?? backgroundColor))
             .cornerRadius(cornerRadius)
             .overlay(
@@ -52,6 +56,23 @@ struct CommonButton: View {
             )
         }
         .disabled(!isEnabled)
+    }
+    
+}
+
+private extension View {
+    
+    func applyFrame(minWidth: CGFloat?, height: CGFloat?) -> some View {
+        if let minWidth = minWidth, let height = height {
+            return AnyView(
+                self.frame(minWidth: minWidth, maxWidth: minWidth,
+                           minHeight: height, maxHeight: height)
+            )
+        } else {
+            return AnyView(
+                self.frame(maxWidth: .infinity)
+            )
+        }
     }
     
 }
