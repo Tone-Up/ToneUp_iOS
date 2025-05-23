@@ -11,10 +11,17 @@ import ComposableArchitecture
 @main
 struct ToneUpApp: App {
     var body: some Scene {
+//        WindowGroup {
+//            OnboardingView(
+//                store: Store(initialState: Onboarding.State()) {
+//                    Onboarding()
+//                }
+//            )
+//        }
         WindowGroup {
-            OnboardingView(
-                store: Store(initialState: Onboarding.State()) {
-                    Onboarding()
+            HomeView(
+                store: Store(initialState: Home.State()) {
+                    Home()
                 }
             )
         }

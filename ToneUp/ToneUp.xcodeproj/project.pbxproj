@@ -7,6 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		72694A042DD9CF7500436EDF /* HomeReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72694A032DD9CF7500436EDF /* HomeReducer.swift */; };
+		72694A062DD9CFA200436EDF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72694A052DD9CFA200436EDF /* HomeView.swift */; };
+		72694A0C2DD9DA4D00436EDF /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72694A0B2DD9DA4D00436EDF /* CustomNavigationBar.swift */; };
+		72694A0E2DD9E07800436EDF /* CustomNavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72694A0D2DD9E07800436EDF /* CustomNavigationBarModifier.swift */; };
+		72694A102DDA08D100436EDF /* PersonalToneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72694A0F2DDA08D100436EDF /* PersonalToneView.swift */; };
+		72694A222DDD9FE900436EDF /* SectionHomeHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72694A212DDD9FE900436EDF /* SectionHomeHeader.swift */; };
+		72694A242DDDA19400436EDF /* RecommendSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72694A232DDDA19400436EDF /* RecommendSection.swift */; };
+		72694A262DDDA1F700436EDF /* ProductViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72694A252DDDA1F700436EDF /* ProductViewCell.swift */; };
+		72694A282DDDA64B00436EDF /* StyleRecordSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72694A272DDDA64B00436EDF /* StyleRecordSection.swift */; };
+		72694A2A2DDDA82D00436EDF /* SharedStyleSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72694A292DDDA82D00436EDF /* SharedStyleSection.swift */; };
+		72694A2C2DDDBD3500436EDF /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72694A2B2DDDBD3500436EDF /* Array+Extension.swift */; };
+		72694A2E2DDDBD6200436EDF /* TileGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72694A2D2DDDBD6200436EDF /* TileGroupView.swift */; };
+		72694A312DDEECA000436EDF /* LikedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72694A302DDEECA000436EDF /* LikedView.swift */; };
+		72694A332DDEECC400436EDF /* LikeReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72694A322DDEECC400436EDF /* LikeReducer.swift */; };
+		72694A362DDEF74200436EDF /* LikedTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72694A352DDEF74200436EDF /* LikedTabBar.swift */; };
+		72694A392DDEFA6300436EDF /* FeedImageTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72694A382DDEFA6300436EDF /* FeedImageTile.swift */; };
+		72694A3D2DDF088600436EDF /* ThreeColumnGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72694A3C2DDF088600436EDF /* ThreeColumnGrid.swift */; };
+		72694A3F2DDF0A5900436EDF /* LikedTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72694A3E2DDF0A5900436EDF /* LikedTab.swift */; };
 		72BAA31A2DD1DB03005E7B23 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72BAA3142DD1DB03005E7B23 /* Preview Assets.xcassets */; };
 		72BAA31B2DD1DB03005E7B23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72BAA3162DD1DB03005E7B23 /* Assets.xcassets */; };
 		72BAA31D2DD1DB03005E7B23 /* ToneUpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BAA3182DD1DB03005E7B23 /* ToneUpApp.swift */; };
@@ -47,6 +65,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		72694A032DD9CF7500436EDF /* HomeReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeReducer.swift; sourceTree = "<group>"; };
+		72694A052DD9CFA200436EDF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		72694A0B2DD9DA4D00436EDF /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
+		72694A0D2DD9E07800436EDF /* CustomNavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarModifier.swift; sourceTree = "<group>"; };
+		72694A0F2DDA08D100436EDF /* PersonalToneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalToneView.swift; sourceTree = "<group>"; };
+		72694A212DDD9FE900436EDF /* SectionHomeHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHomeHeader.swift; sourceTree = "<group>"; };
+		72694A232DDDA19400436EDF /* RecommendSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendSection.swift; sourceTree = "<group>"; };
+		72694A252DDDA1F700436EDF /* ProductViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewCell.swift; sourceTree = "<group>"; };
+		72694A272DDDA64B00436EDF /* StyleRecordSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleRecordSection.swift; sourceTree = "<group>"; };
+		72694A292DDDA82D00436EDF /* SharedStyleSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedStyleSection.swift; sourceTree = "<group>"; };
+		72694A2B2DDDBD3500436EDF /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		72694A2D2DDDBD6200436EDF /* TileGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileGroupView.swift; sourceTree = "<group>"; };
+		72694A302DDEECA000436EDF /* LikedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedView.swift; sourceTree = "<group>"; };
+		72694A322DDEECC400436EDF /* LikeReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeReducer.swift; sourceTree = "<group>"; };
+		72694A352DDEF74200436EDF /* LikedTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedTabBar.swift; sourceTree = "<group>"; };
+		72694A382DDEFA6300436EDF /* FeedImageTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageTile.swift; sourceTree = "<group>"; };
+		72694A3C2DDF088600436EDF /* ThreeColumnGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeColumnGrid.swift; sourceTree = "<group>"; };
+		72694A3E2DDF0A5900436EDF /* LikedTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedTab.swift; sourceTree = "<group>"; };
 		72BAA2E72DD1DAED005E7B23 /* ToneUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToneUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72BAA2F72DD1DAEF005E7B23 /* ToneUpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToneUpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		72BAA3012DD1DAEF005E7B23 /* ToneUpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToneUpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +148,79 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		72694A022DD9CF6400436EDF /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				72694A052DD9CFA200436EDF /* HomeView.swift */,
+				72694A032DD9CF7500436EDF /* HomeReducer.swift */,
+				72694A072DD9D43200436EDF /* Component */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		72694A072DD9D43200436EDF /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				72694A0F2DDA08D100436EDF /* PersonalToneView.swift */,
+				72694A212DDD9FE900436EDF /* SectionHomeHeader.swift */,
+				72694A232DDDA19400436EDF /* RecommendSection.swift */,
+				72694A272DDDA64B00436EDF /* StyleRecordSection.swift */,
+				72694A292DDDA82D00436EDF /* SharedStyleSection.swift */,
+				72694A2D2DDDBD6200436EDF /* TileGroupView.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		72694A0A2DD9DA3D00436EDF /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				72694A0B2DD9DA4D00436EDF /* CustomNavigationBar.swift */,
+			);
+			path = NavigationBar;
+			sourceTree = "<group>";
+		};
+		72694A2F2DDEE7CC00436EDF /* Like */ = {
+			isa = PBXGroup;
+			children = (
+				72694A302DDEECA000436EDF /* LikedView.swift */,
+				72694A322DDEECC400436EDF /* LikeReducer.swift */,
+				72694A342DDEF6E000436EDF /* Component */,
+			);
+			path = Like;
+			sourceTree = "<group>";
+		};
+		72694A342DDEF6E000436EDF /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				72694A352DDEF74200436EDF /* LikedTabBar.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		72694A372DDEFA4800436EDF /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				72694A382DDEFA6300436EDF /* FeedImageTile.swift */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		72694A3A2DDEFEDE00436EDF /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				72694A252DDDA1F700436EDF /* ProductViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		72694A3B2DDF087600436EDF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				72694A3C2DDF088600436EDF /* ThreeColumnGrid.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		72BAA2DE2DD1DAED005E7B23 = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +315,8 @@
 			isa = PBXGroup;
 			children = (
 				72BAA3962DD716EE005E7B23 /* Onboarding */,
+				72694A022DD9CF6400436EDF /* Home */,
+				72694A2F2DDEE7CC00436EDF /* Like */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -232,6 +343,10 @@
 		72BAA3DA2DD74C8E005E7B23 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				72694A3B2DDF087600436EDF /* View */,
+				72694A3A2DDEFEDE00436EDF /* Cell */,
+				72694A372DDEFA4800436EDF /* Image */,
+				72694A0A2DD9DA3D00436EDF /* NavigationBar */,
 				72BAA3DE2DD753DE005E7B23 /* Text */,
 				72BAA3DB2DD74C96005E7B23 /* Button */,
 			);
@@ -258,6 +373,7 @@
 			isa = PBXGroup;
 			children = (
 				72BAA3E22DD75AD4005E7B23 /* CustomFontModifier.swift */,
+				72694A0D2DD9E07800436EDF /* CustomNavigationBarModifier.swift */,
 			);
 			path = Modifier;
 			sourceTree = "<group>";
@@ -283,6 +399,7 @@
 			isa = PBXGroup;
 			children = (
 				72BAA3E92DD75E11005E7B23 /* Image+Extension.swift */,
+				72694A2B2DDDBD3500436EDF /* Array+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -300,6 +417,7 @@
 			children = (
 				72BAA4042DD8D9B8005E7B23 /* User.swift */,
 				72BAA4062DD8D9F3005E7B23 /* AuthError.swift */,
+				72694A3E2DDF0A5900436EDF /* LikedTab.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -457,20 +575,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72694A242DDDA19400436EDF /* RecommendSection.swift in Sources */,
 				72BAA4052DD8D9B8005E7B23 /* User.swift in Sources */,
+				72694A2E2DDDBD6200436EDF /* TileGroupView.swift in Sources */,
 				72BAA3E02DD753FE005E7B23 /* CommonText.swift in Sources */,
+				72694A102DDA08D100436EDF /* PersonalToneView.swift in Sources */,
 				72BAA3E32DD75AD4005E7B23 /* CustomFontModifier.swift in Sources */,
 				72BAA3EA2DD75E11005E7B23 /* Image+Extension.swift in Sources */,
+				72694A062DD9CFA200436EDF /* HomeView.swift in Sources */,
 				72BAA3FF2DD8D8A6005E7B23 /* LoginOption.swift in Sources */,
 				72BAA4022DD8D906005E7B23 /* AuthClient.swift in Sources */,
+				72694A332DDEECC400436EDF /* LikeReducer.swift in Sources */,
 				72BAA4072DD8D9F3005E7B23 /* AuthError.swift in Sources */,
+				72694A3F2DDF0A5900436EDF /* LikedTab.swift in Sources */,
+				72694A2C2DDDBD3500436EDF /* Array+Extension.swift in Sources */,
+				72694A0E2DD9E07800436EDF /* CustomNavigationBarModifier.swift in Sources */,
+				72694A222DDD9FE900436EDF /* SectionHomeHeader.swift in Sources */,
 				72BAA3A72DD747E6005E7B23 /* OnboardingView.swift in Sources */,
 				72BAA3EC2DD76037005E7B23 /* ButtonTitle.swift in Sources */,
+				72694A2A2DDDA82D00436EDF /* SharedStyleSection.swift in Sources */,
+				72694A362DDEF74200436EDF /* LikedTabBar.swift in Sources */,
 				72BAA3DD2DD74CAB005E7B23 /* CommonButton.swift in Sources */,
+				72694A392DDEFA6300436EDF /* FeedImageTile.swift in Sources */,
+				72694A282DDDA64B00436EDF /* StyleRecordSection.swift in Sources */,
 				72BAA4092DD8DA37005E7B23 /* LoginSheetView.swift in Sources */,
 				72BAA3FC2DD8D17B005E7B23 /* OnboardingReducer.swift in Sources */,
+				72694A262DDDA1F700436EDF /* ProductViewCell.swift in Sources */,
+				72694A0C2DD9DA4D00436EDF /* CustomNavigationBar.swift in Sources */,
 				72BAA3E62DD75C20005E7B23 /* AppText.swift in Sources */,
+				72694A3D2DDF088600436EDF /* ThreeColumnGrid.swift in Sources */,
 				72BAA31D2DD1DB03005E7B23 /* ToneUpApp.swift in Sources */,
+				72694A312DDEECA000436EDF /* LikedView.swift in Sources */,
+				72694A042DD9CF7500436EDF /* HomeReducer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

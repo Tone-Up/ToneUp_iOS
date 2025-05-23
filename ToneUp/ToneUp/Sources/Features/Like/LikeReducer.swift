@@ -6,13 +6,34 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
-struct LikeReducer: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+struct Like: Reducer {
+    
+    @ObservableState
+    struct State {
+        var userTone: UserTone = .spring
     }
-}
-
-#Preview {
-    LikeReducer()
+    
+    enum Action: BindableAction {
+        case binding(BindingAction<State>)
+        case tappedAnalyzeAgain
+    }
+    
+    //    @Dependency(\.recommendationClient) var recommendationClient
+    
+    var body: some ReducerOf<Self> {
+        BindingReducer()
+        
+        Reduce { state, action in
+            switch action {
+            case .tappedAnalyzeAgain:
+                return .none
+                
+            case .binding:
+                return .none
+            }
+        }
+    }
+    
 }
