@@ -17,4 +17,8 @@ enum ButtonTitle: String {
     case manageProfile = "프로필 관리"
     case profielChatGo = "1:1채팅하기"
     case follow = "팔로우"
+    case editImage = "이미지 변경"
+    case delete = "삭제"
+    case withdraw = "탈퇴하기"
+    case change = "변경"
 }
