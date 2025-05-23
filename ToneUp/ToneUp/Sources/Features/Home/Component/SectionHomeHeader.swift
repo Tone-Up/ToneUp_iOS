@@ -8,11 +8,21 @@
 import SwiftUI
 
 struct SectionHomeHeader: View {
+    
+    let title: String
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        CommonText(text: title,
+                   font: .notoRegular18,
+                   color: .black)
+        .frame(maxWidth: .infinity,
+               alignment: .leading)
+        .padding(.horizontal)
+        .padding(.vertical, 4)
     }
+    
 }
 
 #Preview {
-    SectionHomeHeader()
+    SectionHomeHeader(title: "추천")
 }

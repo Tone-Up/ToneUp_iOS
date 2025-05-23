@@ -6,13 +6,46 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct HomeView: View {
+    
+    @Bindable var store: StoreOf<Home>
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            ZStack {
+                Color(UIColor.mainBackground)
+                
+                ScrollView {
+                    VStack(spacing: 8) {
+                        PersonalToneView(tone: .summer)
+                        
+                        RecommendSection()
+                        
+                        StyleRecordSection()
+                        
+                        SharedStyleSection()
+                    }
+                }
+                .scrollContentBackground(.hidden)
+            }
+            .navigationBarTitleDisplayMode(.inline)
+            .customNavigationBar(
+                title: AppText.NavigationText.home.rawValue,
+                trailing: .searchButton {
+                    
+                }
+            )
+        }
     }
+    
 }
 
 #Preview {
-    HomeView()
+    HomeView(
+        store: Store(initialState: Home.State()) {
+            Home()
+        }
+    )
 }

@@ -8,11 +8,42 @@
 import SwiftUI
 
 struct CustomNavigationBar: View {
+    
+    let title: String
+    let trailing: NavigationBarTrailingType
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            CommonText(text: title,
+                       font: .notoMedium28)
+            
+            Spacer()
+            
+            switch trailing {
+            case .none:
+                EmptyView()
+                
+            case .searchButton(let action):
+                CommonButton(icon: Image(systemName: "magnifyingglass"),
+                             backgroundColor: .clear,
+                             text: nil,
+                             textColor: .clear,
+                             symbolColor: .black,
+                             cornerRadius: 0) {
+                    
+                }
+                
+            case .customView(let view):
+                view
+            }
+        }
+        .padding(.horizontal)
     }
 }
 
 #Preview {
-    CustomNavigationBar()
+    CustomNavigationBar(title: "Tone Up_",
+                        trailing: .searchButton(action: {
+        
+    }))
 }

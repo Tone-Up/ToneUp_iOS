@@ -8,11 +8,26 @@
 import SwiftUI
 
 struct FeedImageTile: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+    
+    let image: Image
+    var showHeart: Bool = true
+    var width: CGFloat? = nil
+    var height: CGFloat
 
-#Preview {
-    FeedImageTile()
+    var body: some View {
+        ZStack(alignment: .bottomTrailing) {
+            image
+                .resizable()
+                .scaledToFill()
+                .frame(width: width, height: height)
+                .clipped()
+
+            if showHeart {
+                Image(systemName: "heart.fill")
+                    .foregroundColor(.red)
+                    .padding(6)
+            }
+        }
+    }
+    
 }

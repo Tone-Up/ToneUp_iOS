@@ -7,12 +7,24 @@
 
 import SwiftUI
 
-struct ThreeColumnGrid: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+struct ThreeColumnGrid<Content: View>: View {
+    
+    let items: Int
+    let content: (Int) -> Content
 
-#Preview {
-    ThreeColumnGrid()
+    private let columns = Array(repeating: GridItem(.flexible(), spacing: 0), count: 3)
+    
+    init(items: Int, @ViewBuilder content: @escaping (Int) -> Content) {
+        self.items = items
+        self.content = content
+    }
+
+    var body: some View {
+        LazyVGrid(columns: columns, spacing: 0) {
+            ForEach(0..<items, id: \.self) { index in
+                content(index)
+            }
+        }
+    }
+    
 }

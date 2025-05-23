@@ -15,14 +15,16 @@ struct ProductViewCell: View {
     var brand: String = "브랜드명"
     var name: String = "상품명"
     var price: String = "89,000원"
-
+    var width: CGFloat? = nil
+    var height: CGFloat? = nil
+    
     var body: some View {
         VStack(spacing: 4) {
             ZStack(alignment: .bottomTrailing) {
                 image
                     .resizable()
                     .scaledToFill()
-                    .frame(width: 120, height: 160)
+                    .frame(width: width, height: height)
                     .clipped()
                     .cornerRadius(8)
 
@@ -47,6 +49,7 @@ struct ProductViewCell: View {
                 .lineLimit(1)
                 .frame(maxWidth: .infinity,
                        alignment: .leading)
+                .padding(.leading, 8)
 
             CommonText(text: name,
                        font: .regular14,
@@ -54,14 +57,16 @@ struct ProductViewCell: View {
                 .lineLimit(1)
                 .frame(maxWidth: .infinity,
                        alignment: .leading)
+                .padding(.leading, 8)
 
             CommonText(text: price,
                        font: .bold13,
                        color: .black)
                 .frame(maxWidth: .infinity,
                        alignment: .leading)
+                .padding(.leading, 8)
         }
-        .frame(width: 120)
+        .frame(width: width)
     }
     
 }
