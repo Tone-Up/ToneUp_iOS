@@ -13,4 +13,5 @@ enum ButtonTitle: String {
     case googleLogin = "구글로 로그인하기"
     case kakaoLogin = "카카오로 로그인하기"
     case naverLogin = "네이버로 로그인하기"
+    case retryTone = "다시 분석하기"
 }

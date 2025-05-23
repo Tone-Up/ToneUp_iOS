@@ -21,23 +21,63 @@ enum NotoSansKR {
 enum FontType {
     case system(CGFloat, weight: Font.Weight = .regular)
     case custom(name: String, size: CGFloat)
+    case predefined(Font)
     
     var swiftUIFont: Font {
         switch self {
         case .system(let size, let weight):
             return .system(size: size, weight: weight)
+            
         case .custom(let name, let size):
             return .custom(name, size: size)
+            
+        case .predefined(let font):
+            return font
         }
     }
 }
 
 extension FontType {
     //noto
-    static let notoRegular18 = FontType.custom(name: NotoSansKR.notoRegular, size: 18)
-    static let notoMedium60 = FontType.custom(name: NotoSansKR.notoMedium, size: 60)
+    static let notoRegular14 = FontType
+        .custom(name: NotoSansKR.notoRegular,
+                size: 14)
+    static let notoRegular18 = FontType
+        .custom(name: NotoSansKR.notoRegular,
+                size: 18)
+    static let notoMedium28 = FontType
+        .custom(name: NotoSansKR.notoMedium,
+                size: 28)
+    static let notoMedium60 = FontType
+        .custom(name: NotoSansKR.notoMedium,
+                size: 60)
+    static let notoSemiBold20 = FontType
+        .custom(name: NotoSansKR.notoSemiBold,
+                size: 20)
+    static let notoSemiBold40 = FontType
+        .custom(name: NotoSansKR.notoSemiBold,
+                size: 40)
     //regular
-    static let regular12 = FontType.system(12, weight: .regular)
+    static let regular12 = FontType
+        .system(12,
+                weight: .regular)
+    static let regular14 = FontType
+        .system(14,
+                weight: .regular)
     //bold
-    static let bold13 = FontType.system(13, weight: .bold)
+    static let bold12 = FontType
+        .system(12,
+                weight: .bold)
+    static let bold13 = FontType
+        .system(13,
+                weight: .bold)
+    // predefined (SwiftUI 기본값)
+    static let headline = FontType
+        .predefined(.headline)
+    static let body = FontType
+        .predefined(.body)
+    static let title = FontType
+        .predefined(.title)
+    static let caption = FontType
+        .predefined(.caption)
 }
