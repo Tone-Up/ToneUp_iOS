@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		720F6B172DE0365F006CF82C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720F6B162DE0365F006CF82C /* ProfileView.swift */; };
+		720F6B1A2DE036AE006CF82C /* ProfileContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720F6B192DE036AE006CF82C /* ProfileContentView.swift */; };
+		720F6B1C2DE04F66006CF82C /* ProfileTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720F6B1B2DE04F66006CF82C /* ProfileTabBar.swift */; };
+		720F6B1E2DE04FA5006CF82C /* ProfileTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720F6B1D2DE04FA5006CF82C /* ProfileTab.swift */; };
 		72694A042DD9CF7500436EDF /* HomeReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72694A032DD9CF7500436EDF /* HomeReducer.swift */; };
 		72694A062DD9CFA200436EDF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72694A052DD9CFA200436EDF /* HomeView.swift */; };
 		72694A0C2DD9DA4D00436EDF /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72694A0B2DD9DA4D00436EDF /* CustomNavigationBar.swift */; };
@@ -65,6 +69,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		720F6B162DE0365F006CF82C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		720F6B192DE036AE006CF82C /* ProfileContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContentView.swift; sourceTree = "<group>"; };
+		720F6B1B2DE04F66006CF82C /* ProfileTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabBar.swift; sourceTree = "<group>"; };
+		720F6B1D2DE04FA5006CF82C /* ProfileTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTab.swift; sourceTree = "<group>"; };
 		72694A032DD9CF7500436EDF /* HomeReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeReducer.swift; sourceTree = "<group>"; };
 		72694A052DD9CFA200436EDF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		72694A0B2DD9DA4D00436EDF /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
@@ -148,6 +156,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		720F6B152DE03357006CF82C /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				720F6B162DE0365F006CF82C /* ProfileView.swift */,
+				720F6B182DE036A0006CF82C /* Component */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		720F6B182DE036A0006CF82C /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				720F6B192DE036AE006CF82C /* ProfileContentView.swift */,
+				720F6B1B2DE04F66006CF82C /* ProfileTabBar.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
 		72694A022DD9CF6400436EDF /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -317,6 +343,7 @@
 				72BAA3962DD716EE005E7B23 /* Onboarding */,
 				72694A022DD9CF6400436EDF /* Home */,
 				72694A2F2DDEE7CC00436EDF /* Like */,
+				720F6B152DE03357006CF82C /* Profile */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -418,6 +445,7 @@
 				72BAA4042DD8D9B8005E7B23 /* User.swift */,
 				72BAA4062DD8D9F3005E7B23 /* AuthError.swift */,
 				72694A3E2DDF0A5900436EDF /* LikedTab.swift */,
+				720F6B1D2DE04FA5006CF82C /* ProfileTab.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -580,12 +608,14 @@
 				72694A2E2DDDBD6200436EDF /* TileGroupView.swift in Sources */,
 				72BAA3E02DD753FE005E7B23 /* CommonText.swift in Sources */,
 				72694A102DDA08D100436EDF /* PersonalToneView.swift in Sources */,
+				720F6B1E2DE04FA5006CF82C /* ProfileTab.swift in Sources */,
 				72BAA3E32DD75AD4005E7B23 /* CustomFontModifier.swift in Sources */,
 				72BAA3EA2DD75E11005E7B23 /* Image+Extension.swift in Sources */,
 				72694A062DD9CFA200436EDF /* HomeView.swift in Sources */,
 				72BAA3FF2DD8D8A6005E7B23 /* LoginOption.swift in Sources */,
 				72BAA4022DD8D906005E7B23 /* AuthClient.swift in Sources */,
 				72694A332DDEECC400436EDF /* LikeReducer.swift in Sources */,
+				720F6B1C2DE04F66006CF82C /* ProfileTabBar.swift in Sources */,
 				72BAA4072DD8D9F3005E7B23 /* AuthError.swift in Sources */,
 				72694A3F2DDF0A5900436EDF /* LikedTab.swift in Sources */,
 				72694A2C2DDDBD3500436EDF /* Array+Extension.swift in Sources */,
@@ -600,6 +630,8 @@
 				72694A282DDDA64B00436EDF /* StyleRecordSection.swift in Sources */,
 				72BAA4092DD8DA37005E7B23 /* LoginSheetView.swift in Sources */,
 				72BAA3FC2DD8D17B005E7B23 /* OnboardingReducer.swift in Sources */,
+				720F6B172DE0365F006CF82C /* ProfileView.swift in Sources */,
+				720F6B1A2DE036AE006CF82C /* ProfileContentView.swift in Sources */,
 				72694A262DDDA1F700436EDF /* ProductViewCell.swift in Sources */,
 				72694A0C2DD9DA4D00436EDF /* CustomNavigationBar.swift in Sources */,
 				72BAA3E62DD75C20005E7B23 /* AppText.swift in Sources */,

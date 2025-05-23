@@ -14,4 +14,7 @@ enum ButtonTitle: String {
     case kakaoLogin = "카카오로 로그인하기"
     case naverLogin = "네이버로 로그인하기"
     case retryTone = "다시 분석하기"
+    case manageProfile = "프로필 관리"
+    case profielChatGo = "1:1채팅하기"
+    case follow = "팔로우"
 }

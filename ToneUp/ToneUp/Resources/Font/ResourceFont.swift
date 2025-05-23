@@ -42,6 +42,9 @@ extension FontType {
     static let notoRegular14 = FontType
         .custom(name: NotoSansKR.notoRegular,
                 size: 14)
+    static let notoRegular15 = FontType
+        .custom(name: NotoSansKR.notoRegular,
+                size: 15)
     static let notoRegular18 = FontType
         .custom(name: NotoSansKR.notoRegular,
                 size: 18)
@@ -51,12 +54,24 @@ extension FontType {
     static let notoMedium60 = FontType
         .custom(name: NotoSansKR.notoMedium,
                 size: 60)
+    static let notoSemiBold12 = FontType
+        .custom(name: NotoSansKR.notoSemiBold,
+                size: 12)
     static let notoSemiBold20 = FontType
         .custom(name: NotoSansKR.notoSemiBold,
                 size: 20)
     static let notoSemiBold40 = FontType
         .custom(name: NotoSansKR.notoSemiBold,
                 size: 40)
+    static let notoBold14 = FontType
+        .custom(name: NotoSansKR.notoBold,
+                size: 14)
+    static let notoBold15 = FontType
+        .custom(name: NotoSansKR.notoBold,
+                size: 15)
+    static let notoBold20 = FontType
+        .custom(name: NotoSansKR.notoBold,
+                size: 20)
     //regular
     static let regular12 = FontType
         .system(12,

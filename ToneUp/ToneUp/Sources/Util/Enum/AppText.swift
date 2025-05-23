@@ -26,5 +26,6 @@ enum AppText {
     enum NavigationText: String {
         case home = "Tone Up_"
         case like = "Liked_"
+        case profile = "My Profile_"
     }
 }
