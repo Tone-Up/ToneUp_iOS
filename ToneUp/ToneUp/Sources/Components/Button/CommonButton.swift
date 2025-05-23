@@ -17,6 +17,7 @@ struct CommonButton: View {
     let symbolColor: Color? //로고 색상
     let cornerRadius: CGFloat //모서리
     var font: FontType? = .headline
+    var borderColor: Color = .black
     var minWidth: CGFloat? = nil
     var height: CGFloat? = nil
     var isEnabled: Bool = true
@@ -52,7 +53,7 @@ struct CommonButton: View {
             .cornerRadius(cornerRadius)
             .overlay(
                 RoundedRectangle(cornerRadius: cornerRadius)
-                    .stroke(hasBorder ? Color.black : Color.clear, lineWidth: 1)
+                    .stroke(hasBorder ? borderColor : Color.clear, lineWidth: 1)
             )
         }
         .disabled(!isEnabled)
@@ -67,6 +68,15 @@ private extension View {
             return AnyView(
                 self.frame(minWidth: minWidth, maxWidth: minWidth,
                            minHeight: height, maxHeight: height)
+            )
+        } else if let height = height {
+            return AnyView(
+                self.frame(maxWidth: .infinity,
+                           minHeight: height, maxHeight: height)
+            )
+        } else if let minWidth = minWidth {
+            return AnyView(
+                self.frame(minWidth: minWidth, maxWidth: minWidth)
             )
         } else {
             return AnyView(
