@@ -15,7 +15,7 @@ struct ProfileContentView: View {
         VStack(alignment: .leading,
                spacing: 12) {
             HStack(alignment: .center,
-                   spacing: 12) {
+                   spacing: 20) {
                 Image.color4
                     .resizable()
                     .frame(width: 80, height: 80)

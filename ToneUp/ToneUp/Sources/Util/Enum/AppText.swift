@@ -27,5 +27,6 @@ enum AppText {
         case home = "Tone Up_"
         case like = "Liked_"
         case profile = "My Profile_"
+        case setProfile = "프로필 관리"
     }
 }
