@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+enum ProfileTab: CaseIterable {
+    case post
+    case style
+}
