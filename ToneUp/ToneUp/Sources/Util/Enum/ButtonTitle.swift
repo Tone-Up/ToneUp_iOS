@@ -21,4 +21,5 @@ enum ButtonTitle: String {
     case delete = "삭제"
     case withdraw = "탈퇴하기"
     case change = "변경"
+    case postComplete = "작성 완료"
 }
