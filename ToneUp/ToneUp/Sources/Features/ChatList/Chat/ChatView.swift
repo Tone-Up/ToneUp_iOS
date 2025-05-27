@@ -6,13 +6,34 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct ChatView: View {
+    
+    @Bindable var store: StoreOf<Chat>
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 0) {
+            ChatNavigationBar(name: "정상철")
+            
+            ChatMessageListView(messages: store.messages)
+            
+            ChatInputBar(
+                text: $store.currentInput,
+                selectedImages: $store.selectedImages,
+                onSend: { store.send(.sendTextMessage) },
+                onImageSend: { store.send(.sendImageMessage) }
+            )
+        }
+        .background(.chatBackground)
     }
+    
 }
 
 #Preview {
-    ChatView()
+    ChatView(
+        store: Store(initialState: Chat.State()) {
+            Chat()
+        }
+    )
 }

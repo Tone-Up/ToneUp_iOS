@@ -8,11 +8,20 @@
 import SwiftUI
 
 struct TextBubble: View {
+    
+    let text: String
+    let isMe: Bool
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text(text)
+            .padding(12)
+            .background(isMe ? .white : Color(.systemGray5))
+            .clipShape(RoundedRectangle(cornerRadius: 12))
     }
+    
 }
 
 #Preview {
-    TextBubble()
+    TextBubble(text: "aa",
+               isMe: false)
 }

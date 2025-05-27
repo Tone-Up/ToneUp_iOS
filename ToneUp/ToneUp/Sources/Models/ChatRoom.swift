@@ -5,14 +5,12 @@
 //  Created by 전준영 on 5/26/25.
 //
 
-import SwiftUI
+import Foundation
 
-struct ChatRoom: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-#Preview {
-    ChatRoom()
+struct ChatRoom: Identifiable {
+    let id = UUID()
+    let name: String
+    let lastMessage: String
+    let unreadCount: Int
+    let lastDate: String
 }
