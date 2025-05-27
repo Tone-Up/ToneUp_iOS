@@ -82,6 +82,9 @@ extension FontType {
     static let regular14 = FontType
         .system(14,
                 weight: .regular)
+    static let regular20 = FontType
+        .system(20,
+                weight: .regular)
     //bold
     static let bold12 = FontType
         .system(12,
