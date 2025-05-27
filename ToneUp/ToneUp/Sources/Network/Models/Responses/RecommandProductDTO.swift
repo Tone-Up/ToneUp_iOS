@@ -9,7 +9,7 @@ import Foundation
 
 struct RecommandProductDTO: Decodable {
     
-    let products: [String]
+    let products: [ProductDTO]
     let nextCursor: Int
     let hasNext: Bool
     
