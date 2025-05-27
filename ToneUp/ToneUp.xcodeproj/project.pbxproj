@@ -28,6 +28,24 @@
 		720763872DE4CA020017963C /* ChatMessageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720763862DE4CA020017963C /* ChatMessageListView.swift */; };
 		720763892DE4CC1F0017963C /* ChatMessageCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720763882DE4CC1F0017963C /* ChatMessageCellView.swift */; };
 		7207638B2DE4CD060017963C /* ImagePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7207638A2DE4CD060017963C /* ImagePreviewView.swift */; };
+		720763AB2DE57D570017963C /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 720763AA2DE57D570017963C /* Moya */; };
+		720763AD2DE57D730017963C /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720763AC2DE57D730017963C /* APIKey.swift */; };
+		720763B02DE57F690017963C /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720763AF2DE57F690017963C /* NetworkProvider.swift */; };
+		720763B32DE584810017963C /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720763B22DE584810017963C /* APIError.swift */; };
+		720763B52DE58C670017963C /* APIErrorMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720763B42DE58C670017963C /* APIErrorMapper.swift */; };
+		720763B82DE591250017963C /* ServerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720763B72DE591250017963C /* ServerResponse.swift */; };
+		720763BB2DE59CC50017963C /* HeaderKeyAndValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720763BA2DE59CC50017963C /* HeaderKeyAndValue.swift */; };
+		720763BD2DE59F230017963C /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720763BC2DE59F230017963C /* KeychainManager.swift */; };
+		720763BF2DE5A0C50017963C /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720763BE2DE5A0C50017963C /* UserDefaultsStorage.swift */; };
+		720763C22DE5A5B60017963C /* OAuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720763C12DE5A5B60017963C /* OAuthAPI.swift */; };
+		720763C72DE5A6AF0017963C /* SocialRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720763C62DE5A6AF0017963C /* SocialRequestBody.swift */; };
+		720763C92DE5AC140017963C /* UserDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720763C82DE5AC140017963C /* UserDTO.swift */; };
+		720763CB2DE5DCD70017963C /* RecommandAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720763CA2DE5DCD70017963C /* RecommandAPI.swift */; };
+		720763CF2DE5DFEA0017963C /* QueryStringProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720763CE2DE5DFEA0017963C /* QueryStringProtocol.swift */; };
+		720763D12DE5E0190017963C /* RecommandQueryParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720763D02DE5E0190017963C /* RecommandQueryParameters.swift */; };
+		720763D82DE5E1A30017963C /* RecommandProductDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720763D72DE5E1A30017963C /* RecommandProductDTO.swift */; };
+		720763DA2DE5E5200017963C /* ProductDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720763D92DE5E5200017963C /* ProductDTO.swift */; };
+		720763DD2DE5F6B70017963C /* AccessTokenRetrier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720763DC2DE5F6B70017963C /* AccessTokenRetrier.swift */; };
 		720F6B172DE0365F006CF82C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720F6B162DE0365F006CF82C /* ProfileView.swift */; };
 		720F6B1A2DE036AE006CF82C /* ProfileContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720F6B192DE036AE006CF82C /* ProfileContentView.swift */; };
 		720F6B1C2DE04F66006CF82C /* ProfileTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720F6B1B2DE04F66006CF82C /* ProfileTabBar.swift */; };
@@ -111,6 +129,23 @@
 		720763862DE4CA020017963C /* ChatMessageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageListView.swift; sourceTree = "<group>"; };
 		720763882DE4CC1F0017963C /* ChatMessageCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageCellView.swift; sourceTree = "<group>"; };
 		7207638A2DE4CD060017963C /* ImagePreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewView.swift; sourceTree = "<group>"; };
+		720763AC2DE57D730017963C /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		720763AF2DE57F690017963C /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
+		720763B22DE584810017963C /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		720763B42DE58C670017963C /* APIErrorMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrorMapper.swift; sourceTree = "<group>"; };
+		720763B72DE591250017963C /* ServerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerResponse.swift; sourceTree = "<group>"; };
+		720763BA2DE59CC50017963C /* HeaderKeyAndValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderKeyAndValue.swift; sourceTree = "<group>"; };
+		720763BC2DE59F230017963C /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		720763BE2DE5A0C50017963C /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
+		720763C12DE5A5B60017963C /* OAuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthAPI.swift; sourceTree = "<group>"; };
+		720763C62DE5A6AF0017963C /* SocialRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialRequestBody.swift; sourceTree = "<group>"; };
+		720763C82DE5AC140017963C /* UserDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDTO.swift; sourceTree = "<group>"; };
+		720763CA2DE5DCD70017963C /* RecommandAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommandAPI.swift; sourceTree = "<group>"; };
+		720763CE2DE5DFEA0017963C /* QueryStringProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryStringProtocol.swift; sourceTree = "<group>"; };
+		720763D02DE5E0190017963C /* RecommandQueryParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommandQueryParameters.swift; sourceTree = "<group>"; };
+		720763D72DE5E1A30017963C /* RecommandProductDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommandProductDTO.swift; sourceTree = "<group>"; };
+		720763D92DE5E5200017963C /* ProductDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDTO.swift; sourceTree = "<group>"; };
+		720763DC2DE5F6B70017963C /* AccessTokenRetrier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenRetrier.swift; sourceTree = "<group>"; };
 		720F6B162DE0365F006CF82C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		720F6B192DE036AE006CF82C /* ProfileContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContentView.swift; sourceTree = "<group>"; };
 		720F6B1B2DE04F66006CF82C /* ProfileTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabBar.swift; sourceTree = "<group>"; };
@@ -177,6 +212,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				720763AB2DE57D570017963C /* Moya in Frameworks */,
 				72BAA3942DD70903005E7B23 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,6 +301,108 @@
 				7207638A2DE4CD060017963C /* ImagePreviewView.swift */,
 			);
 			path = Component;
+			sourceTree = "<group>";
+		};
+		720763A82DE57BB20017963C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				720763AC2DE57D730017963C /* APIKey.swift */,
+				720763AE2DE57F560017963C /* Provider */,
+				720763C02DE5A57E0017963C /* API */,
+				720763B62DE591170017963C /* Models */,
+				720763B92DE59CB60017963C /* Header */,
+				720763CC2DE5DFCB0017963C /* Query */,
+				720763B12DE584600017963C /* Error */,
+				720763DB2DE5F6A60017963C /* Interceptors */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		720763AE2DE57F560017963C /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				720763AF2DE57F690017963C /* NetworkProvider.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		720763B12DE584600017963C /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				720763B42DE58C670017963C /* APIErrorMapper.swift */,
+				720763B22DE584810017963C /* APIError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		720763B62DE591170017963C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				720763B72DE591250017963C /* ServerResponse.swift */,
+				720763C42DE5A66B0017963C /* Requests */,
+				720763C52DE5A6820017963C /* Responses */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		720763B92DE59CB60017963C /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				720763BA2DE59CC50017963C /* HeaderKeyAndValue.swift */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
+		720763C02DE5A57E0017963C /* API */ = {
+			isa = PBXGroup;
+			children = (
+				720763C12DE5A5B60017963C /* OAuthAPI.swift */,
+				720763CA2DE5DCD70017963C /* RecommandAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		720763C42DE5A66B0017963C /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				720763C62DE5A6AF0017963C /* SocialRequestBody.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		720763C52DE5A6820017963C /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				720763C82DE5AC140017963C /* UserDTO.swift */,
+				720763D72DE5E1A30017963C /* RecommandProductDTO.swift */,
+				720763D92DE5E5200017963C /* ProductDTO.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		720763CC2DE5DFCB0017963C /* Query */ = {
+			isa = PBXGroup;
+			children = (
+				720763CD2DE5DFD50017963C /* Protocol */,
+				720763D02DE5E0190017963C /* RecommandQueryParameters.swift */,
+			);
+			path = Query;
+			sourceTree = "<group>";
+		};
+		720763CD2DE5DFD50017963C /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				720763CE2DE5DFEA0017963C /* QueryStringProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		720763DB2DE5F6A60017963C /* Interceptors */ = {
+			isa = PBXGroup;
+			children = (
+				720763DC2DE5F6B70017963C /* AccessTokenRetrier.swift */,
+			);
+			path = Interceptors;
 			sourceTree = "<group>";
 		};
 		720F6B152DE03357006CF82C /* Profile */ = {
@@ -433,6 +571,7 @@
 		72BAA3272DD1DB65005E7B23 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				720763A82DE57BB20017963C /* Network */,
 				72BAA4032DD8D9AC005E7B23 /* Models */,
 				72BAA3952DD716DE005E7B23 /* Features */,
 				72BAA3972DD7170C005E7B23 /* Services */,
@@ -526,6 +665,8 @@
 		72BAA3E42DD75C05005E7B23 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				720763BE2DE5A0C50017963C /* UserDefaultsStorage.swift */,
+				720763BC2DE59F230017963C /* KeychainManager.swift */,
 				72BAA3E72DD75C24005E7B23 /* Enum */,
 			);
 			path = Util;
@@ -599,6 +740,7 @@
 			name = ToneUp;
 			packageProductDependencies = (
 				72BAA3932DD70903005E7B23 /* ComposableArchitecture */,
+				720763AA2DE57D570017963C /* Moya */,
 			);
 			productName = ToneUp;
 			productReference = 72BAA2E72DD1DAED005E7B23 /* ToneUp.app */;
@@ -678,6 +820,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				72BAA3922DD70903005E7B23 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				720763A92DE57D570017963C /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 72BAA2E82DD1DAED005E7B23 /* Products */;
@@ -726,33 +869,45 @@
 				7207630E2DE0654E0017963C /* EditProfileInfoSection.swift in Sources */,
 				72BAA4052DD8D9B8005E7B23 /* User.swift in Sources */,
 				72038C362DE05F5A002669F5 /* EditProfileContentView.swift in Sources */,
+				720763B82DE591250017963C /* ServerResponse.swift in Sources */,
+				720763C22DE5A5B60017963C /* OAuthAPI.swift in Sources */,
 				72694A2E2DDDBD6200436EDF /* TileGroupView.swift in Sources */,
 				72BAA3E02DD753FE005E7B23 /* CommonText.swift in Sources */,
 				72694A102DDA08D100436EDF /* PersonalToneView.swift in Sources */,
 				720763512DE2FD4C0017963C /* TitleInputView.swift in Sources */,
 				720F6B1E2DE04FA5006CF82C /* ProfileTab.swift in Sources */,
+				720763BF2DE5A0C50017963C /* UserDefaultsStorage.swift in Sources */,
 				72BAA3E32DD75AD4005E7B23 /* CustomFontModifier.swift in Sources */,
+				720763CB2DE5DCD70017963C /* RecommandAPI.swift in Sources */,
 				720763812DE4C8020017963C /* ChatInputBar.swift in Sources */,
 				7207634C2DE2F7BD0017963C /* StylePostView.swift in Sources */,
 				72BAA3EA2DD75E11005E7B23 /* Image+Extension.swift in Sources */,
 				72694A062DD9CFA200436EDF /* HomeView.swift in Sources */,
 				72BAA3FF2DD8D8A6005E7B23 /* LoginOption.swift in Sources */,
+				720763C92DE5AC140017963C /* UserDTO.swift in Sources */,
 				72BAA4022DD8D906005E7B23 /* AuthClient.swift in Sources */,
+				720763BD2DE59F230017963C /* KeychainManager.swift in Sources */,
 				72694A332DDEECC400436EDF /* LikeReducer.swift in Sources */,
 				720F6B1C2DE04F66006CF82C /* ProfileTabBar.swift in Sources */,
 				72BAA4072DD8D9F3005E7B23 /* AuthError.swift in Sources */,
+				720763B32DE584810017963C /* APIError.swift in Sources */,
 				72694A3F2DDF0A5900436EDF /* LikedTab.swift in Sources */,
 				72694A2C2DDDBD3500436EDF /* Array+Extension.swift in Sources */,
 				72694A0E2DD9E07800436EDF /* CustomNavigationBarModifier.swift in Sources */,
 				720763722DE442C60017963C /* ChatListView.swift in Sources */,
+				720763CF2DE5DFEA0017963C /* QueryStringProtocol.swift in Sources */,
 				72694A222DDD9FE900436EDF /* SectionHomeHeader.swift in Sources */,
 				72BAA3A72DD747E6005E7B23 /* OnboardingView.swift in Sources */,
 				72BAA3EC2DD76037005E7B23 /* ButtonTitle.swift in Sources */,
 				72694A2A2DDDA82D00436EDF /* SharedStyleSection.swift in Sources */,
+				720763C72DE5A6AF0017963C /* SocialRequestBody.swift in Sources */,
 				7207634F2DE2FA840017963C /* ImagePickerSection.swift in Sources */,
 				7207637C2DE449D00017963C /* ChatReducer.swift in Sources */,
+				720763B02DE57F690017963C /* NetworkProvider.swift in Sources */,
 				72694A362DDEF74200436EDF /* LikedTabBar.swift in Sources */,
+				720763D82DE5E1A30017963C /* RecommandProductDTO.swift in Sources */,
 				72BAA3DD2DD74CAB005E7B23 /* CommonButton.swift in Sources */,
+				720763D12DE5E0190017963C /* RecommandQueryParameters.swift in Sources */,
 				720763872DE4CA020017963C /* ChatMessageListView.swift in Sources */,
 				72694A392DDEFA6300436EDF /* FeedImageTile.swift in Sources */,
 				720763892DE4CC1F0017963C /* ChatMessageCellView.swift in Sources */,
@@ -761,19 +916,24 @@
 				72BAA3FC2DD8D17B005E7B23 /* OnboardingReducer.swift in Sources */,
 				720763852DE4C8BD0017963C /* ImageGridMessageView.swift in Sources */,
 				7207638B2DE4CD060017963C /* ImagePreviewView.swift in Sources */,
+				720763B52DE58C670017963C /* APIErrorMapper.swift in Sources */,
 				7207637F2DE4C2350017963C /* ChatNavigationBar.swift in Sources */,
 				720F6B172DE0365F006CF82C /* ProfileView.swift in Sources */,
 				720F6B1A2DE036AE006CF82C /* ProfileContentView.swift in Sources */,
 				72694A262DDDA1F700436EDF /* ProductViewCell.swift in Sources */,
 				720763532DE2FD930017963C /* DescriptionInputView.swift in Sources */,
 				72694A0C2DD9DA4D00436EDF /* CustomNavigationBar.swift in Sources */,
+				720763DD2DE5F6B70017963C /* AccessTokenRetrier.swift in Sources */,
 				720763772DE4447C0017963C /* ChatRoom.swift in Sources */,
 				72038C342DE05D32002669F5 /* EditProfileView.swift in Sources */,
+				720763BB2DE59CC50017963C /* HeaderKeyAndValue.swift in Sources */,
 				720763832DE4C8600017963C /* TextBubble.swift in Sources */,
 				72BAA3E62DD75C20005E7B23 /* AppText.swift in Sources */,
 				7207637A2DE4493A0017963C /* ChatView.swift in Sources */,
 				720763752DE444460017963C /* ChatCell.swift in Sources */,
 				72694A3D2DDF088600436EDF /* ThreeColumnGrid.swift in Sources */,
+				720763AD2DE57D730017963C /* APIKey.swift in Sources */,
+				720763DA2DE5E5200017963C /* ProductDTO.swift in Sources */,
 				72BAA31D2DD1DB03005E7B23 /* ToneUpApp.swift in Sources */,
 				72694A312DDEECA000436EDF /* LikedView.swift in Sources */,
 				7207632D2DE1E26E0017963C /* PostDetailView.swift in Sources */,
@@ -1144,6 +1304,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		720763A92DE57D570017963C /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
 		72BAA3922DD70903005E7B23 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
@@ -1155,6 +1323,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		720763AA2DE57D570017963C /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 720763A92DE57D570017963C /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
 		72BAA3932DD70903005E7B23 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 72BAA3922DD70903005E7B23 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
