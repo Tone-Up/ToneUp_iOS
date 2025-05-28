@@ -34,6 +34,7 @@ struct Onboarding: Reducer {
                 return .none
 
             case .loginOptionSelected(let option):
+                state.isLoginSheetPresented = false
                 return .run { send in
                     do {
                         let user = try await authClient.login(option)
@@ -51,4 +52,5 @@ struct Onboarding: Reducer {
             }
         }
     }
+    
 }

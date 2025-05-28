@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LoginSheetView: View {
+    
     let onSelect: (LoginOption) -> Void
     
     var body: some View {
@@ -21,7 +22,7 @@ struct LoginSheetView: View {
                 cornerRadius: 12,
                 hasBorder: true
             ) {
-                
+                onSelect(.google)
             }
             
             CommonButton(

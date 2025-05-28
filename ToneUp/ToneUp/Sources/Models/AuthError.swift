@@ -8,6 +8,9 @@
 import Foundation
 
 enum AuthError: Error {
+    case cancelled
     case network(Error)
     case unknown
+    case tokenMissing
+    case unsupportedProvider
 }

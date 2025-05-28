@@ -46,6 +46,9 @@
 		720763D82DE5E1A30017963C /* RecommandProductDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720763D72DE5E1A30017963C /* RecommandProductDTO.swift */; };
 		720763DA2DE5E5200017963C /* ProductDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720763D92DE5E5200017963C /* ProductDTO.swift */; };
 		720763DD2DE5F6B70017963C /* AccessTokenRetrier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720763DC2DE5F6B70017963C /* AccessTokenRetrier.swift */; };
+		720764182DE603CA0017963C /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 720764172DE603CA0017963C /* GoogleSignIn */; };
+		7207641A2DE603CA0017963C /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 720764192DE603CA0017963C /* GoogleSignInSwift */; };
+		7207641D2DE6DC090017963C /* NetworkProviderClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7207641C2DE6DC090017963C /* NetworkProviderClient.swift */; };
 		720F6B172DE0365F006CF82C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720F6B162DE0365F006CF82C /* ProfileView.swift */; };
 		720F6B1A2DE036AE006CF82C /* ProfileContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720F6B192DE036AE006CF82C /* ProfileContentView.swift */; };
 		720F6B1C2DE04F66006CF82C /* ProfileTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720F6B1B2DE04F66006CF82C /* ProfileTabBar.swift */; };
@@ -146,6 +149,8 @@
 		720763D72DE5E1A30017963C /* RecommandProductDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommandProductDTO.swift; sourceTree = "<group>"; };
 		720763D92DE5E5200017963C /* ProductDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDTO.swift; sourceTree = "<group>"; };
 		720763DC2DE5F6B70017963C /* AccessTokenRetrier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenRetrier.swift; sourceTree = "<group>"; };
+		7207641B2DE609870017963C /* Secretes.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secretes.xcconfig; sourceTree = "<group>"; };
+		7207641C2DE6DC090017963C /* NetworkProviderClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProviderClient.swift; sourceTree = "<group>"; };
 		720F6B162DE0365F006CF82C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		720F6B192DE036AE006CF82C /* ProfileContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContentView.swift; sourceTree = "<group>"; };
 		720F6B1B2DE04F66006CF82C /* ProfileTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabBar.swift; sourceTree = "<group>"; };
@@ -214,6 +219,8 @@
 			files = (
 				720763AB2DE57D570017963C /* Moya in Frameworks */,
 				72BAA3942DD70903005E7B23 /* ComposableArchitecture in Frameworks */,
+				720764182DE603CA0017963C /* GoogleSignIn in Frameworks */,
+				7207641A2DE603CA0017963C /* GoogleSignInSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +510,7 @@
 		72BAA2DE2DD1DAED005E7B23 = {
 			isa = PBXGroup;
 			children = (
+				7207641B2DE609870017963C /* Secretes.xcconfig */,
 				72BAA32B2DD1DCEF005E7B23 /* .gitignore */,
 				72BAA3192DD1DB03005E7B23 /* ToneUp */,
 				72BAA31F2DD1DB08005E7B23 /* ToneUpTests */,
@@ -571,9 +579,9 @@
 		72BAA3272DD1DB65005E7B23 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				72BAA3952DD716DE005E7B23 /* Features */,
 				720763A82DE57BB20017963C /* Network */,
 				72BAA4032DD8D9AC005E7B23 /* Models */,
-				72BAA3952DD716DE005E7B23 /* Features */,
 				72BAA3972DD7170C005E7B23 /* Services */,
 				72BAA3DA2DD74C8E005E7B23 /* Components */,
 				72BAA3E42DD75C05005E7B23 /* Util */,
@@ -694,6 +702,7 @@
 			isa = PBXGroup;
 			children = (
 				72BAA4012DD8D906005E7B23 /* AuthClient.swift */,
+				7207641C2DE6DC090017963C /* NetworkProviderClient.swift */,
 			);
 			path = AuthClient;
 			sourceTree = "<group>";
@@ -741,6 +750,8 @@
 			packageProductDependencies = (
 				72BAA3932DD70903005E7B23 /* ComposableArchitecture */,
 				720763AA2DE57D570017963C /* Moya */,
+				720764172DE603CA0017963C /* GoogleSignIn */,
+				720764192DE603CA0017963C /* GoogleSignInSwift */,
 			);
 			productName = ToneUp;
 			productReference = 72BAA2E72DD1DAED005E7B23 /* ToneUp.app */;
@@ -821,6 +832,7 @@
 			packageReferences = (
 				72BAA3922DD70903005E7B23 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				720763A92DE57D570017963C /* XCRemoteSwiftPackageReference "Moya" */,
+				720764162DE603CA0017963C /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 72BAA2E82DD1DAED005E7B23 /* Products */;
@@ -902,6 +914,7 @@
 				72694A2A2DDDA82D00436EDF /* SharedStyleSection.swift in Sources */,
 				720763C72DE5A6AF0017963C /* SocialRequestBody.swift in Sources */,
 				7207634F2DE2FA840017963C /* ImagePickerSection.swift in Sources */,
+				7207641D2DE6DC090017963C /* NetworkProviderClient.swift in Sources */,
 				7207637C2DE449D00017963C /* ChatReducer.swift in Sources */,
 				720763B02DE57F690017963C /* NetworkProvider.swift in Sources */,
 				72694A362DDEF74200436EDF /* LikedTabBar.swift in Sources */,
@@ -977,6 +990,7 @@
 /* Begin XCBuildConfiguration section */
 		72BAA3092DD1DAEF005E7B23 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7207641B2DE609870017963C /* Secretes.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -1040,6 +1054,7 @@
 		};
 		72BAA30A2DD1DAEF005E7B23 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7207641B2DE609870017963C /* Secretes.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -1108,6 +1123,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ToneUp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1147,6 +1164,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ToneUp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1312,6 +1331,14 @@
 				minimumVersion = 15.0.3;
 			};
 		};
+		720764162DE603CA0017963C /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
 		72BAA3922DD70903005E7B23 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
@@ -1327,6 +1354,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 720763A92DE57D570017963C /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
+		};
+		720764172DE603CA0017963C /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 720764162DE603CA0017963C /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		720764192DE603CA0017963C /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 720764162DE603CA0017963C /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
 		};
 		72BAA3932DD70903005E7B23 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
