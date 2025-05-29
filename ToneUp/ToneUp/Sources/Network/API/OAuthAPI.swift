@@ -20,7 +20,7 @@ extension OAuthAPI: TargetType {
     var path: String {
         switch self {
         case .googleLogin:
-            return "/api/auth/social-login"
+            return "api/app/authorization"
         }
     }
     
