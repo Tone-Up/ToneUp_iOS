@@ -11,7 +11,7 @@ import ComposableArchitecture
 struct Onboarding: Reducer {
     
     @ObservableState
-    struct State {
+    struct State: Equatable {
         var isLoginSheetPresented = false
     }
 

@@ -35,7 +35,7 @@ struct OnboardingView: View {
             Spacer()
             
             CommonButton(icon: nil,
-                         backgroundColor: .gray,
+                         backgroundColor: Color.lightGray,
                          text: .goLogin,
                          textColor: .black,
                          symbolColor: nil,

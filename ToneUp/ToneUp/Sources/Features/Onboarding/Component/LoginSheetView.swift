@@ -33,7 +33,7 @@ struct LoginSheetView: View {
                 symbolColor: .black,
                 cornerRadius: 12
             ) {
-                
+                onSelect(.kakao)
             }
             
             CommonButton(
@@ -44,9 +44,10 @@ struct LoginSheetView: View {
                 symbolColor: .white,
                 cornerRadius: 12
             ) {
-                
+                onSelect(.naver)
             }
         }
         .padding()
     }
+    
 }
