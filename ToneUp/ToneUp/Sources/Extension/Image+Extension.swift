@@ -23,4 +23,8 @@ extension Image {
     static var color4: Image {
         Image("color4")
     }
+    
+    static var person: Image {
+        Image("person")
+    }
 }

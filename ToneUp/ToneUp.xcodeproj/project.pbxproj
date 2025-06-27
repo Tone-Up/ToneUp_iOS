@@ -65,6 +65,7 @@
 		720764742DEC2C170017963C /* FriendAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720764732DEC2C170017963C /* FriendAPI.swift */; };
 		720765082E02ED8D0017963C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 720765072E02ED8D0017963C /* GoogleService-Info.plist */; };
 		7207650B2E02EE670017963C /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 7207650A2E02EE670017963C /* FirebaseAnalytics */; };
+		720765372E0BB8210017963C /* AnalyzeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720765362E0BB8210017963C /* AnalyzeView.swift */; };
 		720F6B172DE0365F006CF82C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720F6B162DE0365F006CF82C /* ProfileView.swift */; };
 		720F6B1A2DE036AE006CF82C /* ProfileContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720F6B192DE036AE006CF82C /* ProfileContentView.swift */; };
 		720F6B1C2DE04F66006CF82C /* ProfileTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720F6B1B2DE04F66006CF82C /* ProfileTabBar.swift */; };
@@ -87,6 +88,7 @@
 		72694A392DDEFA6300436EDF /* FeedImageTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72694A382DDEFA6300436EDF /* FeedImageTile.swift */; };
 		72694A3D2DDF088600436EDF /* ThreeColumnGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72694A3C2DDF088600436EDF /* ThreeColumnGrid.swift */; };
 		72694A3F2DDF0A5900436EDF /* LikedTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72694A3E2DDF0A5900436EDF /* LikedTab.swift */; };
+		72AD634A2E0BC4120078EB69 /* DecorativeCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AD63492E0BC4120078EB69 /* DecorativeCircle.swift */; };
 		72BAA31A2DD1DB03005E7B23 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72BAA3142DD1DB03005E7B23 /* Preview Assets.xcassets */; };
 		72BAA31B2DD1DB03005E7B23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72BAA3162DD1DB03005E7B23 /* Assets.xcassets */; };
 		72BAA31D2DD1DB03005E7B23 /* ToneUpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BAA3182DD1DB03005E7B23 /* ToneUpApp.swift */; };
@@ -182,6 +184,7 @@
 		720764712DEC2B330017963C /* SearchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAPI.swift; sourceTree = "<group>"; };
 		720764732DEC2C170017963C /* FriendAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendAPI.swift; sourceTree = "<group>"; };
 		720765072E02ED8D0017963C /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		720765362E0BB8210017963C /* AnalyzeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzeView.swift; sourceTree = "<group>"; };
 		720F6B162DE0365F006CF82C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		720F6B192DE036AE006CF82C /* ProfileContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContentView.swift; sourceTree = "<group>"; };
 		720F6B1B2DE04F66006CF82C /* ProfileTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabBar.swift; sourceTree = "<group>"; };
@@ -204,6 +207,7 @@
 		72694A382DDEFA6300436EDF /* FeedImageTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageTile.swift; sourceTree = "<group>"; };
 		72694A3C2DDF088600436EDF /* ThreeColumnGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeColumnGrid.swift; sourceTree = "<group>"; };
 		72694A3E2DDF0A5900436EDF /* LikedTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedTab.swift; sourceTree = "<group>"; };
+		72AD63492E0BC4120078EB69 /* DecorativeCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecorativeCircle.swift; sourceTree = "<group>"; };
 		72BAA2E72DD1DAED005E7B23 /* ToneUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToneUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72BAA2F72DD1DAEF005E7B23 /* ToneUpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToneUpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		72BAA3012DD1DAEF005E7B23 /* ToneUpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToneUpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -466,6 +470,15 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
+		720765352E0BB7F90017963C /* Analyze */ = {
+			isa = PBXGroup;
+			children = (
+				720765362E0BB8210017963C /* AnalyzeView.swift */,
+				72AD63482E0BC4020078EB69 /* Component */,
+			);
+			path = Analyze;
+			sourceTree = "<group>";
+		};
 		720F6B152DE03357006CF82C /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -559,6 +572,14 @@
 				72694A3C2DDF088600436EDF /* ThreeColumnGrid.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		72AD63482E0BC4020078EB69 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				72AD63492E0BC4120078EB69 /* DecorativeCircle.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 		72BAA2DE2DD1DAED005E7B23 = {
@@ -658,6 +679,7 @@
 			isa = PBXGroup;
 			children = (
 				72BAA3962DD716EE005E7B23 /* Onboarding */,
+				720765352E0BB7F90017963C /* Analyze */,
 				72694A022DD9CF6400436EDF /* Home */,
 				72694A2F2DDEE7CC00436EDF /* Like */,
 				720F6B152DE03357006CF82C /* Profile */,
@@ -940,6 +962,7 @@
 				72BAA4052DD8D9B8005E7B23 /* User.swift in Sources */,
 				72038C362DE05F5A002669F5 /* EditProfileContentView.swift in Sources */,
 				720763B82DE591250017963C /* ServerResponse.swift in Sources */,
+				72AD634A2E0BC4120078EB69 /* DecorativeCircle.swift in Sources */,
 				720763C22DE5A5B60017963C /* OAuthAPI.swift in Sources */,
 				72694A2E2DDDBD6200436EDF /* TileGroupView.swift in Sources */,
 				72BAA3E02DD753FE005E7B23 /* CommonText.swift in Sources */,
@@ -1001,6 +1024,7 @@
 				7207637F2DE4C2350017963C /* ChatNavigationBar.swift in Sources */,
 				720F6B172DE0365F006CF82C /* ProfileView.swift in Sources */,
 				7207645B2DE8309B0017963C /* TokenRequestBody.swift in Sources */,
+				720765372E0BB8210017963C /* AnalyzeView.swift in Sources */,
 				7207646E2DEC25F40017963C /* MyStyleAPI.swift in Sources */,
 				720F6B1A2DE036AE006CF82C /* ProfileContentView.swift in Sources */,
 				72694A262DDDA1F700436EDF /* ProductViewCell.swift in Sources */,

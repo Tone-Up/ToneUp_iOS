@@ -22,4 +22,6 @@ enum ButtonTitle: String {
     case withdraw = "탈퇴하기"
     case change = "변경"
     case postComplete = "작성 완료"
+    case camera = "카메라로 분석하기"
+    case gallery = "갤러리에서 사진 선택"
 }

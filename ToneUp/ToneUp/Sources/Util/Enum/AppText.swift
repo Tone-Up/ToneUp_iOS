@@ -31,4 +31,8 @@ enum AppText {
         case setProfile = "프로필 관리"
     }
     
+    enum AnalyzeView: String {
+        case title = "나만의 톤을\n찾아볼까요?"
+        case subTitle = "톤업은 당신만의 색을 존중합니다.\n지금, 내 퍼스널컬러를 확인해보세요."
+    }
 }
