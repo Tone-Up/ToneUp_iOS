@@ -89,6 +89,9 @@
 		72694A3D2DDF088600436EDF /* ThreeColumnGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72694A3C2DDF088600436EDF /* ThreeColumnGrid.swift */; };
 		72694A3F2DDF0A5900436EDF /* LikedTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72694A3E2DDF0A5900436EDF /* LikedTab.swift */; };
 		72AD634A2E0BC4120078EB69 /* DecorativeCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AD63492E0BC4120078EB69 /* DecorativeCircle.swift */; };
+		72AD63502E0E2EF10078EB69 /* AnalyzeReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AD634F2E0E2EF10078EB69 /* AnalyzeReducer.swift */; };
+		72AD63532E0E311D0078EB69 /* ColorAnalysisClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AD63522E0E311D0078EB69 /* ColorAnalysisClient.swift */; };
+		72AD63552E0E34610078EB69 /* CameraCaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AD63542E0E34610078EB69 /* CameraCaptureView.swift */; };
 		72BAA31A2DD1DB03005E7B23 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72BAA3142DD1DB03005E7B23 /* Preview Assets.xcassets */; };
 		72BAA31B2DD1DB03005E7B23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72BAA3162DD1DB03005E7B23 /* Assets.xcassets */; };
 		72BAA31D2DD1DB03005E7B23 /* ToneUpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BAA3182DD1DB03005E7B23 /* ToneUpApp.swift */; };
@@ -109,6 +112,8 @@
 		72BAA4052DD8D9B8005E7B23 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BAA4042DD8D9B8005E7B23 /* User.swift */; };
 		72BAA4072DD8D9F3005E7B23 /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BAA4062DD8D9F3005E7B23 /* AuthError.swift */; };
 		72BAA4092DD8DA37005E7B23 /* LoginSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BAA4082DD8DA37005E7B23 /* LoginSheetView.swift */; };
+		72F7D5B42E0E70ED00B33ED8 /* CustomPhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F7D5B32E0E70ED00B33ED8 /* CustomPhotoPicker.swift */; };
+		72F7D5B62E0E8A3E00B33ED8 /* PersonalAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F7D5B52E0E8A3E00B33ED8 /* PersonalAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -208,6 +213,9 @@
 		72694A3C2DDF088600436EDF /* ThreeColumnGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeColumnGrid.swift; sourceTree = "<group>"; };
 		72694A3E2DDF0A5900436EDF /* LikedTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedTab.swift; sourceTree = "<group>"; };
 		72AD63492E0BC4120078EB69 /* DecorativeCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecorativeCircle.swift; sourceTree = "<group>"; };
+		72AD634F2E0E2EF10078EB69 /* AnalyzeReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzeReducer.swift; sourceTree = "<group>"; };
+		72AD63522E0E311D0078EB69 /* ColorAnalysisClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAnalysisClient.swift; sourceTree = "<group>"; };
+		72AD63542E0E34610078EB69 /* CameraCaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCaptureView.swift; sourceTree = "<group>"; };
 		72BAA2E72DD1DAED005E7B23 /* ToneUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToneUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72BAA2F72DD1DAEF005E7B23 /* ToneUpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToneUpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		72BAA3012DD1DAEF005E7B23 /* ToneUpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToneUpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -232,6 +240,8 @@
 		72BAA4042DD8D9B8005E7B23 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		72BAA4062DD8D9F3005E7B23 /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
 		72BAA4082DD8DA37005E7B23 /* LoginSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSheetView.swift; sourceTree = "<group>"; };
+		72F7D5B32E0E70ED00B33ED8 /* CustomPhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPhotoPicker.swift; sourceTree = "<group>"; };
+		72F7D5B52E0E8A3E00B33ED8 /* PersonalAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -409,6 +419,7 @@
 				7207646F2DEC28980017963C /* LikeAPI.swift */,
 				720764712DEC2B330017963C /* SearchAPI.swift */,
 				720764732DEC2C170017963C /* FriendAPI.swift */,
+				72F7D5B52E0E8A3E00B33ED8 /* PersonalAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -474,7 +485,9 @@
 			isa = PBXGroup;
 			children = (
 				720765362E0BB8210017963C /* AnalyzeView.swift */,
+				72AD634F2E0E2EF10078EB69 /* AnalyzeReducer.swift */,
 				72AD63482E0BC4020078EB69 /* Component */,
+				72AD63542E0E34610078EB69 /* CameraCaptureView.swift */,
 			);
 			path = Analyze;
 			sourceTree = "<group>";
@@ -570,6 +583,7 @@
 			isa = PBXGroup;
 			children = (
 				72694A3C2DDF088600436EDF /* ThreeColumnGrid.swift */,
+				72F7D5B32E0E70ED00B33ED8 /* CustomPhotoPicker.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -580,6 +594,14 @@
 				72AD63492E0BC4120078EB69 /* DecorativeCircle.swift */,
 			);
 			path = Component;
+			sourceTree = "<group>";
+		};
+		72AD63512E0E30F10078EB69 /* AnalyzePersonal */ = {
+			isa = PBXGroup;
+			children = (
+				72AD63522E0E311D0078EB69 /* ColorAnalysisClient.swift */,
+			);
+			path = AnalyzePersonal;
 			sourceTree = "<group>";
 		};
 		72BAA2DE2DD1DAED005E7B23 = {
@@ -704,6 +726,7 @@
 		72BAA3972DD7170C005E7B23 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				72AD63512E0E30F10078EB69 /* AnalyzePersonal */,
 				72BAA4002DD8D8F3005E7B23 /* AuthClient */,
 			);
 			path = Services;
@@ -883,7 +906,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1620;
-				LastUpgradeCheck = 1620;
+				LastUpgradeCheck = 2600;
 				TargetAttributes = {
 					72BAA2E62DD1DAED005E7B23 = {
 						CreatedOnToolsVersion = 16.2;
@@ -988,6 +1011,7 @@
 				720F6B1C2DE04F66006CF82C /* ProfileTabBar.swift in Sources */,
 				72BAA4072DD8D9F3005E7B23 /* AuthError.swift in Sources */,
 				720763B32DE584810017963C /* APIError.swift in Sources */,
+				72F7D5B62E0E8A3E00B33ED8 /* PersonalAPI.swift in Sources */,
 				72694A3F2DDF0A5900436EDF /* LikedTab.swift in Sources */,
 				72694A2C2DDDBD3500436EDF /* Array+Extension.swift in Sources */,
 				72694A0E2DD9E07800436EDF /* CustomNavigationBarModifier.swift in Sources */,
@@ -1010,9 +1034,11 @@
 				720763D82DE5E1A30017963C /* RecommandProductDTO.swift in Sources */,
 				72BAA3DD2DD74CAB005E7B23 /* CommonButton.swift in Sources */,
 				720763D12DE5E0190017963C /* QueryParameters.swift in Sources */,
+				72AD63552E0E34610078EB69 /* CameraCaptureView.swift in Sources */,
 				7207646C2DEC23E50017963C /* ReportRequestBody.swift in Sources */,
 				720763872DE4CA020017963C /* ChatMessageListView.swift in Sources */,
 				72694A392DDEFA6300436EDF /* FeedImageTile.swift in Sources */,
+				72AD63502E0E2EF10078EB69 /* AnalyzeReducer.swift in Sources */,
 				720763892DE4CC1F0017963C /* ChatMessageCellView.swift in Sources */,
 				7207645D2DE831D80017963C /* TokenDTO.swift in Sources */,
 				72694A282DDDA64B00436EDF /* StyleRecordSection.swift in Sources */,
@@ -1022,6 +1048,7 @@
 				7207638B2DE4CD060017963C /* ImagePreviewView.swift in Sources */,
 				720763B52DE58C670017963C /* APIErrorMapper.swift in Sources */,
 				7207637F2DE4C2350017963C /* ChatNavigationBar.swift in Sources */,
+				72AD63532E0E311D0078EB69 /* ColorAnalysisClient.swift in Sources */,
 				720F6B172DE0365F006CF82C /* ProfileView.swift in Sources */,
 				7207645B2DE8309B0017963C /* TokenRequestBody.swift in Sources */,
 				720765372E0BB8210017963C /* AnalyzeView.swift in Sources */,
@@ -1038,6 +1065,7 @@
 				720764722DEC2B330017963C /* SearchAPI.swift in Sources */,
 				720764642DEC1B570017963C /* MultipartFormDataConvertible.swift in Sources */,
 				72BAA3E62DD75C20005E7B23 /* AppText.swift in Sources */,
+				72F7D5B42E0E70ED00B33ED8 /* CustomPhotoPicker.swift in Sources */,
 				7207637A2DE4493A0017963C /* ChatView.swift in Sources */,
 				720763752DE444460017963C /* ChatCell.swift in Sources */,
 				72694A3D2DDF088600436EDF /* ThreeColumnGrid.swift in Sources */,
@@ -1143,6 +1171,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -1200,6 +1229,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1210,6 +1240,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1226,7 +1257,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1251,6 +1282,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1267,7 +1299,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

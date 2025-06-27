@@ -25,9 +25,14 @@ struct ToneUpApp: App {
     
     var body: some Scene {
         WindowGroup {
-            OnboardingView(
-                store: Store(initialState: Onboarding.State()) {
-                    Onboarding()
+//            OnboardingView(
+//                store: Store(initialState: Onboarding.State()) {
+//                    Onboarding()
+//                }
+//            )
+            AnalyzeView(
+                store: Store(initialState: Analyze.State()) {
+                    Analyze()
                 }
             )
             .onOpenURL { url in

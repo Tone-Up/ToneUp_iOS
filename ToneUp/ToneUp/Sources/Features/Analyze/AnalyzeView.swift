@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct AnalyzeView: View {
+    
+    @Bindable var store: StoreOf<Analyze>
     
     var body: some View {
         GeometryReader { geo in
@@ -77,32 +80,58 @@ struct AnalyzeView: View {
                                  font: .notoRegular18,
                                  height: 60,
                                  hasBorder: false) {
-                        print("true")
+                        store.send(.cameraButtonTapped)
                     }
                                  .padding(.horizontal, 24)
                     
-                    CommonButton(icon: Image(systemName: "photo"),
-                                 backgroundColor: .white,
-                                 text: .gallery,
-                                 textColor: .black,
-                                 symbolColor: .black,
-                                 cornerRadius: 30,
-                                 font: .notoRegular18,
-                                 height: 60,
-                                 hasBorder: false,
-                                 hasInternalPadding: true) {
-                        print("true")
+                    CustomPhotoPicker(
+                        selectedImages: $store.selectedImages,
+                        isPresentedError: $store.isGalleryErrorPresented,
+                        maxSelectedCount: 1
+                    ) {
+                        CommonButton(icon: Image(systemName: "photo"),
+                                     backgroundColor: .white,
+                                     text: .gallery,
+                                     textColor: .black,
+                                     symbolColor: .black,
+                                     cornerRadius: 30,
+                                     font: .notoRegular18,
+                                     height: 60,
+                                     isEnabled: false,
+                                     hasBorder: false,
+                                     hasInternalPadding: true) {
+                            //                            store.send(.galleryButtonTapped)
+                        }
+                                     .padding(.horizontal, 24)
+                                     .padding(.bottom, 20)
                     }
-                                 .padding(.horizontal, 24)
-                                 .padding(.bottom, 20)
+                    
+                    
                 }
+                .alert("사진을 불러올 수 없습니다",
+                       isPresented: $store.isGalleryErrorPresented) {
+                    Button("확인") { }
+                }
+                       .fullScreenCover(isPresented: $store.isCameraButtonTapped) {
+                           CameraCaptureView(
+                            onDismiss: {
+                                store.send(.set(\.isCameraButtonTapped, false))
+                            },
+                            onFaceFound: { image in
+                                // TODO: store.send(.cameraCaptured(image))
+                            }
+                           )
+                       }
             }
-            
         }
     }
     
 }
 
 #Preview {
-    AnalyzeView()
+    AnalyzeView(
+        store: Store(initialState: Analyze.State()) {
+            Analyze()
+        }
+    )
 }
