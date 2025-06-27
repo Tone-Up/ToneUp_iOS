@@ -31,13 +31,13 @@ jobs:
         run: fastlane --version
         
       # 5. Build Project using xcodebuild
-      - name: Build Project
-        run: |
-          xcodebuild \
-            -project ToneUp/ToneUp.xcodeproj \
-            -scheme ToneUp \
-            -destination "platform=iOS Simulator,name=iPhone 16,OS=18.0" \
-            -verbose clean build
+      # - name: Build Project
+      #   run: |
+      #     xcodebuild \
+      #       -project ToneUp/ToneUp.xcodeproj \
+      #       -scheme ToneUp \
+      #       -destination "platform=iOS Simulator,name=iPhone 16,OS=18.0" \
+      #       -verbose clean build
 
       # 6. 인증서 정보를 가져올 Private Repository 접근을 위한 SSH 설정
       - name: Install SSH key
