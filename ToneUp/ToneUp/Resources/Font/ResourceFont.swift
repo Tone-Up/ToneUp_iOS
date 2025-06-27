@@ -75,6 +75,10 @@ extension FontType {
     static let notoBold20 = FontType
         .custom(name: NotoSansKR.notoBold,
                 size: 20)
+    static let notoBold32 = FontType
+        .custom(name: NotoSansKR.notoBold,
+                size: 32)
+    
     //regular
     static let regular12 = FontType
         .system(12,

@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct CommonButton: View {
-    
-    let icon: Image? //글자만 있는 버튼도 사용할 수 있도록
-    let backgroundColor: Color //배경색
-    let disabledBackgroundColor: Color? = .gray// disabled일때 배경색상
-    let text: ButtonTitle? //글자
-    let textColor: Color //글자색상
-    let symbolColor: Color? //로고 색상
-    let cornerRadius: CGFloat //모서리
+    let icon: Image?
+    let backgroundColor: Color
+    let disabledBackgroundColor: Color? = nil
+    let text: ButtonTitle?
+    let textColor: Color
+    let symbolColor: Color?
+    let cornerRadius: CGFloat
     var font: FontType? = .headline
     var borderColor: Color = .black
     var minWidth: CGFloat? = nil
@@ -31,7 +30,7 @@ struct CommonButton: View {
                 action()
             }
         }) {
-            HStack {
+            HStack(spacing: 8) {
                 if let icon = icon {
                     icon
                         .resizable()
@@ -39,7 +38,6 @@ struct CommonButton: View {
                         .frame(width: 20, height: 20)
                         .foregroundStyle(symbolColor ?? .primary)
                 }
-                
                 if let text = text {
                     Text(text.rawValue)
                         .customFont(font ?? .headline)
@@ -47,9 +45,13 @@ struct CommonButton: View {
                 }
             }
             .padding(hasInternalPadding ? 12 : 0)
-            .applyFrame(minWidth: minWidth,
-                        height: height)
-            .background(isEnabled ? backgroundColor : (disabledBackgroundColor ?? backgroundColor))
+            .applyFrame(minWidth: minWidth, height: height)
+            // isEnabled에 따라 배경색: 비활성일 때 disabledBackgroundColor가 nil이면 원래 색 유지
+            .background(
+                (isEnabled)
+                ? backgroundColor
+                : (disabledBackgroundColor ?? backgroundColor)
+            )
             .cornerRadius(cornerRadius)
             .overlay(
                 RoundedRectangle(cornerRadius: cornerRadius)
@@ -58,11 +60,9 @@ struct CommonButton: View {
         }
         .disabled(!isEnabled)
     }
-    
 }
 
 private extension View {
-    
     func applyFrame(minWidth: CGFloat?, height: CGFloat?) -> some View {
         if let minWidth = minWidth, let height = height {
             return AnyView(
@@ -84,17 +84,4 @@ private extension View {
             )
         }
     }
-    
-}
-
-#Preview {
-    CommonButton(icon: nil,
-                 backgroundColor: .red,
-                 text: .goLogin,
-                 textColor: .green,
-                 symbolColor: .blue,
-                 cornerRadius: 20,
-                 action: {
-        
-    })
 }
