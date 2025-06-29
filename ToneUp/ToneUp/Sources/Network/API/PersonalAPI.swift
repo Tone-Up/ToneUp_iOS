@@ -9,12 +9,7 @@ import Foundation
 import Moya
 
 enum PersonalAPI {
-    case getMyProfile
-    case getOpponentProfile(opponentUserId: Int)
-    case updateMyProfile(body: UpdateMyProfileRequestBody)
-    case updateMyProfileImage(body: UpdateMyImageRequestBody)
-    //    case withdrawal(userId: Int,
-    //                    body: WithdrawalRequestBody)
+    case personalAnalysis(body: PersonalAnalysisBody)
 }
 
 extension PersonalAPI: TargetType {
@@ -24,50 +19,29 @@ extension PersonalAPI: TargetType {
     
     var path: String {
         switch self {
-        case .getMyProfile:
-            return "/api/profiles/me"
-            
-        case let .getOpponentProfile(opponentUserId):
-            return "/api/profiles/\(opponentUserId)"
-            
-        case .updateMyProfile:
-            return "/api/profiles"
-            
-        case .updateMyProfileImage:
-            return "/api/profiles/image"
+        case .personalAnalysis:
+            return "/api/personalcolor"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .getMyProfile, .getOpponentProfile:
-            return .get
-            
-        case .updateMyProfile, .updateMyProfileImage:
-            return .patch
+        case .personalAnalysis:
+            return .post
         }
     }
     
     var task: Task {
         switch self {
-        case .getMyProfile, .getOpponentProfile:
-            return .requestPlain
-            
-        case let .updateMyProfile(body):
-            return .requestCustomJSONEncodable(body,
-                                               encoder: JSONEncoder())
-            
-        case let .updateMyProfileImage(body):
-            return .requestCustomJSONEncodable(body,
-                                               encoder: JSONEncoder())
+        case let .personalAnalysis(body):
+            return .uploadMultipart(body.toMultipartFormData())
         }
     }
     
     var headers: [String: String]? {
         switch self {
-        case .getMyProfile, .getOpponentProfile,
-                .updateMyProfile, .updateMyProfileImage:
-            return [Header.contentTypeJson.key: Header.contentTypeJson.value,
+        case .personalAnalysis:
+            return [Header.contentTypeMulti.key: Header.contentTypeMulti.value,
                     Header.authorization.key: Header.authorization.value]
         }
     }

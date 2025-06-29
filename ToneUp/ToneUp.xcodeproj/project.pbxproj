@@ -92,6 +92,8 @@
 		72AD63502E0E2EF10078EB69 /* AnalyzeReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AD634F2E0E2EF10078EB69 /* AnalyzeReducer.swift */; };
 		72AD63532E0E311D0078EB69 /* ColorAnalysisClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AD63522E0E311D0078EB69 /* ColorAnalysisClient.swift */; };
 		72AD63552E0E34610078EB69 /* CameraCaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AD63542E0E34610078EB69 /* CameraCaptureView.swift */; };
+		72B819262E0EB8B000DE95EB /* PersonalColorDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B819252E0EB8B000DE95EB /* PersonalColorDTO.swift */; };
+		72B819282E0EBAE900DE95EB /* PersonalAnalysisBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B819272E0EBAE900DE95EB /* PersonalAnalysisBody.swift */; };
 		72BAA31A2DD1DB03005E7B23 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72BAA3142DD1DB03005E7B23 /* Preview Assets.xcassets */; };
 		72BAA31B2DD1DB03005E7B23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72BAA3162DD1DB03005E7B23 /* Assets.xcassets */; };
 		72BAA31D2DD1DB03005E7B23 /* ToneUpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BAA3182DD1DB03005E7B23 /* ToneUpApp.swift */; };
@@ -216,6 +218,8 @@
 		72AD634F2E0E2EF10078EB69 /* AnalyzeReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzeReducer.swift; sourceTree = "<group>"; };
 		72AD63522E0E311D0078EB69 /* ColorAnalysisClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAnalysisClient.swift; sourceTree = "<group>"; };
 		72AD63542E0E34610078EB69 /* CameraCaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCaptureView.swift; sourceTree = "<group>"; };
+		72B819252E0EB8B000DE95EB /* PersonalColorDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalColorDTO.swift; sourceTree = "<group>"; };
+		72B819272E0EBAE900DE95EB /* PersonalAnalysisBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalAnalysisBody.swift; sourceTree = "<group>"; };
 		72BAA2E72DD1DAED005E7B23 /* ToneUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToneUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72BAA2F72DD1DAEF005E7B23 /* ToneUpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToneUpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		72BAA3012DD1DAEF005E7B23 /* ToneUpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToneUpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -433,6 +437,7 @@
 				720764652DEC1BEE0017963C /* UpdateMyProfileRequestBody.swift */,
 				720764692DEC230A0017963C /* PostRequestBody.swift */,
 				7207646B2DEC23E50017963C /* ReportRequestBody.swift */,
+				72B819272E0EBAE900DE95EB /* PersonalAnalysisBody.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -444,6 +449,7 @@
 				720763D72DE5E1A30017963C /* RecommandProductDTO.swift */,
 				720763D92DE5E5200017963C /* ProductDTO.swift */,
 				7207645C2DE831D80017963C /* TokenDTO.swift */,
+				72B819252E0EB8B000DE95EB /* PersonalColorDTO.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -985,6 +991,7 @@
 				72BAA4052DD8D9B8005E7B23 /* User.swift in Sources */,
 				72038C362DE05F5A002669F5 /* EditProfileContentView.swift in Sources */,
 				720763B82DE591250017963C /* ServerResponse.swift in Sources */,
+				72B819262E0EB8B000DE95EB /* PersonalColorDTO.swift in Sources */,
 				72AD634A2E0BC4120078EB69 /* DecorativeCircle.swift in Sources */,
 				720763C22DE5A5B60017963C /* OAuthAPI.swift in Sources */,
 				72694A2E2DDDBD6200436EDF /* TileGroupView.swift in Sources */,
@@ -1000,6 +1007,7 @@
 				7207634C2DE2F7BD0017963C /* StylePostView.swift in Sources */,
 				72BAA3EA2DD75E11005E7B23 /* Image+Extension.swift in Sources */,
 				72694A062DD9CFA200436EDF /* HomeView.swift in Sources */,
+				72B819282E0EBAE900DE95EB /* PersonalAnalysisBody.swift in Sources */,
 				720764682DEC1EB90017963C /* FeedAPI.swift in Sources */,
 				72BAA3FF2DD8D8A6005E7B23 /* LoginOption.swift in Sources */,
 				720763C92DE5AC140017963C /* UserDTO.swift in Sources */,
@@ -1262,7 +1270,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jun.ToneUp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1304,7 +1312,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jun.ToneUp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

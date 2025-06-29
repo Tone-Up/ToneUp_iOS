@@ -85,9 +85,8 @@ struct AnalyzeView: View {
                                  .padding(.horizontal, 24)
                     
                     CustomPhotoPicker(
-                        selectedImages: $store.selectedImages,
+                        selectedImage: $store.selectedImage,
                         isPresentedError: $store.isGalleryErrorPresented,
-                        maxSelectedCount: 1
                     ) {
                         CommonButton(icon: Image(systemName: "photo"),
                                      backgroundColor: .white,
@@ -107,6 +106,12 @@ struct AnalyzeView: View {
                     }
                     
                     
+                }
+                .onChange(of: store.selectedImage) { newImage, _ in
+                    print("📸 선택된 이미지: ", newImage as Any)
+                    if let img = newImage {
+                        store.send(.galleryImagePicked(img))
+                    }
                 }
                 .alert("사진을 불러올 수 없습니다",
                        isPresented: $store.isGalleryErrorPresented) {

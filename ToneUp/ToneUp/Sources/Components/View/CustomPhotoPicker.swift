@@ -10,33 +10,23 @@ import SwiftUI
 
 public struct CustomPhotoPicker<Content: View>: View {
     
-    @State private var selectedPhotos: [PhotosPickerItem]
-    @Binding private var selectedImages: [UIImage]
+    @State private var selectedPhoto: PhotosPickerItem?
+    @Binding private var selectedImage: UIImage?
     @Binding private var isPresentedError: Bool
-    private let maxSelectedCount: Int
-    private var disabled: Bool {
-        selectedImages.count >= maxSelectedCount
-    }
-    private var availableSelectedCount: Int {
-        maxSelectedCount - selectedImages.count
-    }
     private let matching: PHPickerFilter
     private let photoLibrary: PHPhotoLibrary
     private let content: () -> Content
     
     public init(
-        selectedPhotos: [PhotosPickerItem] = [],
-        selectedImages: Binding<[UIImage]>,
+        selectedImage: Binding<UIImage?>,
         isPresentedError: Binding<Bool> = .constant(false),
-        maxSelectedCount: Int = 5,
         matching: PHPickerFilter = .images,
         photoLibrary: PHPhotoLibrary = .shared(),
         content: @escaping () -> Content
     ) {
-        self.selectedPhotos = selectedPhotos
-        self._selectedImages = selectedImages
+        self._selectedPhoto = State(initialValue: nil)
+        self._selectedImage = selectedImage
         self._isPresentedError = isPresentedError
-        self.maxSelectedCount = maxSelectedCount
         self.matching = matching
         self.photoLibrary = photoLibrary
         self.content = content
@@ -44,39 +34,27 @@ public struct CustomPhotoPicker<Content: View>: View {
     
     public var body: some View {
         PhotosPicker(
-            selection: $selectedPhotos,
-            maxSelectionCount: availableSelectedCount,
+            selection: $selectedPhoto,
             matching: matching,
             photoLibrary: photoLibrary
         ) {
             content()
-                .disabled(disabled)
         }
-        .disabled(disabled)
-        .onChange(of: selectedPhotos) { _, newValue in
-            handleSelectedPhotos(newValue)
-        }
-    }
-    
-    private func handleSelectedPhotos(_ newPhotos: [PhotosPickerItem]) {
-        for newPhoto in newPhotos {
-            newPhoto.loadTransferable(type: Data.self) { result in
+        .onChange(of: selectedPhoto) { newItem, _ in
+            guard let item = newItem else { return }
+            item.loadTransferable(type: Data.self) { result in
                 switch result {
                 case .success(let data):
-                    if let data = data, let newImage = UIImage(data: data) {
-                        if !selectedImages.contains(where: { $0.pngData() == newImage.pngData() }) {
-                            DispatchQueue.main.async {
-                                selectedImages.append(newImage)
-                            }
+                    if let data = data, let image = UIImage(data: data) {
+                        DispatchQueue.main.async {
+                            selectedImage = image
                         }
                     }
                 case .failure:
                     isPresentedError = true
                 }
             }
+            selectedPhoto = nil
         }
-        
-        selectedPhotos.removeAll()
     }
-    
 }
