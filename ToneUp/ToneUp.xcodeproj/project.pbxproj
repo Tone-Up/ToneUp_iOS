@@ -94,6 +94,7 @@
 		72AD63552E0E34610078EB69 /* CameraCaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72AD63542E0E34610078EB69 /* CameraCaptureView.swift */; };
 		72B819262E0EB8B000DE95EB /* PersonalColorDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B819252E0EB8B000DE95EB /* PersonalColorDTO.swift */; };
 		72B819282E0EBAE900DE95EB /* PersonalAnalysisBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B819272E0EBAE900DE95EB /* PersonalAnalysisBody.swift */; };
+		72B8192B2E11788800DE95EB /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B8192A2E11788800DE95EB /* CustomTabView.swift */; };
 		72BAA31A2DD1DB03005E7B23 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72BAA3142DD1DB03005E7B23 /* Preview Assets.xcassets */; };
 		72BAA31B2DD1DB03005E7B23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72BAA3162DD1DB03005E7B23 /* Assets.xcassets */; };
 		72BAA31D2DD1DB03005E7B23 /* ToneUpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BAA3182DD1DB03005E7B23 /* ToneUpApp.swift */; };
@@ -220,6 +221,7 @@
 		72AD63542E0E34610078EB69 /* CameraCaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCaptureView.swift; sourceTree = "<group>"; };
 		72B819252E0EB8B000DE95EB /* PersonalColorDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalColorDTO.swift; sourceTree = "<group>"; };
 		72B819272E0EBAE900DE95EB /* PersonalAnalysisBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalAnalysisBody.swift; sourceTree = "<group>"; };
+		72B8192A2E11788800DE95EB /* CustomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
 		72BAA2E72DD1DAED005E7B23 /* ToneUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToneUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72BAA2F72DD1DAEF005E7B23 /* ToneUpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToneUpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		72BAA3012DD1DAEF005E7B23 /* ToneUpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToneUpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -610,6 +612,14 @@
 			path = AnalyzePersonal;
 			sourceTree = "<group>";
 		};
+		72B819292E11787200DE95EB /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				72B8192A2E11788800DE95EB /* CustomTabView.swift */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
 		72BAA2DE2DD1DAED005E7B23 = {
 			isa = PBXGroup;
 			children = (
@@ -706,6 +716,7 @@
 		72BAA3952DD716DE005E7B23 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				72B819292E11787200DE95EB /* Tabbar */,
 				72BAA3962DD716EE005E7B23 /* Onboarding */,
 				720765352E0BB7F90017963C /* Analyze */,
 				72694A022DD9CF6400436EDF /* Home */,
@@ -1032,6 +1043,7 @@
 				720764702DEC28980017963C /* LikeAPI.swift in Sources */,
 				720763C72DE5A6AF0017963C /* SocialRequestBody.swift in Sources */,
 				720764592DE830130017963C /* TokenAPI.swift in Sources */,
+				72B8192B2E11788800DE95EB /* CustomTabView.swift in Sources */,
 				7207634F2DE2FA840017963C /* ImagePickerSection.swift in Sources */,
 				7207646A2DEC230A0017963C /* PostRequestBody.swift in Sources */,
 				7207641D2DE6DC090017963C /* NetworkProviderClient.swift in Sources */,

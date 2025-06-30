@@ -11,7 +11,7 @@ import ComposableArchitecture
 struct Home: Reducer {
     
     @ObservableState
-    struct State {
+    struct State: Equatable {
         var userTone: UserTone = .spring
     }
     
