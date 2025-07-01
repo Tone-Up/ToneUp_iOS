@@ -30,11 +30,12 @@ struct ToneUpApp: App {
 //                    Onboarding()
 //                }
 //            )
-            AnalyzeView(
-                store: Store(initialState: Analyze.State()) {
-                    Analyze()
-                }
-            )
+//            AnalyzeView(
+//                store: Store(initialState: Analyze.State()) {
+//                    Analyze()
+//                }
+//            )
+            CustomTabView()
             .onOpenURL { url in
                 GIDSignIn.sharedInstance.handle(url)
             }

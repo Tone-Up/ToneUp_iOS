@@ -10,6 +10,9 @@ import SwiftUI
 struct ProfileContentView: View {
     
     let isMine: Bool
+    let nickname: String
+    let bio: String?
+    let profileImageUrl: String?
     
     var body: some View {
         VStack(alignment: .leading,
@@ -25,7 +28,7 @@ struct ProfileContentView: View {
                        spacing: 4) {
                     HStack(alignment: .center,
                            spacing: 4) {
-                        CommonText(text: "김승용",
+                        CommonText(text: nickname,
                                    font: .notoBold20)
                         
                         CommonText(text: "#봄웜",
@@ -74,8 +77,10 @@ struct ProfileContentView: View {
                 CommonText(text: "fdjskfjei@naver.com",
                            font: .notoSemiBold12)
                 
-                CommonText(text: "안녕하세요",
-                           font: .regular14)
+                if let bio = bio {
+                    CommonText(text: bio,
+                               font: .regular14)
+                }
             }
             
             if isMine {
@@ -114,8 +119,4 @@ struct ProfileContentView: View {
                .background(.white)
     }
     
-}
-
-#Preview {
-    ProfileContentView(isMine: false)
 }

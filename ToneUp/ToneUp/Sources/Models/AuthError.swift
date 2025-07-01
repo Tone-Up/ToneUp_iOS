@@ -14,3 +14,13 @@ enum AuthError: Error {
     case tokenMissing
     case unsupportedProvider
 }
+
+enum ColorAnalysisError: Error {
+  case missingData
+  case networkFailure(Error)
+}
+
+enum ProfileError: Error {
+  case missingData
+  case networkFailure(Error)
+}

@@ -14,7 +14,7 @@ struct Analyze: Reducer {
     struct State: Equatable {
         var isCameraButtonTapped: Bool = false
         var isGalleryButtonTapped: Bool = false
-        var selectedImages: [UIImage] = []
+        var selectedImage: UIImage? = nil
         var isGalleryErrorPresented = false
     }
     
@@ -22,11 +22,12 @@ struct Analyze: Reducer {
         case binding(BindingAction<State>)
         case cameraButtonTapped
         case galleryButtonTapped
-        case galleryImagePicked([UIImage])
+        case galleryImagePicked(UIImage)
         case galleryError
+        case analysisResponse(TaskResult<PersonalColorDTO>)
     }
     
-//    @Dependency(\.) var analyzeEnvironment
+    @Dependency(\.colorAnalysisClient) var colorAnalysisClient
     
     var body: some ReducerOf<Self> {
         BindingReducer()
@@ -44,13 +45,34 @@ struct Analyze: Reducer {
                 state.isGalleryButtonTapped = true
                 return .none
                 
-            case .galleryImagePicked(let images):
-                state.selectedImages = images
-                state.isGalleryButtonTapped = false
-                return .none
+            case .galleryImagePicked(let image):
+                print(image)
+                state.selectedImage = image
+//                state.isGalleryButtonTapped = false
+                return .run { send in
+                    await send(
+                        .analysisResponse(
+                            TaskResult {
+                                guard let data = image.jpegData(compressionQuality: 0.8) else {
+                                    throw ColorAnalysisError.missingData
+                                }
+                                return try await colorAnalysisClient.analytic(data)
+                            }
+                        )
+                    )
+                }
                 
             case .galleryError:
                 state.isGalleryErrorPresented = true
+                return .none
+                
+            case .analysisResponse(.failure(let error)):
+                print("❌ 분석 중 에러 발생:", error)
+                state.isGalleryErrorPresented = true
+                return .none
+                
+            case .analysisResponse(.success(let dto)):
+                print("🎨 퍼스널 컬러 분석 결과:", dto)
                 return .none
             }
         }
