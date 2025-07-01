@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct ProfileView: View {
     
     let isMine: Bool
+    @Bindable var store: StoreOf<Profile>
     @State private var selectedTab: ProfileTab = .post
     
     var body: some View {
@@ -17,7 +19,16 @@ struct ProfileView: View {
             Color(UIColor.mainBackground)
             
             VStack(spacing: 8) {
-                ProfileContentView(isMine: isMine)
+                if let dto = store.profile {
+                    ProfileContentView(
+                        isMine: isMine,
+                        nickname: dto.nickname,
+                        bio: dto.bio,
+                        profileImageUrl: dto.profileImageUrl
+                    )
+                } else if store.isLoading {
+                    ProgressView()
+                }
                 
                 VStack(spacing: 0) {
                     ProfileTabBar(selectedTab: $selectedTab,
@@ -53,11 +64,8 @@ struct ProfileView: View {
                 title: isMine ? AppText.NavigationText.profile.rawValue : "",
                 trailing: isMine ? .none : .none
             )
+            .onAppear { store.send(.onAppear) }
         }
     }
     
-}
-
-#Preview {
-    ProfileView(isMine: true)
 }

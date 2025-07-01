@@ -19,3 +19,8 @@ enum ColorAnalysisError: Error {
   case missingData
   case networkFailure(Error)
 }
+
+enum ProfileError: Error {
+  case missingData
+  case networkFailure(Error)
+}

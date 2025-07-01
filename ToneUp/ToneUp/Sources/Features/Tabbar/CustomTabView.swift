@@ -20,7 +20,7 @@ struct CustomTabView: View {
         TabView(selection: $selection) {
             Group {
                 NavigationStack {
-                    ProfileView(isMine: true)
+                    ChatListView()
                 }
                 .tabItem{
                     TabButton(selectedTab: $selection,
@@ -60,7 +60,10 @@ struct CustomTabView: View {
                 .tag(TabComponent.like)
                 
                 NavigationStack {
-                    ProfileView(isMine: true)
+                    ProfileView(isMine: true,
+                                store: Store(initialState: Profile.State()){
+                        Profile()
+                    })
                 }
                 .tabItem{
                     TabButton(selectedTab: $selection,
