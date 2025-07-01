@@ -48,9 +48,9 @@ extension FontType {
     static let notoRegular18 = FontType
         .custom(name: NotoSansKR.notoRegular,
                 size: 18)
-    static let notoMedium28 = FontType
+    static let notoMedium24 = FontType
         .custom(name: NotoSansKR.notoMedium,
-                size: 28)
+                size: 24)
     static let notoMedium60 = FontType
         .custom(name: NotoSansKR.notoMedium,
                 size: 60)

@@ -15,7 +15,7 @@ struct CustomNavigationBar: View {
     var body: some View {
         HStack {
             CommonText(text: title,
-                       font: .notoMedium28)
+                       font: .notoMedium24)
             
             Spacer()
             

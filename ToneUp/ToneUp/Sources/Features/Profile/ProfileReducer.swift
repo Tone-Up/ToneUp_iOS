@@ -17,6 +17,7 @@ struct Profile: Reducer {
         var isLoading: Bool = false
         //내 프로필 관리 버튼
         var isProfileSettingButtonTap: Bool = false
+        var isStyleSettingButtonTap: Bool = false
         //내 게시물 세팅
         //내 스타일 세팅
     }
@@ -25,6 +26,7 @@ struct Profile: Reducer {
         case binding(BindingAction<State>)
         case onAppear
         case profileSettingButtonTapped
+        case styleSettingButtonTapped
         case profileResponse(TaskResult<ProfileDTO>)
     }
     
@@ -58,6 +60,10 @@ struct Profile: Reducer {
                 
             case .profileResponse(.failure):
                 state.isLoading = false
+                return .none
+                
+            case .styleSettingButtonTapped:
+                state.isStyleSettingButtonTap = true
                 return .none
             }
             

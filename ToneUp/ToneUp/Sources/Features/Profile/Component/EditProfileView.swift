@@ -10,23 +10,28 @@ import SwiftUI
 struct EditProfileView: View {
     
     var body: some View {
-        NavigationView {
-            VStack(spacing: 8) {
-                EditProfileContentView()
-                
-                Divider()
-                
-                EditProfileInfoSection()
-                
-                Spacer()
+        VStack(spacing: 8) {
+            EditProfileContentView()
+            
+            Divider()
+            
+            EditProfileInfoSection()
+            
+            Spacer()
+        }
+        .navigationBarTitleDisplayMode(.inline)
+        .customNavigationBar(
+            title: AppText.NavigationText.setProfile.rawValue,
+            trailing: .none
+        )
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                BackButton(color: .black)
             }
-            .navigationBarTitleDisplayMode(.inline)
-            .customNavigationBar(
-                title: AppText.NavigationText.setProfile.rawValue,
-                trailing: .none
-            )
         }
     }
+    
 }
 
 #Preview {

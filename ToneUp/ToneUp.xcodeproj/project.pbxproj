@@ -66,6 +66,7 @@
 		720765082E02ED8D0017963C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 720765072E02ED8D0017963C /* GoogleService-Info.plist */; };
 		7207650B2E02EE670017963C /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 7207650A2E02EE670017963C /* FirebaseAnalytics */; };
 		720765372E0BB8210017963C /* AnalyzeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720765362E0BB8210017963C /* AnalyzeView.swift */; };
+		7208D5472E139EEB00039BA5 /* CustomBackButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7208D5462E139EEB00039BA5 /* CustomBackButtonModifier.swift */; };
 		720F6B172DE0365F006CF82C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720F6B162DE0365F006CF82C /* ProfileView.swift */; };
 		720F6B1A2DE036AE006CF82C /* ProfileContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720F6B192DE036AE006CF82C /* ProfileContentView.swift */; };
 		720F6B1C2DE04F66006CF82C /* ProfileTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720F6B1B2DE04F66006CF82C /* ProfileTabBar.swift */; };
@@ -196,6 +197,7 @@
 		720764732DEC2C170017963C /* FriendAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendAPI.swift; sourceTree = "<group>"; };
 		720765072E02ED8D0017963C /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		720765362E0BB8210017963C /* AnalyzeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzeView.swift; sourceTree = "<group>"; };
+		7208D5462E139EEB00039BA5 /* CustomBackButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButtonModifier.swift; sourceTree = "<group>"; };
 		720F6B162DE0365F006CF82C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		720F6B192DE036AE006CF82C /* ProfileContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContentView.swift; sourceTree = "<group>"; };
 		720F6B1B2DE04F66006CF82C /* ProfileTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabBar.swift; sourceTree = "<group>"; };
@@ -800,6 +802,7 @@
 			children = (
 				72BAA3E22DD75AD4005E7B23 /* CustomFontModifier.swift */,
 				72694A0D2DD9E07800436EDF /* CustomNavigationBarModifier.swift */,
+				7208D5462E139EEB00039BA5 /* CustomBackButtonModifier.swift */,
 			);
 			path = Modifier;
 			sourceTree = "<group>";
@@ -1102,6 +1105,7 @@
 				72038C342DE05D32002669F5 /* EditProfileView.swift in Sources */,
 				720763BB2DE59CC50017963C /* HeaderKeyAndValue.swift in Sources */,
 				720763832DE4C8600017963C /* TextBubble.swift in Sources */,
+				7208D5472E139EEB00039BA5 /* CustomBackButtonModifier.swift in Sources */,
 				720764722DEC2B330017963C /* SearchAPI.swift in Sources */,
 				720764642DEC1B570017963C /* MultipartFormDataConvertible.swift in Sources */,
 				72BAA3E62DD75C20005E7B23 /* AppText.swift in Sources */,

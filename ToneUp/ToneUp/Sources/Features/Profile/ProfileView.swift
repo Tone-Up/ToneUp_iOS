@@ -19,16 +19,18 @@ struct ProfileView: View {
             Color(UIColor.mainBackground)
             
             VStack(spacing: 8) {
-                if let dto = store.profile {
+//                if let dto = store.profile {
                     ProfileContentView(
                         isMine: isMine,
-                        nickname: dto.nickname,
-                        bio: dto.bio,
-                        profileImageUrl: dto.profileImageUrl
+                        nickname: store.profile?.nickname ?? "",
+                        bio: store.profile?.bio,
+                        profileImageUrl: store.profile?.profileImageUrl,
+                        userStore: store
                     )
-                } else if store.isLoading {
-                    ProgressView()
-                }
+//                }
+//                else if store.isLoading {
+//                    ProgressView()
+//                }
                 
                 VStack(spacing: 0) {
                     ProfileTabBar(selectedTab: $selectedTab,
@@ -64,6 +66,14 @@ struct ProfileView: View {
                 title: isMine ? AppText.NavigationText.profile.rawValue : "",
                 trailing: isMine ? .none : .none
             )
+            .navigationDestination(isPresented: $store.isProfileSettingButtonTap,
+                                   destination: {
+                EditProfileView()
+            })
+            .navigationDestination(isPresented: $store.isStyleSettingButtonTap,
+                                   destination: {
+                StylePostView()
+            })
             .onAppear { store.send(.onAppear) }
         }
     }

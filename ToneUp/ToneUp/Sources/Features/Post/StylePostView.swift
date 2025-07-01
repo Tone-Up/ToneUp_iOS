@@ -9,49 +9,69 @@ import SwiftUI
 
 struct StylePostView: View {
     
-    let isSharingFeed: Bool
+    private enum PostType: String, CaseIterable, Identifiable {
+        case feed = "Feed"
+        case myStyle = "MyStyle"
+        
+        var id: Self { self }
+    }
     
+    @State private var selectedType: PostType = .feed
     @State private var title: String = ""
     @State private var description: String = ""
     @State private var images: [UIImage] = []
     
     var body: some View {
-        NavigationView {
-            VStack(spacing: 16) {
-                ImagePickerSection(images: $images)
-                
-                if isSharingFeed {
-                    TitleInputView(title: $title)
+        VStack(spacing: 16) {
+            
+            Picker("유형", selection: $selectedType) {
+                ForEach(PostType.allCases) { type in
+                    Text(type.rawValue).tag(type)
                 }
-                
-                DescriptionInputView(description: $description)
-                
-                Spacer()
-                
-                CommonButton(icon: nil,
-                             backgroundColor: .white,
-                             text: .postComplete,
-                             textColor: .black,
-                             symbolColor: nil,
-                             cornerRadius: 8,
-                             font: .notoRegular14,
-                             borderColor: .profileBorder,
-                             height: 48,
-                             hasBorder: true) {
-                    
-                }
-                             .padding(.horizontal)
-                             .padding(.bottom, 16)
             }
-            .padding(.top, 8)
-            .background(.mainBackground)
-            .navigationTitle(isSharingFeed ? "스타일 공유" : "내 스타일 기록")
-            .navigationBarTitleDisplayMode(.inline)
+            .pickerStyle(SegmentedPickerStyle())
+            .padding(.horizontal)
+            
+            ImagePickerSection(images: $images)
+            
+            if selectedType == .feed {
+                TitleInputView(title: $title)
+            }
+            
+            DescriptionInputView(description: $description)
+            
+            Spacer()
+            
+            CommonButton(icon: nil,
+                         backgroundColor: .white,
+                         text: .postComplete,
+                         textColor: .black,
+                         symbolColor: nil,
+                         cornerRadius: 8,
+                         font: .notoRegular14,
+                         borderColor: .profileBorder,
+                         height: 48,
+                         hasBorder: true) {
+                
+            }
+                         .padding(.horizontal)
+                         .padding(.bottom, 16)
+        }
+        .padding(.top, 8)
+        .background(.mainBackground)
+        .navigationTitle(selectedType == .feed ? "스타일 공유" : "내 스타일 기록")
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar(.hidden, for: .tabBar)
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                BackButton(color: .black)
+            }
         }
     }
     
 }
 
 #Preview {
-    StylePostView(isSharingFeed: true)
+    StylePostView()
 }
