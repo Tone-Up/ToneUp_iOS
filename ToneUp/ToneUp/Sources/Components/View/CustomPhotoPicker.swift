@@ -22,7 +22,7 @@ public struct CustomPhotoPicker<Content: View>: View {
         isPresentedError: Binding<Bool> = .constant(false),
         matching: PHPickerFilter = .images,
         photoLibrary: PHPhotoLibrary = .shared(),
-        content: @escaping () -> Content
+        @ViewBuilder content: @escaping () -> Content
     ) {
         self._selectedPhoto = State(initialValue: nil)
         self._selectedImage = selectedImage
@@ -40,21 +40,30 @@ public struct CustomPhotoPicker<Content: View>: View {
         ) {
             content()
         }
-        .onChange(of: selectedPhoto) { newItem, _ in
+        .onChange(of: selectedPhoto) { oldItem, newItem in
             guard let item = newItem else { return }
             item.loadTransferable(type: Data.self) { result in
                 switch result {
                 case .success(let data):
-                    if let data = data, let image = UIImage(data: data) {
+                    if let data, let uiImage = UIImage(data: data) {
                         DispatchQueue.main.async {
-                            selectedImage = image
+                            selectedImage = uiImage
+                            selectedPhoto = nil
+                        }
+                    } else {
+                        DispatchQueue.main.async {
+                            isPresentedError = true
+                            selectedPhoto = nil
                         }
                     }
-                case .failure:
-                    isPresentedError = true
+                    
+                case .failure(let error):
+                    DispatchQueue.main.async {
+                        isPresentedError = true
+                        selectedPhoto = nil
+                    }
                 }
             }
-            selectedPhoto = nil
         }
     }
 }

@@ -20,6 +20,9 @@ struct Profile: Reducer {
         var isStyleSettingButtonTap: Bool = false
         //내 게시물 세팅
         //내 스타일 세팅
+        //프로필 변경 이미지 선택
+        var selectedImage: UIImage? = nil
+        var isGalleryErrorPresented = false
     }
     
     enum Action: BindableAction {
@@ -27,6 +30,8 @@ struct Profile: Reducer {
         case onAppear
         case profileSettingButtonTapped
         case styleSettingButtonTapped
+        case galleryImagePicked(UIImage)
+        case galleryError
         case profileResponse(TaskResult<ProfileDTO>)
     }
     
@@ -39,6 +44,7 @@ struct Profile: Reducer {
             switch action {
             case .binding:
                 return .none
+                
             case .onAppear:
                 state.isLoading = true
                 return .run { send in
@@ -64,6 +70,15 @@ struct Profile: Reducer {
                 
             case .styleSettingButtonTapped:
                 state.isStyleSettingButtonTap = true
+                return .none
+                
+            case .galleryImagePicked(let image):
+                print(image)
+                state.selectedImage = image
+                return .none
+                
+            case .galleryError:
+                state.isGalleryErrorPresented = true
                 return .none
             }
             

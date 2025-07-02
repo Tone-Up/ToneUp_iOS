@@ -68,7 +68,7 @@ struct ProfileView: View {
             )
             .navigationDestination(isPresented: $store.isProfileSettingButtonTap,
                                    destination: {
-                EditProfileView()
+                EditProfileView(store: store)
             })
             .navigationDestination(isPresented: $store.isStyleSettingButtonTap,
                                    destination: {

@@ -6,24 +6,32 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct EditProfileContentView: View {
+    
+    @Bindable var store: StoreOf<Profile>
     
     var body: some View {
         VStack(alignment: .leading,
                spacing: 12) {
             HStack(alignment: .center,
                    spacing: 12) {
-                Image.color4
-                    .resizable()
-                    .frame(width: 80, height: 80)
-                    .clipShape(Circle())
+                Group {
+                    if let uiImage = store.selectedImage {
+                        Image(uiImage: uiImage)
+                            .resizable()
+                    } else {
+                        Image.color4
+                            .resizable()
+                    }
+                }
+                .frame(width: 80, height: 80)
+                .clipShape(Circle())
                 
-                VStack(alignment: .leading,
-                       spacing: 4) {
-                    CommonText(text: "김승용", font: .notoBold20)
-                    
-                    HStack(spacing: 4) {
+                HStack(spacing: 4) {
+                    CustomPhotoPicker(selectedImage: $store.selectedImage,
+                                      isPresentedError: $store.isGalleryErrorPresented) {
                         CommonButton(
                             icon: nil,
                             backgroundColor: .white,
@@ -35,28 +43,27 @@ struct EditProfileContentView: View {
                             borderColor: .profileBorder,
                             minWidth: 72,
                             height: 24,
+                            isEnabled: false,
                             hasBorder: true,
                             hasInternalPadding: false
-                        ) {
-                            
-                        }
+                        ) { }
+                    }
+                    
+                    CommonButton(
+                        icon: nil,
+                        backgroundColor: .white,
+                        text: .delete,
+                        textColor: .black,
+                        symbolColor: nil,
+                        cornerRadius: 6,
+                        font: .regular12,
+                        borderColor: .profileBorder,
+                        minWidth: 48,
+                        height: 24,
+                        hasBorder: true,
+                        hasInternalPadding: false
+                    ) {
                         
-                        CommonButton(
-                            icon: nil,
-                            backgroundColor: .white,
-                            text: .delete,
-                            textColor: .black,
-                            symbolColor: nil,
-                            cornerRadius: 6,
-                            font: .regular12,
-                            borderColor: .profileBorder,
-                            minWidth: 48,
-                            height: 24,
-                            hasBorder: true,
-                            hasInternalPadding: false
-                        ) {
-                            
-                        }
                     }
                 }
                 
@@ -69,8 +76,3 @@ struct EditProfileContentView: View {
     }
     
 }
-
-#Preview {
-    EditProfileContentView()
-}
-

@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct EditProfileView: View {
     
+    @Bindable var store: StoreOf<Profile>
+    
     var body: some View {
         VStack(spacing: 8) {
-            EditProfileContentView()
+            EditProfileContentView(store: store)
             
             Divider()
             
@@ -32,8 +35,4 @@ struct EditProfileView: View {
         }
     }
     
-}
-
-#Preview {
-    EditProfileView()
 }
