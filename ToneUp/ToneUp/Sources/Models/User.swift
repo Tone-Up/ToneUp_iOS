@@ -12,6 +12,8 @@ struct User {
     let nickname: String
     let accessToken: String
     let refreshToken: String
+    let isPersonal: Bool
+    let signedUp: Bool
 }
 
 extension User {
@@ -20,5 +22,7 @@ extension User {
         self.nickname = dto.nickname ?? "Unknown"
         self.accessToken = dto.accessToken ?? ""
         self.refreshToken = dto.refreshToken ?? ""
+        self.isPersonal = dto.personal ?? false
+        self.signedUp = dto.signedUp ?? false
     }
 }

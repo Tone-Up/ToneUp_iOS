@@ -34,7 +34,9 @@ extension DependencyValues {
                         guard let userId = userDTO.userId,
                               let nickname = userDTO.nickname,
                               let accessToken = userDTO.accessToken,
-                              let refreshToken = userDTO.refreshToken else {
+                              let refreshToken = userDTO.refreshToken,
+                              let personal = userDTO.personal,
+                              let signedUp = userDTO.signedUp else {
                             throw AuthError.tokenMissing
                         }
                         
@@ -42,7 +44,9 @@ extension DependencyValues {
                             id: userId,
                             nickname: nickname,
                             accessToken: accessToken,
-                            refreshToken: refreshToken
+                            refreshToken: refreshToken,
+                            isPersonal: personal,
+                            signedUp: signedUp
                         )
                         
                     default:

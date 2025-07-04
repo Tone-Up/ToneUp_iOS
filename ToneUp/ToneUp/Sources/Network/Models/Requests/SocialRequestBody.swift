@@ -9,13 +9,13 @@ import Foundation
 
 struct SocialRequestBody: Encodable {
     
-    let provider: String?
-    let token: String?
+    let provider: String
+    let token: String
     
-    init(provider: String? = nil,
-         token: String? = nil) {
-        self.provider = provider
-        self.token = token
-    }
+//    init(provider: String? = nil,
+//         token: String? = nil) {
+//        self.provider = provider
+//        self.token = token
+//    }
     
 }

@@ -10,20 +10,29 @@ import ComposableArchitecture
 
 struct CustomTabView: View {
     
-    @State private var selection: TabComponent = .home
+    let store: StoreOf<AppFeature>
+    @ObservedObject var viewStore: ViewStoreOf<AppFeature>
+    //    @State private var selection: TabComponent = .home
     
-    init() {
+    init(store: StoreOf<AppFeature>) {
+        self.store = store
+        self.viewStore = ViewStore(store, observe: { $0 })
         UITabBar.appearance().scrollEdgeAppearance = .init()
     }
     
     var body: some View {
-        TabView(selection: $selection) {
+        let selection = viewStore.binding(
+            get: \.selectedTab,
+            send: AppFeature.Action.tabChanged
+        )
+        
+        TabView(selection: selection) {
             Group {
                 NavigationStack {
                     ChatListView()
                 }
                 .tabItem{
-                    TabButton(selectedTab: $selection,
+                    TabButton(selectedTab: selection,
                               tabType: .chatBot)
                 }
                 .tag(TabComponent.chatBot)
@@ -32,7 +41,7 @@ struct CustomTabView: View {
                     ChatListView()
                 }
                 .tabItem{
-                    TabButton(selectedTab: $selection,
+                    TabButton(selectedTab: selection,
                               tabType: .chatting)
                 }
                 .tag(TabComponent.chatting)
@@ -43,7 +52,7 @@ struct CustomTabView: View {
                     })
                 }
                 .tabItem{
-                    TabButton(selectedTab: $selection,
+                    TabButton(selectedTab: selection,
                               tabType: .home)
                 }
                 .tag(TabComponent.home)
@@ -54,7 +63,7 @@ struct CustomTabView: View {
                     })
                 }
                 .tabItem{
-                    TabButton(selectedTab: $selection,
+                    TabButton(selectedTab: selection,
                               tabType: .like)
                 }
                 .tag(TabComponent.like)
@@ -66,7 +75,7 @@ struct CustomTabView: View {
                     })
                 }
                 .tabItem{
-                    TabButton(selectedTab: $selection,
+                    TabButton(selectedTab: selection,
                               tabType: .profile)
                 }
                 .tag(TabComponent.profile)
@@ -99,11 +108,7 @@ struct TabButton: View {
 }
 
 enum TabComponent: Int, CaseIterable {
-    case chatBot
-    case chatting
-    case home
-    case like
-    case profile
+    case chatBot, chatting, home, like, profile
     
     var title: String {
         switch self {
@@ -144,6 +149,6 @@ enum TabComponent: Int, CaseIterable {
     }
 }
 
-#Preview {
-    CustomTabView()
-}
+//#Preview {
+//    CustomTabView()
+//}

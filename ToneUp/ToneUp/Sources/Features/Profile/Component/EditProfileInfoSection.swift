@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct EditProfileInfoSection: View {
     
+    @Bindable var store: StoreOf<Profile>
     @State private var name: String = "김승용"
     @State private var introduction: String = "안녕하세요"
     
@@ -18,13 +20,15 @@ struct EditProfileInfoSection: View {
                 .font(.headline)
                 .padding(.bottom, 4)
             
-            ProfileRowItem(title: "프로필 이름",
-                           placeholder: "성명을 입력해주세요",
-                           value: $name)
+            ProfileRowItem(store: store,
+                           value: $store.nickname,
+                           title: "프로필 이름",
+                           placeholder: "성명을 입력해주세요")
             
-            ProfileRowItem(title: "소개",
-                           placeholder: "나를 소개하세요",
-                           value: $introduction)
+            ProfileRowItem(store: store,
+                           value: $store.bio,
+                           title: "소개",
+                           placeholder: "나를 소개하세요")
             
             CommonButton(icon: nil,
                          backgroundColor: .white,
@@ -37,7 +41,7 @@ struct EditProfileInfoSection: View {
                          height: 28,
                          hasBorder: true,
                          hasInternalPadding: false) {
-                
+                store.send(.editTextFieldButtonTapped)
             }
                          .padding(.top, 4)
         }

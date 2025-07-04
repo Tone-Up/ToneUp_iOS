@@ -10,6 +10,7 @@ import Dependencies
 
 struct ProfileClient {
     var myProfile: () async throws -> ProfileDTO
+//    var updateProfile: 
 }
 
 enum ProfileClientClientKey: DependencyKey {

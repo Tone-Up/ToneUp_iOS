@@ -18,7 +18,7 @@ struct EditProfileView: View {
             
             Divider()
             
-            EditProfileInfoSection()
+            EditProfileInfoSection(store: store)
             
             Spacer()
         }

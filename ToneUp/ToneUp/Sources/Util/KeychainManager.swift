@@ -12,6 +12,8 @@ enum KeychainKey: String, CaseIterable {
     case accessToken = "com.toneup.keychain.accessToken"
     case refreshToken = "com.toneup.keychain.refreshToken"
     case userID = "com.toneup.keychain.userID"
+    case personalComplete = "com.toneup.keychain.personalComplete"
+    case signedUp = "com.toneup.keychain.signUp"
 }
 
 final class KeychainManager {

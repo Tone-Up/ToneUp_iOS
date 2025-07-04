@@ -21,6 +21,11 @@
 	<string>$(GOOGLE_CLIENT_ID)</string>
 	<key>GOOGLE_URL_SCHEMES</key>
 	<string>$(GOOGLE_URL_SCHEMES)</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>UIAppFonts</key>
 	<array>
 		<string>NotoSansKR-Bold.ttf</string>

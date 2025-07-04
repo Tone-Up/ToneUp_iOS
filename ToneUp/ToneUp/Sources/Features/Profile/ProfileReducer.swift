@@ -14,6 +14,9 @@ struct Profile: Reducer {
     struct State: Equatable {
         //내 프로필 세팅
         var profile: ProfileDTO? = nil
+        var nickname: String = ""
+        var bio: String = ""
+        var profileImageUrl: String = ""
         var isLoading: Bool = false
         //내 프로필 관리 버튼
         var isProfileSettingButtonTap: Bool = false
@@ -23,6 +26,7 @@ struct Profile: Reducer {
         //프로필 변경 이미지 선택
         var selectedImage: UIImage? = nil
         var isGalleryErrorPresented = false
+        var isEditTextFieldButtonTap: Bool = false
     }
     
     enum Action: BindableAction {
@@ -30,6 +34,7 @@ struct Profile: Reducer {
         case onAppear
         case profileSettingButtonTapped
         case styleSettingButtonTapped
+        case editTextFieldButtonTapped
         case galleryImagePicked(UIImage)
         case galleryError
         case profileResponse(TaskResult<ProfileDTO>)
@@ -62,6 +67,9 @@ struct Profile: Reducer {
             case .profileResponse(.success(let dto)):
                 state.isLoading = false
                 state.profile = dto
+                state.nickname = dto.nickname
+                state.bio = dto.bio
+                state.profileImageUrl = dto.profileImageUrl
                 return .none
                 
             case .profileResponse(.failure):
@@ -79,6 +87,11 @@ struct Profile: Reducer {
                 
             case .galleryError:
                 state.isGalleryErrorPresented = true
+                return .none
+                
+            case .editTextFieldButtonTapped:
+                print("aa: ", state.nickname, state.bio)
+                state.isEditTextFieldButtonTap = true
                 return .none
             }
             

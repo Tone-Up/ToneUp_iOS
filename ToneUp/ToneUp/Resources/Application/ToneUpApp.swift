@@ -25,6 +25,10 @@ struct ToneUpApp: App {
     
     var body: some Scene {
         WindowGroup {
+            RootView(store: Store(initialState: AppReducer.State(), reducer: {
+                AppReducer()
+            }))
+            
 //            OnboardingView(
 //                store: Store(initialState: Onboarding.State()) {
 //                    Onboarding()
@@ -35,10 +39,10 @@ struct ToneUpApp: App {
 //                    Analyze()
 //                }
 //            )
-            CustomTabView()
-            .onOpenURL { url in
-                GIDSignIn.sharedInstance.handle(url)
-            }
+//            CustomTabView()
+//            .onOpenURL { url in
+//                GIDSignIn.sharedInstance.handle(url)
+//            }
         }
 
         //        WindowGroup {
