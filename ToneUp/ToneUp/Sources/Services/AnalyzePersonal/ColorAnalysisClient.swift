@@ -9,7 +9,7 @@ import Foundation
 import Dependencies
 
 struct ColorAnalysisClient {
-    var analytic: (_ image: Data) async throws -> PersonalColorDTO
+    var analytic: (_ image: Data) async throws -> String
 }
 
 enum ColorAnalysisClientKey: DependencyKey {
@@ -19,14 +19,18 @@ enum ColorAnalysisClientKey: DependencyKey {
             let body = PersonalAnalysisBody(imageData: image)
             let response = try await provider.request(
                 .personalAnalysis(body: body),
-                decodingType: ServerResponse<PersonalColorDTO>.self
+                decodingType: PersonalColorDTO.self
             )
             
-            guard let colorDTO = response.data else {
-                throw ColorAnalysisError.missingData
-            }
+            print("response: \(response)")
             
-            return colorDTO
+//            guard let colorDTO = response.data else {
+//                throw ColorAnalysisError.missingData
+//            }
+            
+//            print("colorDTO: \(colorDTO)")
+            
+            return response.personalColor
         }
     )
 }

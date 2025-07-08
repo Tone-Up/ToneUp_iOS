@@ -11,6 +11,7 @@ import ComposableArchitecture
 struct AnalyzeView: View {
     
     @Bindable var store: StoreOf<Analyze>
+    @State private var localSelectedImage: UIImage?
     
     var body: some View {
         GeometryReader { geo in
@@ -47,7 +48,13 @@ struct AnalyzeView: View {
                     xOffset: 20,
                     yOffset: -100
                 )
-                
+                if store.isLoading {
+                    Color.black.opacity(0.3).ignoresSafeArea()
+                    ProgressView("분석 중…")
+                        .padding(20)
+                        .background(.ultraThinMaterial)
+                        .cornerRadius(12)
+                }
                 VStack(spacing: 20) {
                     
                     VStack(spacing: 20) {
@@ -85,7 +92,7 @@ struct AnalyzeView: View {
                                  .padding(.horizontal, 24)
                     
                     CustomPhotoPicker(
-                        selectedImage: $store.selectedImage,
+                        selectedImage: $localSelectedImage,
                         isPresentedError: $store.isGalleryErrorPresented,
                     ) {
                         CommonButton(icon: Image(systemName: "photo"),
@@ -98,20 +105,15 @@ struct AnalyzeView: View {
                                      height: 60,
                                      isEnabled: false,
                                      hasBorder: false,
-                                     hasInternalPadding: true) {
-                            //                            store.send(.galleryButtonTapped)
-                        }
-                                     .padding(.horizontal, 24)
-                                     .padding(.bottom, 20)
+                                     hasInternalPadding: true) { }
                     }
-                    
+                    .padding(.horizontal, 24)
+                    .padding(.bottom, 20)
                     
                 }
-                .onChange(of: store.selectedImage) { newImage, _ in
-                    print("📸 선택된 이미지: ", newImage as Any)
-                    if let img = newImage {
-                        store.send(.galleryImagePicked(img))
-                    }
+                .onChange(of: localSelectedImage) { newImage in
+                    guard let img = newImage else { return }
+                    store.send(.galleryImagePicked(img)) 
                 }
                 .alert("사진을 불러올 수 없습니다",
                        isPresented: $store.isGalleryErrorPresented) {
