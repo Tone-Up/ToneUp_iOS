@@ -35,8 +35,11 @@ enum ProfileClientClientKey: DependencyKey {
             ProfileDTO(
                 userId: 1000,
                 nickname: "JJUN",
+                personalColor: "ATUMN",
                 profileImageUrl: "https://example.com/avatar.png",
-                bio: "제 자기소개입니다."
+                bio: "제 자기소개입니다.",
+                follower: 10,
+                following: 10
             )
         }
     )

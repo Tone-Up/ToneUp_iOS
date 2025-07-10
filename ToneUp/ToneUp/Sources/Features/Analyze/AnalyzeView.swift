@@ -7,11 +7,13 @@
 
 import SwiftUI
 import ComposableArchitecture
+import PhotosUI
 
 struct AnalyzeView: View {
     
     @Bindable var store: StoreOf<Analyze>
     @State private var localSelectedImage: UIImage?
+    @State private var photoItem: PhotosPickerItem?
     
     var body: some View {
         GeometryReader { geo in
@@ -92,6 +94,7 @@ struct AnalyzeView: View {
                                  .padding(.horizontal, 24)
                     
                     CustomPhotoPicker(
+                        selectedItem: $photoItem,
                         selectedImage: $localSelectedImage,
                         isPresentedError: $store.isGalleryErrorPresented,
                     ) {

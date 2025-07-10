@@ -106,14 +106,13 @@ struct Analyze: Reducer {
 }
 
 extension UIImage {
-  /// 가로 기준 `maxWidth` 크기로만 조정합니다. 비율 유지.
-  func resized(to maxWidth: CGFloat) -> UIImage? {
-    guard size.width > maxWidth else { return self }
-    let aspect = size.height / size.width
-    let newSize = CGSize(width: maxWidth, height: maxWidth * aspect)
-    UIGraphicsBeginImageContextWithOptions(newSize, false, 0)
-    defer { UIGraphicsEndImageContext() }
-    draw(in: CGRect(origin: .zero, size: newSize))
-    return UIGraphicsGetImageFromCurrentImageContext()
-  }
+    func resized(to maxWidth: CGFloat) -> UIImage? {
+        guard size.width > maxWidth else { return self }
+        let aspect = size.height / size.width
+        let newSize = CGSize(width: maxWidth, height: maxWidth * aspect)
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 0)
+        defer { UIGraphicsEndImageContext() }
+        draw(in: CGRect(origin: .zero, size: newSize))
+        return UIGraphicsGetImageFromCurrentImageContext()
+    }
 }

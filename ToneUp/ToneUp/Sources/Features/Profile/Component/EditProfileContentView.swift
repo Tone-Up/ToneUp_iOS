@@ -7,9 +7,11 @@
 
 import SwiftUI
 import ComposableArchitecture
+import PhotosUI
 
 struct EditProfileContentView: View {
     
+    @State private var photoItem: PhotosPickerItem?
     @Bindable var store: StoreOf<Profile>
     
     var body: some View {
@@ -30,7 +32,8 @@ struct EditProfileContentView: View {
                 .clipShape(Circle())
                 
                 HStack(spacing: 4) {
-                    CustomPhotoPicker(selectedImage: $store.selectedImage,
+                    CustomPhotoPicker(selectedItem: $photoItem,
+                                      selectedImage: $store.selectedImage,
                                       isPresentedError: $store.isGalleryErrorPresented) {
                         CommonButton(
                             icon: nil,

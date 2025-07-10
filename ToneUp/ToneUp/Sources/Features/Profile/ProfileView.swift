@@ -72,10 +72,15 @@ struct ProfileView: View {
             })
             .navigationDestination(isPresented: $store.isStyleSettingButtonTap,
                                    destination: {
-                StylePostView()
+                StylePostView(
+                    store: Store(initialState: Post.State()) {
+                        Post()
+                    }
+                )
             })
             .onAppear { store.send(.onAppear) }
         }
     }
     
 }
+

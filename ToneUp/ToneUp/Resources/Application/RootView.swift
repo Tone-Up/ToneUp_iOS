@@ -23,13 +23,17 @@ struct RootView: View {
         Group {
             switch viewStore.route {
             case .onboarding:
-                OnboardingView(store: store.scope(state: \.onboarding,
-                                                  action: \.onboarding))
+//                OnboardingView(store: store.scope(state: \.onboarding,
+//                                                  action: \.onboarding))
+                CustomTabView(store: store.scope(state: \.mainTab,
+                                                 action: \.mainTab))
                 
             case .analyze:
-                AnalyzeView(store: store.scope(state: \.analyze,
-                                               action: \.analyze)
-                )
+//                AnalyzeView(store: store.scope(state: \.analyze,
+//                                               action: \.analyze)
+//                )
+                CustomTabView(store: store.scope(state: \.mainTab,
+                                                 action: \.mainTab))
                 
             case .mainTab:
                 CustomTabView(store: store.scope(state: \.mainTab,

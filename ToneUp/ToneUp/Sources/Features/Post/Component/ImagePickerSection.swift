@@ -6,18 +6,22 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct ImagePickerSection: View {
     
     @Binding var images: [UIImage]
+    @State private var photoItems: [PhotosPickerItem] = []
     
     var body: some View {
         ScrollView(.horizontal,
                    showsIndicators: false) {
             HStack(spacing: 8) {
-                Button {
-                    
-                } label: {
+                CustomPhotoPicker(
+                    selectedItems: $photoItems,
+                    selectedImages: $images,
+                    maxCount: 5
+                ) {
                     VStack {
                         Image(systemName: "camera")
                             .resizable()
@@ -33,9 +37,9 @@ struct ImagePickerSection: View {
                     }
                 }
                 
-                ForEach(images.indices, id: \.self) { index in
+                ForEach(Array(zip(photoItems.indices, images)), id: \.0) { idx, uiImage in
                     ZStack(alignment: .topTrailing) {
-                        Image(uiImage: images[index])
+                        Image(uiImage: uiImage)
                             .resizable()
                             .scaledToFill()
                             .frame(width: 40, height: 40)
@@ -43,7 +47,8 @@ struct ImagePickerSection: View {
                             .cornerRadius(6)
                         
                         Button(action: {
-                            images.remove(at: index)
+                            photoItems.remove(at: idx)
+                            images.remove(at: idx)
                         }) {
                             Image(systemName: "xmark.circle.fill")
                                 .foregroundColor(.black)

@@ -6,25 +6,22 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
+
+enum PostType: String, CaseIterable, Identifiable, Equatable {
+    case feed = "Feed"
+    case myStyle = "MyStyle"
+    
+    var id: Self { self }
+}
 
 struct StylePostView: View {
     
-    private enum PostType: String, CaseIterable, Identifiable {
-        case feed = "Feed"
-        case myStyle = "MyStyle"
-        
-        var id: Self { self }
-    }
-    
-    @State private var selectedType: PostType = .feed
-    @State private var title: String = ""
-    @State private var description: String = ""
-    @State private var images: [UIImage] = []
+    @Bindable var store: StoreOf<Post>
     
     var body: some View {
         VStack(spacing: 16) {
-            
-            Picker("유형", selection: $selectedType) {
+            Picker("유형", selection: $store.postType) {
                 ForEach(PostType.allCases) { type in
                     Text(type.rawValue).tag(type)
                 }
@@ -32,13 +29,13 @@ struct StylePostView: View {
             .pickerStyle(SegmentedPickerStyle())
             .padding(.horizontal)
             
-            ImagePickerSection(images: $images)
+            ImagePickerSection(images: $store.images)
             
-            if selectedType == .feed {
-                TitleInputView(title: $title)
+            if store.postType != .feed {
+                TitleInputView(title: $store.title)
             }
             
-            DescriptionInputView(description: $description)
+            DescriptionInputView(description: $store.description)
             
             Spacer()
             
@@ -52,14 +49,14 @@ struct StylePostView: View {
                          borderColor: .profileBorder,
                          height: 48,
                          hasBorder: true) {
-                
+                store.send(.isWriteButtonTapped)
             }
                          .padding(.horizontal)
                          .padding(.bottom, 16)
         }
         .padding(.top, 8)
         .background(.mainBackground)
-        .navigationTitle(selectedType == .feed ? "스타일 공유" : "내 스타일 기록")
+        .navigationTitle(store.postType == .feed ? "스타일 공유" : "내 스타일 기록")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar(.hidden, for: .tabBar)
         .navigationBarBackButtonHidden(true)
@@ -73,5 +70,9 @@ struct StylePostView: View {
 }
 
 #Preview {
-    StylePostView()
+    StylePostView(
+        store: Store(initialState: Post.State()) {
+            Post()
+        }
+    )
 }
