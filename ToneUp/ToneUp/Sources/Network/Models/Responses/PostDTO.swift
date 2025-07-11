@@ -9,6 +9,6 @@ import Foundation
 
 struct PostDTO: Decodable {
     
-    let feedId: String?
+    let feedId: Int?
     
 }

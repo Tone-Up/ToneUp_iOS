@@ -82,6 +82,9 @@ struct CustomTabView: View {
             }
         }
         .tint(.black)
+        .onReceive(NotificationCenter.default.publisher(for: .didPostSuccess)) { _ in
+            viewStore.send(.tabChanged(.home))
+        }
     }
     
 }

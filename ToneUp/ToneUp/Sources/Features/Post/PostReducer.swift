@@ -23,6 +23,7 @@ struct Post: Reducer {
         ///작성완료 버튼
         var isWriteButtonTap: Bool = false
         var isLoading = false
+        var didPostSuccess = false
     }
     
     enum Action: BindableAction {
@@ -66,10 +67,13 @@ struct Post: Reducer {
                 
             case .postResponse(.failure(let error)):
                 state.isLoading = false
+                state.didPostSuccess = false
                 return .none
                 
             case .postResponse(.success(let response)):
                 state.isLoading = false
+                state.didPostSuccess = true
+                print("성공성공성공성공성공성공성공성공")
                 return .none
             }
         }
