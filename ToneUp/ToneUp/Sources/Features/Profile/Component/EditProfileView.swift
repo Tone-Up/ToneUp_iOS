@@ -6,29 +6,33 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct EditProfileView: View {
     
+    @Bindable var store: StoreOf<Profile>
+    
     var body: some View {
-        NavigationView {
-            VStack(spacing: 8) {
-                EditProfileContentView()
-                
-                Divider()
-                
-                EditProfileInfoSection()
-                
-                Spacer()
+        VStack(spacing: 8) {
+            EditProfileContentView(store: store)
+            
+            Divider()
+            
+            EditProfileInfoSection(store: store)
+            
+            Spacer()
+        }
+        .navigationBarTitleDisplayMode(.inline)
+        .customNavigationBar(
+            title: AppText.NavigationText.setProfile.rawValue,
+            trailing: .none
+        )
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                BackButton(color: .black)
             }
-            .navigationBarTitleDisplayMode(.inline)
-            .customNavigationBar(
-                title: AppText.NavigationText.setProfile.rawValue,
-                trailing: .none
-            )
         }
     }
-}
-
-#Preview {
-    EditProfileView()
+    
 }

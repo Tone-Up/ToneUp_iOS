@@ -6,11 +6,18 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct SharedStyleSection: View {
     
+    @Bindable var store: StoreOf<Home>
+    @ObservedObject var viewStore: ViewStoreOf<Home>
     let screenWidth = UIScreen.main.bounds.width
-    let images: [Image] = Array(repeating: Image.onboardingImage, count: 20)
+    
+    init(store: StoreOf<Home>) {
+        self._store = .init(store)
+        self.viewStore = ViewStore(store, observe: { $0 })
+    }
     
     var body: some View {
         VStack(alignment: .leading,
@@ -18,17 +25,20 @@ struct SharedStyleSection: View {
             SectionHomeHeader(title: AppText.HomeView.feed.rawValue)
                 .padding(.bottom, 8)
             
+            let items = viewStore.feed?.feeds ?? []
+            
             ForEach(Array(stride(from: 0,
-                                 to: images.count,
+                                 to: items.count,
                                  by: 6)),
                     id: \.self) { baseIndex in
                 let end = min(baseIndex + 6,
-                              images.count)
-                let group = Array(images[baseIndex..<end])
+                              items.count)
+                let group = Array(items[baseIndex..<end])
+                let urls  = group.map(\.imageUrl)
                 let isLeftBig = (baseIndex / 6) % 2 == 0
                 
                 TileGroupView(
-                    images: group,
+                    imageUrls: urls,
                     isLeftBig: isLeftBig,
                     screenWidth: screenWidth
                 )
@@ -36,8 +46,4 @@ struct SharedStyleSection: View {
                     .background(.white)
         }
     }
-}
-
-#Preview {
-    SharedStyleSection()
 }

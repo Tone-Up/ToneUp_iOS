@@ -23,7 +23,7 @@ struct CustomNavigationBarModifier: ViewModifier {
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     CommonText(text: title,
-                               font: .notoMedium28)
+                               font: .notoMedium24)
                 }
                 
                 ToolbarItem(placement: .topBarTrailing) {

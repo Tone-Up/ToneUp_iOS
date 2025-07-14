@@ -16,6 +16,8 @@ struct Analyze: Reducer {
         var isGalleryButtonTapped: Bool = false
         var selectedImage: UIImage? = nil
         var isGalleryErrorPresented = false
+        var personalColor: String? = nil
+        var isLoading = false
     }
     
     enum Action: BindableAction {
@@ -24,7 +26,7 @@ struct Analyze: Reducer {
         case galleryButtonTapped
         case galleryImagePicked(UIImage)
         case galleryError
-        case analysisResponse(TaskResult<PersonalColorDTO>)
+        case analysisResponse(TaskResult<String>)
     }
     
     @Dependency(\.colorAnalysisClient) var colorAnalysisClient
@@ -45,22 +47,42 @@ struct Analyze: Reducer {
                 state.isGalleryButtonTapped = true
                 return .none
                 
+//            case .galleryImagePicked(let image):
+//                state.selectedImage = image
+//                state.isLoading = true
+//                return .run { send in
+//                    await send(
+//                        .analysisResponse(
+//                            TaskResult {
+//                                guard let data = image.jpegData(compressionQuality: 0.8) else {
+//                                    throw ColorAnalysisError.missingData
+//                                }
+//                                return try await colorAnalysisClient.analytic(data)
+//                            }
+//                        )
+//                    )
+//                }
             case .galleryImagePicked(let image):
-                print(image)
-                state.selectedImage = image
-//                state.isGalleryButtonTapped = false
-                return .run { send in
-                    await send(
-                        .analysisResponse(
-                            TaskResult {
-                                guard let data = image.jpegData(compressionQuality: 0.8) else {
-                                    throw ColorAnalysisError.missingData
-                                }
-                                return try await colorAnalysisClient.analytic(data)
-                            }
-                        )
-                    )
-                }
+              guard let small = image.resized(to: 1024),
+                    let data = small.jpegData(compressionQuality: 0.3)
+              else {
+                state.isGalleryErrorPresented = true
+                return .none
+              }
+
+              state.selectedImage = small
+              state.isLoading = true
+
+              return .run { send in
+                await send(
+                  .analysisResponse(
+                    TaskResult {
+                      try await colorAnalysisClient.analytic(data)
+                    }
+                  )
+                )
+              }
+
                 
             case .galleryError:
                 state.isGalleryErrorPresented = true
@@ -68,14 +90,29 @@ struct Analyze: Reducer {
                 
             case .analysisResponse(.failure(let error)):
                 print("❌ 분석 중 에러 발생:", error)
+                state.isLoading = false
                 state.isGalleryErrorPresented = true
                 return .none
                 
-            case .analysisResponse(.success(let dto)):
-                print("🎨 퍼스널 컬러 분석 결과:", dto)
+            case .analysisResponse(.success(let colorString)):
+                state.isLoading = false
+                state.personalColor = colorString
+                print("🎨 퍼스널 컬러 분석 결과:", colorString)
                 return .none
             }
         }
     }
     
+}
+
+extension UIImage {
+    func resized(to maxWidth: CGFloat) -> UIImage? {
+        guard size.width > maxWidth else { return self }
+        let aspect = size.height / size.width
+        let newSize = CGSize(width: maxWidth, height: maxWidth * aspect)
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 0)
+        defer { UIGraphicsEndImageContext() }
+        draw(in: CGRect(origin: .zero, size: newSize))
+        return UIGraphicsGetImageFromCurrentImageContext()
+    }
 }

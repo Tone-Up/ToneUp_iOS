@@ -6,52 +6,106 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
+
+enum PostType: String, CaseIterable, Identifiable, Equatable {
+    case feed = "Feed"
+    case myStyle = "MyStyle"
+    
+    var id: Self { self }
+}
 
 struct StylePostView: View {
     
-    let isSharingFeed: Bool
+    @Bindable var store: StoreOf<Post>
+    @ObservedObject var viewStore: ViewStoreOf<Post>
+    @Environment(\.dismiss) private var dismiss
     
-    @State private var title: String = ""
-    @State private var description: String = ""
-    @State private var images: [UIImage] = []
+    init(store: StoreOf<Post>) {
+        self._store = .init(store)
+        self.viewStore = ViewStore(store, observe: { $0 })
+    }
     
     var body: some View {
-        NavigationView {
-            VStack(spacing: 16) {
-                ImagePickerSection(images: $images)
+        ZStack {
+            content
+            
+            if viewStore.isLoading {
+                Color.black.opacity(0.4)
+                    .ignoresSafeArea()
                 
-                if isSharingFeed {
-                    TitleInputView(title: $title)
-                }
-                
-                DescriptionInputView(description: $description)
-                
-                Spacer()
-                
-                CommonButton(icon: nil,
-                             backgroundColor: .white,
-                             text: .postComplete,
-                             textColor: .black,
-                             symbolColor: nil,
-                             cornerRadius: 8,
-                             font: .notoRegular14,
-                             borderColor: .profileBorder,
-                             height: 48,
-                             hasBorder: true) {
-                    
-                }
-                             .padding(.horizontal)
-                             .padding(.bottom, 16)
+                ProgressView()
+                    .progressViewStyle(.circular)
+                    .scaleEffect(1.5)
             }
-            .padding(.top, 8)
-            .background(.mainBackground)
-            .navigationTitle(isSharingFeed ? "스타일 공유" : "내 스타일 기록")
-            .navigationBarTitleDisplayMode(.inline)
+        }
+        .onChange(of: viewStore.didPostSuccess) { success in
+            guard success else { return }
+            dismiss()
+            NotificationCenter.default.post(name: .didPostSuccess, object: nil)
+        }
+    }
+    
+    private var content: some View {
+        VStack(spacing: 16) {
+            Picker("유형", selection: $store.postType) {
+                ForEach(PostType.allCases) { type in
+                    Text(type.rawValue).tag(type)
+                }
+            }
+            .pickerStyle(SegmentedPickerStyle())
+            .padding(.horizontal)
+            
+            ImagePickerSection(images: $store.images)
+            
+            if store.postType != .feed {
+                TitleInputView(title: $store.title)
+            }
+            
+            DescriptionInputView(description: $store.description)
+            
+            Spacer()
+            
+            CommonButton(
+                icon: nil,
+                backgroundColor: .white,
+                text: .postComplete,
+                textColor: .black,
+                symbolColor: nil,
+                cornerRadius: 8,
+                font: .notoRegular14,
+                borderColor: .profileBorder,
+                height: 48,
+                hasBorder: true
+            ) {
+                store.send(.isWriteButtonTapped)
+            }
+            .padding(.horizontal)
+            .padding(.bottom, 16)
+        }
+        .padding(.top, 8)
+        .background(.mainBackground)
+        .navigationTitle(
+            store.postType == .feed
+            ? "스타일 공유"
+            : "내 스타일 기록"
+        )
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar(.hidden, for: .tabBar)
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                BackButton(color: .black)
+            }
         }
     }
     
 }
 
 #Preview {
-    StylePostView(isSharingFeed: true)
+    StylePostView(
+        store: Store(initialState: Post.State()) {
+            Post()
+        }
+    )
 }

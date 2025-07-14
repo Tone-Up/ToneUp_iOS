@@ -12,6 +12,7 @@ enum Header {
     case contentTypeJson
     case contentTypeMulti
     case authorization
+    case image
     
     var key: String {
         switch self {
@@ -21,6 +22,9 @@ enum Header {
             
         case .authorization:
             return "Authorization"
+            
+        case .image:
+            return "Content-Type"
         }
     }
     
@@ -35,6 +39,9 @@ enum Header {
         case .authorization:
             guard let token = KeychainManager.load(forKey: .accessToken) else { return "실패" }
             return "Bearer \(token)"
+            
+        case .image:
+            return "image/png"
         }
     }
     

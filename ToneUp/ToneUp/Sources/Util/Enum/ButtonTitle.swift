@@ -15,6 +15,7 @@ enum ButtonTitle: String {
     case naverLogin = "네이버로 로그인하기"
     case retryTone = "다시 분석하기"
     case manageProfile = "프로필 관리"
+    case postStyle = "스타일 공유하기"
     case profielChatGo = "1:1채팅하기"
     case follow = "팔로우"
     case editImage = "이미지 변경"

@@ -19,16 +19,18 @@ struct ProfileView: View {
             Color(UIColor.mainBackground)
             
             VStack(spacing: 8) {
-                if let dto = store.profile {
+//                if let dto = store.profile {
                     ProfileContentView(
                         isMine: isMine,
-                        nickname: dto.nickname,
-                        bio: dto.bio,
-                        profileImageUrl: dto.profileImageUrl
+                        nickname: store.profile?.nickname ?? "",
+                        bio: store.profile?.bio,
+                        profileImageUrl: store.profile?.profileImageUrl,
+                        userStore: store
                     )
-                } else if store.isLoading {
-                    ProgressView()
-                }
+//                }
+//                else if store.isLoading {
+//                    ProgressView()
+//                }
                 
                 VStack(spacing: 0) {
                     ProfileTabBar(selectedTab: $selectedTab,
@@ -39,18 +41,18 @@ struct ProfileView: View {
                     ScrollView {
                         if selectedTab == .post {
                             ThreeColumnGrid(items: 14) { _ in
-                                FeedImageTile(image: .onboardingImage,
-                                              width: UIScreen.main.bounds.width / 3,
-                                              height: 200)
-                                .background(.white)
+//                                FeedImageTile(image: .onboardingImage,
+//                                              width: UIScreen.main.bounds.width / 3,
+//                                              height: 200)
+//                                .background(.white)
                             }
                         } else if selectedTab == .style {
                             ThreeColumnGrid(items: 7) { _ in
-                                FeedImageTile(image: .onboardingImage,
-                                              isFeed: false,
-                                              width: UIScreen.main.bounds.width / 3,
-                                              height: 180)
-                                .background(.white)
+//                                FeedImageTile(image: .onboardingImage,
+//                                              isFeed: false,
+//                                              width: UIScreen.main.bounds.width / 3,
+//                                              height: 180)
+//                                .background(.white)
                             }
                         }
                     }
@@ -64,8 +66,21 @@ struct ProfileView: View {
                 title: isMine ? AppText.NavigationText.profile.rawValue : "",
                 trailing: isMine ? .none : .none
             )
+            .navigationDestination(isPresented: $store.isProfileSettingButtonTap,
+                                   destination: {
+                EditProfileView(store: store)
+            })
+            .navigationDestination(isPresented: $store.isStyleSettingButtonTap,
+                                   destination: {
+                StylePostView(
+                    store: Store(initialState: Post.State()) {
+                        Post()
+                    }
+                )
+            })
             .onAppear { store.send(.onAppear) }
         }
     }
     
 }
+

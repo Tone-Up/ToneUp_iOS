@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct ProfileContentView: View {
     
@@ -13,6 +14,7 @@ struct ProfileContentView: View {
     let nickname: String
     let bio: String?
     let profileImageUrl: String?
+    @ObservedObject var userStore: StoreOf<Profile>
     
     var body: some View {
         VStack(alignment: .leading,
@@ -84,20 +86,37 @@ struct ProfileContentView: View {
             }
             
             if isMine {
-                CommonButton(icon: nil,
-                             backgroundColor: .white,
-                             text: .manageProfile,
-                             textColor: .black,
-                             symbolColor: nil,
-                             cornerRadius: 8,
-                             font: .regular14,
-                             borderColor: .profileBorder,
-                             height: 28,
-                             hasBorder: true,
-                             hasInternalPadding: false) {
+                HStack(spacing: 8) {
+                    CommonButton(icon: nil,
+                                 backgroundColor: .white,
+                                 text: .manageProfile,
+                                 textColor: .black,
+                                 symbolColor: nil,
+                                 cornerRadius: 8,
+                                 font: .regular14,
+                                 borderColor: .profileBorder,
+                                 height: 28,
+                                 hasBorder: true,
+                                 hasInternalPadding: false) {
+                        userStore.send(.profileSettingButtonTapped)
+                    }
+                                 .padding(.top, 4)
                     
+                    CommonButton(icon: nil,
+                                 backgroundColor: .white,
+                                 text: .postStyle,
+                                 textColor: .black,
+                                 symbolColor: nil,
+                                 cornerRadius: 8,
+                                 font: .regular14,
+                                 borderColor: .profileBorder,
+                                 height: 28,
+                                 hasBorder: true,
+                                 hasInternalPadding: false) {
+                        userStore.send(.styleSettingButtonTapped)
+                    }
+                                 .padding(.top, 4)
                 }
-                             .padding(.top, 4)
             } else {
                 CommonButton(icon: nil,
                              backgroundColor: .white,

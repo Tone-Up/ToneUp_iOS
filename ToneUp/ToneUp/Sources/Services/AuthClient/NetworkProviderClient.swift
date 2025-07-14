@@ -19,14 +19,16 @@ enum NetworkProviderClientKey: DependencyKey {
             let body = SocialRequestBody(provider: "GOOGLE", token: token)
             let response = try await provider.request(
                 .googleLogin(body: body),
-                decodingType: ServerResponse<UserDTO>.self
+                decodingType: UserDTO.self
             )
+            
+            print("response: \(response)")
 
-            guard let user = response.data else {
-                throw AuthError.tokenMissing
-            }
+//            guard let user = response.data else {
+//                throw AuthError.tokenMissing
+//            }
 
-            return user
+            return response
         }
     )
 }

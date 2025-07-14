@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct ProfileRowItem: View {
     
+    @Bindable var store: StoreOf<Profile>
+    @Binding var value: String
     let title: String
     let placeholder: String
-    @Binding var value: String
     
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
@@ -37,7 +39,7 @@ struct ProfileRowItem: View {
                              height: 28,
                              hasBorder: true,
                              hasInternalPadding: false) {
-                    
+                    store.send(.editTextFieldButtonTapped)
                 }
                              .padding(.bottom, 4)
             }

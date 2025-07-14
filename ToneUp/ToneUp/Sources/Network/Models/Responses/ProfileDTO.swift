@@ -10,6 +10,9 @@ import Foundation
 struct ProfileDTO: Decodable, Equatable {
     let userId: Int
     let nickname: String
+    let personalColor: String
     let profileImageUrl: String
     let bio: String
+    let follower: Int
+    let following: Int
 }

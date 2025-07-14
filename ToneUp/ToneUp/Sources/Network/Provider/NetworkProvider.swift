@@ -61,3 +61,16 @@ extension MoyaProvider {
         }
     }
 }
+
+extension MoyaProvider {
+    func requestAsync(_ target: Target) async throws -> Response {
+        try await withCheckedThrowingContinuation { cont in
+            self.request(target) { result in
+                switch result {
+                case .success(let resp): cont.resume(returning: resp)
+                case .failure(let err):  cont.resume(throwing: err)
+                }
+            }
+        }
+    }
+}

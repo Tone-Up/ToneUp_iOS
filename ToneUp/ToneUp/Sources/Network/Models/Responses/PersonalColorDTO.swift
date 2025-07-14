@@ -8,5 +8,5 @@
 import Foundation
 
 struct PersonalColorDTO: Decodable {
-    let PersonalColor: String
+    let personalColor: String
 }

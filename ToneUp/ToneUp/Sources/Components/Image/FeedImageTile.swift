@@ -9,39 +9,60 @@ import SwiftUI
 
 struct FeedImageTile: View {
     
-    let image: Image
-    var isFeed: Bool? = true
+    let imageUrl: String?
+    let placeholder: Image
+    var isFeed: Bool = true
     var showHeart: Bool = true
     var width: CGFloat? = nil
-    var height: CGFloat
-    
+    let height: CGFloat
+
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
-            if isFeed ?? true {
-                image
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: width, height: height)
-                    .clipped()
-                
-                
-                if showHeart {
-                    Image(systemName: "heart.fill")
-                        .foregroundColor(.red)
-                        .padding(6)
-                }
-            } else {
-                VStack {
-                    image
+            Group {
+                if let s = imageUrl, let url = URL(string: s) {
+                    AsyncImage(url: url) { phase in
+                        switch phase {
+                        case .empty:
+                            placeholder
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: width, height: height)
+                                .clipped()
+                                .opacity(0.3)
+                        case .success(let img):
+                            img
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: width, height: height)
+                                .clipped()
+                        case .failure:
+                            placeholder
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: width, height: height)
+                                .clipped()
+                        @unknown default:
+                            placeholder
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: width, height: height)
+                                .clipped()
+                        }
+                    }
+                } else {
+                    placeholder
                         .resizable()
                         .scaledToFill()
                         .frame(width: width, height: height)
                         .clipped()
-                    
-                    CommonText(text: "제목")
                 }
             }
+
+            if isFeed && showHeart {
+                Image(systemName: "heart.fill")
+                    .foregroundColor(.red)
+                    .padding(6)
+            }
         }
-        
     }
 }

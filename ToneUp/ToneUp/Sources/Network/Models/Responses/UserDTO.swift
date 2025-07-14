@@ -10,8 +10,8 @@ import Foundation
 struct UserDTO: Decodable {
     
     let provider: String?
-    let isPersonal: Bool?
-    let isSignedUp: Bool?
+    let personal: Bool?
+    let signedUp: Bool?
     let nickname: String?
     let userId: Int?
     let accessToken: String?

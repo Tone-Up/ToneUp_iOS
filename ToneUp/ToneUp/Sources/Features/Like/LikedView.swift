@@ -26,10 +26,10 @@ struct LikedView: View {
                     ScrollView {
                         if selectedTab == .feed {
                             ThreeColumnGrid(items: 12) { _ in
-                                FeedImageTile(image: .onboardingImage,
-                                              width: UIScreen.main.bounds.width / 3,
-                                              height: 200)
-                                .background(.white)
+//                                FeedImageTile(image: .onboardingImage,
+//                                              width: UIScreen.main.bounds.width / 3,
+//                                              height: 200)
+//                                .background(.white)
                             }
                         } else {
                             ThreeColumnGrid(items: 12) { _ in

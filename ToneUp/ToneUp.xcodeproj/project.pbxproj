@@ -66,6 +66,20 @@
 		720765082E02ED8D0017963C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 720765072E02ED8D0017963C /* GoogleService-Info.plist */; };
 		7207650B2E02EE670017963C /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 7207650A2E02EE670017963C /* FirebaseAnalytics */; };
 		720765372E0BB8210017963C /* AnalyzeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720765362E0BB8210017963C /* AnalyzeView.swift */; };
+		7208D5472E139EEB00039BA5 /* CustomBackButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7208D5462E139EEB00039BA5 /* CustomBackButtonModifier.swift */; };
+		7208D5492E16D97E00039BA5 /* ToneUpAppReduer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7208D5482E16D97E00039BA5 /* ToneUpAppReduer.swift */; };
+		7208D54B2E16DA6C00039BA5 /* AppFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7208D54A2E16DA6C00039BA5 /* AppFeature.swift */; };
+		7208D54D2E1797A800039BA5 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7208D54C2E1797A800039BA5 /* RootView.swift */; };
+		7208D5512E1CF92A00039BA5 /* PostReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7208D5502E1CF92A00039BA5 /* PostReducer.swift */; };
+		7208D5542E1E407300039BA5 /* PostClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7208D5532E1E407300039BA5 /* PostClient.swift */; };
+		7208D5562E1E454500039BA5 /* PostDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7208D5552E1E454500039BA5 /* PostDTO.swift */; };
+		7208D5592E1E476200039BA5 /* ImageURLClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7208D5582E1E476200039BA5 /* ImageURLClient.swift */; };
+		7208D55B2E1E4DAC00039BA5 /* ImageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7208D55A2E1E4DAC00039BA5 /* ImageAPI.swift */; };
+		7208D55D2E1E4E3900039BA5 /* ImageRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7208D55C2E1E4E3900039BA5 /* ImageRequestBody.swift */; };
+		7208D55F2E1E4FE500039BA5 /* ImageDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7208D55E2E1E4FE500039BA5 /* ImageDTO.swift */; };
+		7208D5612E20DD3500039BA5 /* Notification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7208D5602E20DD3500039BA5 /* Notification+Extension.swift */; };
+		7208D5632E20DFB200039BA5 /* FeedDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7208D5622E20DFB200039BA5 /* FeedDTO.swift */; };
+		7208D5662E20E1CA00039BA5 /* FeedClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7208D5652E20E1CA00039BA5 /* FeedClient.swift */; };
 		720F6B172DE0365F006CF82C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720F6B162DE0365F006CF82C /* ProfileView.swift */; };
 		720F6B1A2DE036AE006CF82C /* ProfileContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720F6B192DE036AE006CF82C /* ProfileContentView.swift */; };
 		720F6B1C2DE04F66006CF82C /* ProfileTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720F6B1B2DE04F66006CF82C /* ProfileTabBar.swift */; };
@@ -196,6 +210,20 @@
 		720764732DEC2C170017963C /* FriendAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendAPI.swift; sourceTree = "<group>"; };
 		720765072E02ED8D0017963C /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		720765362E0BB8210017963C /* AnalyzeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzeView.swift; sourceTree = "<group>"; };
+		7208D5462E139EEB00039BA5 /* CustomBackButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackButtonModifier.swift; sourceTree = "<group>"; };
+		7208D5482E16D97E00039BA5 /* ToneUpAppReduer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToneUpAppReduer.swift; sourceTree = "<group>"; };
+		7208D54A2E16DA6C00039BA5 /* AppFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeature.swift; sourceTree = "<group>"; };
+		7208D54C2E1797A800039BA5 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		7208D5502E1CF92A00039BA5 /* PostReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostReducer.swift; sourceTree = "<group>"; };
+		7208D5532E1E407300039BA5 /* PostClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostClient.swift; sourceTree = "<group>"; };
+		7208D5552E1E454500039BA5 /* PostDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDTO.swift; sourceTree = "<group>"; };
+		7208D5582E1E476200039BA5 /* ImageURLClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageURLClient.swift; sourceTree = "<group>"; };
+		7208D55A2E1E4DAC00039BA5 /* ImageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPI.swift; sourceTree = "<group>"; };
+		7208D55C2E1E4E3900039BA5 /* ImageRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequestBody.swift; sourceTree = "<group>"; };
+		7208D55E2E1E4FE500039BA5 /* ImageDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDTO.swift; sourceTree = "<group>"; };
+		7208D5602E20DD3500039BA5 /* Notification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extension.swift"; sourceTree = "<group>"; };
+		7208D5622E20DFB200039BA5 /* FeedDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDTO.swift; sourceTree = "<group>"; };
+		7208D5652E20E1CA00039BA5 /* FeedClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedClient.swift; sourceTree = "<group>"; };
 		720F6B162DE0365F006CF82C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		720F6B192DE036AE006CF82C /* ProfileContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContentView.swift; sourceTree = "<group>"; };
 		720F6B1B2DE04F66006CF82C /* ProfileTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabBar.swift; sourceTree = "<group>"; };
@@ -311,6 +339,7 @@
 			isa = PBXGroup;
 			children = (
 				7207634B2DE2F7BD0017963C /* StylePostView.swift */,
+				7208D5502E1CF92A00039BA5 /* PostReducer.swift */,
 				7207634D2DE2FA6B0017963C /* Component */,
 			);
 			path = Post;
@@ -432,6 +461,7 @@
 				720764712DEC2B330017963C /* SearchAPI.swift */,
 				720764732DEC2C170017963C /* FriendAPI.swift */,
 				72F7D5B52E0E8A3E00B33ED8 /* PersonalAPI.swift */,
+				7208D55A2E1E4DAC00039BA5 /* ImageAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -446,6 +476,7 @@
 				720764692DEC230A0017963C /* PostRequestBody.swift */,
 				7207646B2DEC23E50017963C /* ReportRequestBody.swift */,
 				72B819272E0EBAE900DE95EB /* PersonalAnalysisBody.swift */,
+				7208D55C2E1E4E3900039BA5 /* ImageRequestBody.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -459,6 +490,9 @@
 				7207645C2DE831D80017963C /* TokenDTO.swift */,
 				72B819252E0EB8B000DE95EB /* PersonalColorDTO.swift */,
 				72B819312E12C88F00DE95EB /* ProfileDTO.swift */,
+				7208D5552E1E454500039BA5 /* PostDTO.swift */,
+				7208D55E2E1E4FE500039BA5 /* ImageDTO.swift */,
+				7208D5622E20DFB200039BA5 /* FeedDTO.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -505,6 +539,30 @@
 				72AD63542E0E34610078EB69 /* CameraCaptureView.swift */,
 			);
 			path = Analyze;
+			sourceTree = "<group>";
+		};
+		7208D5522E1E406900039BA5 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				7208D5532E1E407300039BA5 /* PostClient.swift */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
+		7208D5572E1E472E00039BA5 /* ImageS3 */ = {
+			isa = PBXGroup;
+			children = (
+				7208D5582E1E476200039BA5 /* ImageURLClient.swift */,
+			);
+			path = ImageS3;
+			sourceTree = "<group>";
+		};
+		7208D5642E20E1AA00039BA5 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				7208D5652E20E1CA00039BA5 /* FeedClient.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		720F6B152DE03357006CF82C /* Profile */ = {
@@ -725,6 +783,9 @@
 			isa = PBXGroup;
 			children = (
 				72BAA3182DD1DB03005E7B23 /* ToneUpApp.swift */,
+				7208D5482E16D97E00039BA5 /* ToneUpAppReduer.swift */,
+				7208D54A2E16DA6C00039BA5 /* AppFeature.swift */,
+				7208D54C2E1797A800039BA5 /* RootView.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -759,6 +820,9 @@
 		72BAA3972DD7170C005E7B23 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				7208D5642E20E1AA00039BA5 /* Home */,
+				7208D5572E1E472E00039BA5 /* ImageS3 */,
+				7208D5522E1E406900039BA5 /* Post */,
 				72B819332E12CDFD00DE95EB /* Profile */,
 				72AD63512E0E30F10078EB69 /* AnalyzePersonal */,
 				72BAA4002DD8D8F3005E7B23 /* AuthClient */,
@@ -800,6 +864,7 @@
 			children = (
 				72BAA3E22DD75AD4005E7B23 /* CustomFontModifier.swift */,
 				72694A0D2DD9E07800436EDF /* CustomNavigationBarModifier.swift */,
+				7208D5462E139EEB00039BA5 /* CustomBackButtonModifier.swift */,
 			);
 			path = Modifier;
 			sourceTree = "<group>";
@@ -826,6 +891,7 @@
 		72BAA3E82DD75DE9005E7B23 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				7208D5602E20DD3500039BA5 /* Notification+Extension.swift */,
 				72BAA3E92DD75E11005E7B23 /* Image+Extension.swift */,
 				72694A2B2DDDBD3500436EDF /* Array+Extension.swift */,
 			);
@@ -1016,6 +1082,7 @@
 			files = (
 				72694A242DDDA19400436EDF /* RecommendSection.swift in Sources */,
 				7207630E2DE0654E0017963C /* EditProfileInfoSection.swift in Sources */,
+				7208D54D2E1797A800039BA5 /* RootView.swift in Sources */,
 				72BAA4052DD8D9B8005E7B23 /* User.swift in Sources */,
 				72038C362DE05F5A002669F5 /* EditProfileContentView.swift in Sources */,
 				72B819302E12C56E00DE95EB /* ProfileReducer.swift in Sources */,
@@ -1026,27 +1093,33 @@
 				72694A2E2DDDBD6200436EDF /* TileGroupView.swift in Sources */,
 				72BAA3E02DD753FE005E7B23 /* CommonText.swift in Sources */,
 				72694A102DDA08D100436EDF /* PersonalToneView.swift in Sources */,
+				7208D5542E1E407300039BA5 /* PostClient.swift in Sources */,
 				720763512DE2FD4C0017963C /* TitleInputView.swift in Sources */,
 				720764742DEC2C170017963C /* FriendAPI.swift in Sources */,
 				720F6B1E2DE04FA5006CF82C /* ProfileTab.swift in Sources */,
 				720763BF2DE5A0C50017963C /* UserDefaultsStorage.swift in Sources */,
 				72BAA3E32DD75AD4005E7B23 /* CustomFontModifier.swift in Sources */,
 				720763CB2DE5DCD70017963C /* RecommandAPI.swift in Sources */,
+				7208D5592E1E476200039BA5 /* ImageURLClient.swift in Sources */,
 				720763812DE4C8020017963C /* ChatInputBar.swift in Sources */,
 				7207634C2DE2F7BD0017963C /* StylePostView.swift in Sources */,
+				7208D55F2E1E4FE500039BA5 /* ImageDTO.swift in Sources */,
 				72B819322E12C88F00DE95EB /* ProfileDTO.swift in Sources */,
 				72BAA3EA2DD75E11005E7B23 /* Image+Extension.swift in Sources */,
 				72694A062DD9CFA200436EDF /* HomeView.swift in Sources */,
+				7208D5492E16D97E00039BA5 /* ToneUpAppReduer.swift in Sources */,
 				72B819282E0EBAE900DE95EB /* PersonalAnalysisBody.swift in Sources */,
 				720764682DEC1EB90017963C /* FeedAPI.swift in Sources */,
 				72BAA3FF2DD8D8A6005E7B23 /* LoginOption.swift in Sources */,
 				720763C92DE5AC140017963C /* UserDTO.swift in Sources */,
+				7208D5662E20E1CA00039BA5 /* FeedClient.swift in Sources */,
 				720764662DEC1BEE0017963C /* UpdateMyProfileRequestBody.swift in Sources */,
 				72BAA4022DD8D906005E7B23 /* AuthClient.swift in Sources */,
 				7207645F2DEC19F60017963C /* UserAPI.swift in Sources */,
 				720763BD2DE59F230017963C /* KeychainManager.swift in Sources */,
 				72694A332DDEECC400436EDF /* LikeReducer.swift in Sources */,
 				720F6B1C2DE04F66006CF82C /* ProfileTabBar.swift in Sources */,
+				7208D5512E1CF92A00039BA5 /* PostReducer.swift in Sources */,
 				72BAA4072DD8D9F3005E7B23 /* AuthError.swift in Sources */,
 				720763B32DE584810017963C /* APIError.swift in Sources */,
 				72F7D5B62E0E8A3E00B33ED8 /* PersonalAPI.swift in Sources */,
@@ -1062,6 +1135,7 @@
 				720764702DEC28980017963C /* LikeAPI.swift in Sources */,
 				720763C72DE5A6AF0017963C /* SocialRequestBody.swift in Sources */,
 				720764592DE830130017963C /* TokenAPI.swift in Sources */,
+				7208D5612E20DD3500039BA5 /* Notification+Extension.swift in Sources */,
 				72B8192B2E11788800DE95EB /* CustomTabView.swift in Sources */,
 				7207634F2DE2FA840017963C /* ImagePickerSection.swift in Sources */,
 				7207646A2DEC230A0017963C /* PostRequestBody.swift in Sources */,
@@ -1073,9 +1147,11 @@
 				720763D82DE5E1A30017963C /* RecommandProductDTO.swift in Sources */,
 				72B819352E12CE2100DE95EB /* ProfileClient.swift in Sources */,
 				72BAA3DD2DD74CAB005E7B23 /* CommonButton.swift in Sources */,
+				7208D5632E20DFB200039BA5 /* FeedDTO.swift in Sources */,
 				720763D12DE5E0190017963C /* QueryParameters.swift in Sources */,
 				72AD63552E0E34610078EB69 /* CameraCaptureView.swift in Sources */,
 				7207646C2DEC23E50017963C /* ReportRequestBody.swift in Sources */,
+				7208D54B2E16DA6C00039BA5 /* AppFeature.swift in Sources */,
 				720763872DE4CA020017963C /* ChatMessageListView.swift in Sources */,
 				72694A392DDEFA6300436EDF /* FeedImageTile.swift in Sources */,
 				72AD63502E0E2EF10078EB69 /* AnalyzeReducer.swift in Sources */,
@@ -1085,6 +1161,8 @@
 				72BAA4092DD8DA37005E7B23 /* LoginSheetView.swift in Sources */,
 				72BAA3FC2DD8D17B005E7B23 /* OnboardingReducer.swift in Sources */,
 				720763852DE4C8BD0017963C /* ImageGridMessageView.swift in Sources */,
+				7208D5562E1E454500039BA5 /* PostDTO.swift in Sources */,
+				7208D55D2E1E4E3900039BA5 /* ImageRequestBody.swift in Sources */,
 				7207638B2DE4CD060017963C /* ImagePreviewView.swift in Sources */,
 				720763B52DE58C670017963C /* APIErrorMapper.swift in Sources */,
 				7207637F2DE4C2350017963C /* ChatNavigationBar.swift in Sources */,
@@ -1102,11 +1180,13 @@
 				72038C342DE05D32002669F5 /* EditProfileView.swift in Sources */,
 				720763BB2DE59CC50017963C /* HeaderKeyAndValue.swift in Sources */,
 				720763832DE4C8600017963C /* TextBubble.swift in Sources */,
+				7208D5472E139EEB00039BA5 /* CustomBackButtonModifier.swift in Sources */,
 				720764722DEC2B330017963C /* SearchAPI.swift in Sources */,
 				720764642DEC1B570017963C /* MultipartFormDataConvertible.swift in Sources */,
 				72BAA3E62DD75C20005E7B23 /* AppText.swift in Sources */,
 				72F7D5B42E0E70ED00B33ED8 /* CustomPhotoPicker.swift in Sources */,
 				7207637A2DE4493A0017963C /* ChatView.swift in Sources */,
+				7208D55B2E1E4DAC00039BA5 /* ImageAPI.swift in Sources */,
 				720763752DE444460017963C /* ChatCell.swift in Sources */,
 				72694A3D2DDF088600436EDF /* ThreeColumnGrid.swift in Sources */,
 				720763AD2DE57D730017963C /* APIKey.swift in Sources */,
@@ -1281,12 +1361,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ToneUp/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = QQN262X7KM;
+				DEVELOPMENT_TEAM = QQN262X7KM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ToneUp/Info.plist;
@@ -1306,7 +1384,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jun.ToneUp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match AppStore com.jun.ToneUp 1747305583";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -1323,12 +1400,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ToneUp/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = QQN262X7KM;
+				DEVELOPMENT_TEAM = QQN262X7KM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ToneUp/Info.plist;
@@ -1348,7 +1423,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jun.ToneUp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match AppStore com.jun.ToneUp 1747305583";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
