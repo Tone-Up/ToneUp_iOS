@@ -38,6 +38,7 @@ struct Profile: Reducer {
         case galleryImagePicked(UIImage)
         case galleryError
         case profileResponse(TaskResult<ProfileDTO>)
+        case profileUpdateResponse(TaskResult<Void>)
     }
     
     @Dependency(\.profileClient) var profileClient
@@ -90,8 +91,22 @@ struct Profile: Reducer {
                 return .none
                 
             case .editTextFieldButtonTapped:
-                print("aa: ", state.nickname, state.bio)
+                let nickname = state.nickname
+                let bio = state.bio
+                
                 state.isEditTextFieldButtonTap = true
+                return .run { send in
+                    await send(
+                        .profileUpdateResponse(
+                            TaskResult { try await profileClient.updateProfile(nickname, bio) }
+                        )
+                    )
+                }
+                
+            case .profileUpdateResponse(.success):
+                return .none
+                
+            case .profileUpdateResponse(.failure):
                 return .none
             }
             

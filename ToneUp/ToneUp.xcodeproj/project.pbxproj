@@ -78,6 +78,8 @@
 		7208D55D2E1E4E3900039BA5 /* ImageRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7208D55C2E1E4E3900039BA5 /* ImageRequestBody.swift */; };
 		7208D55F2E1E4FE500039BA5 /* ImageDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7208D55E2E1E4FE500039BA5 /* ImageDTO.swift */; };
 		7208D5612E20DD3500039BA5 /* Notification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7208D5602E20DD3500039BA5 /* Notification+Extension.swift */; };
+		7208D5632E20DFB200039BA5 /* FeedDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7208D5622E20DFB200039BA5 /* FeedDTO.swift */; };
+		7208D5662E20E1CA00039BA5 /* FeedClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7208D5652E20E1CA00039BA5 /* FeedClient.swift */; };
 		720F6B172DE0365F006CF82C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720F6B162DE0365F006CF82C /* ProfileView.swift */; };
 		720F6B1A2DE036AE006CF82C /* ProfileContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720F6B192DE036AE006CF82C /* ProfileContentView.swift */; };
 		720F6B1C2DE04F66006CF82C /* ProfileTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720F6B1B2DE04F66006CF82C /* ProfileTabBar.swift */; };
@@ -220,6 +222,8 @@
 		7208D55C2E1E4E3900039BA5 /* ImageRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequestBody.swift; sourceTree = "<group>"; };
 		7208D55E2E1E4FE500039BA5 /* ImageDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDTO.swift; sourceTree = "<group>"; };
 		7208D5602E20DD3500039BA5 /* Notification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extension.swift"; sourceTree = "<group>"; };
+		7208D5622E20DFB200039BA5 /* FeedDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDTO.swift; sourceTree = "<group>"; };
+		7208D5652E20E1CA00039BA5 /* FeedClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedClient.swift; sourceTree = "<group>"; };
 		720F6B162DE0365F006CF82C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		720F6B192DE036AE006CF82C /* ProfileContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileContentView.swift; sourceTree = "<group>"; };
 		720F6B1B2DE04F66006CF82C /* ProfileTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabBar.swift; sourceTree = "<group>"; };
@@ -488,6 +492,7 @@
 				72B819312E12C88F00DE95EB /* ProfileDTO.swift */,
 				7208D5552E1E454500039BA5 /* PostDTO.swift */,
 				7208D55E2E1E4FE500039BA5 /* ImageDTO.swift */,
+				7208D5622E20DFB200039BA5 /* FeedDTO.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -550,6 +555,14 @@
 				7208D5582E1E476200039BA5 /* ImageURLClient.swift */,
 			);
 			path = ImageS3;
+			sourceTree = "<group>";
+		};
+		7208D5642E20E1AA00039BA5 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				7208D5652E20E1CA00039BA5 /* FeedClient.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		720F6B152DE03357006CF82C /* Profile */ = {
@@ -807,6 +820,7 @@
 		72BAA3972DD7170C005E7B23 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				7208D5642E20E1AA00039BA5 /* Home */,
 				7208D5572E1E472E00039BA5 /* ImageS3 */,
 				7208D5522E1E406900039BA5 /* Post */,
 				72B819332E12CDFD00DE95EB /* Profile */,
@@ -1098,6 +1112,7 @@
 				720764682DEC1EB90017963C /* FeedAPI.swift in Sources */,
 				72BAA3FF2DD8D8A6005E7B23 /* LoginOption.swift in Sources */,
 				720763C92DE5AC140017963C /* UserDTO.swift in Sources */,
+				7208D5662E20E1CA00039BA5 /* FeedClient.swift in Sources */,
 				720764662DEC1BEE0017963C /* UpdateMyProfileRequestBody.swift in Sources */,
 				72BAA4022DD8D906005E7B23 /* AuthClient.swift in Sources */,
 				7207645F2DEC19F60017963C /* UserAPI.swift in Sources */,
@@ -1132,6 +1147,7 @@
 				720763D82DE5E1A30017963C /* RecommandProductDTO.swift in Sources */,
 				72B819352E12CE2100DE95EB /* ProfileClient.swift in Sources */,
 				72BAA3DD2DD74CAB005E7B23 /* CommonButton.swift in Sources */,
+				7208D5632E20DFB200039BA5 /* FeedDTO.swift in Sources */,
 				720763D12DE5E0190017963C /* QueryParameters.swift in Sources */,
 				72AD63552E0E34610078EB69 /* CameraCaptureView.swift in Sources */,
 				7207646C2DEC23E50017963C /* ReportRequestBody.swift in Sources */,

@@ -10,7 +10,7 @@ import Dependencies
 
 struct ProfileClient {
     var myProfile: () async throws -> ProfileDTO
-//    var updateProfile: 
+    var updateProfile: (_ nickname: String, _ bio: String) async throws -> Void
 }
 
 enum ProfileClientClientKey: DependencyKey {
@@ -19,14 +19,22 @@ enum ProfileClientClientKey: DependencyKey {
             let provider = NetworkProvider<UserAPI>()
             let response = try await provider.request(
                 .getMyProfile,
-                decodingType: ServerResponse<ProfileDTO>.self
+                decodingType: ProfileDTO.self
             )
             
-            guard let profileDTO = response.data else {
-                throw ProfileError.missingData
-            }
+//            guard let profileDTO = response.data else {
+//                throw ProfileError.missingData
+//            }
             
-            return profileDTO
+            return response
+        },
+        updateProfile: { nickname, bio in
+            let provider = NetworkProvider<UserAPI>()
+            let body = UpdateMyProfileRequestBody(nickname: nickname, bio: bio, profilImageUrl: nil)
+            _ = try await provider.request(
+                .updateMyProfile(body: body),
+                decodingType: EmptyResponse.self
+            )
         }
     )
     
@@ -41,6 +49,8 @@ enum ProfileClientClientKey: DependencyKey {
                 follower: 10,
                 following: 10
             )
+        }, updateProfile: { nickname, bio in 
+            
         }
     )
     

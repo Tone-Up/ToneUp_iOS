@@ -13,31 +13,61 @@ struct Home: Reducer {
     @ObservableState
     struct State: Equatable {
         var userTone: UserTone = .spring
+        var feed: FeedDTO? = nil
+        var isLoading: Bool = false
     }
     
     enum Action: BindableAction {
         case binding(BindingAction<State>)
+        case onAppear
         case tappedAnalyzeAgain
+        case feedResponse(TaskResult<FeedDTO>)
+//        case recommandResponse(TaskResult<RecommandProductDTO>)
     }
     
-    //    @Dependency(\.recommendationClient) var recommendationClient
+    @Dependency(\.feedClient) var feedClient
     
     var body: some ReducerOf<Self> {
         BindingReducer()
         
         Reduce { state, action in
             switch action {
+            case .binding:
+                return .none
+                
+            case .onAppear:
+                state.isLoading = true
+                return .run { send in
+//                    async let feedResult = TaskResult { try await feedClient.fetchFeed() }
+//                    async let recResult  = TaskResult { try await recommandClient.fetchRecommand() }
+//                    
+//                    let (feedRes, recRes) = await (feedResult, recResult)
+//                    
+//                    await send(.feedResponse(feedRes))
+//                    await send(.recommandResponse(recRes))
+                    
+                    await send(
+                        .feedResponse(
+                            TaskResult { try await feedClient.homeFeed()}
+                        )
+                    )
+                }
+                
             case .tappedAnalyzeAgain:
                 return .none
                 
-            case .binding:
+            case .feedResponse(.success(let dto)):
+                state.isLoading = false
+                state.feed = dto
+                return .none
+                
+            case .feedResponse(.failure):
                 return .none
             }
         }
     }
     
 }
-
 
 enum UserTone: String {
     case spring = "봄웜"

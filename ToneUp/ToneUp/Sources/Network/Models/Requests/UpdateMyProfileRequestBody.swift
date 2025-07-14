@@ -11,5 +11,6 @@ struct UpdateMyProfileRequestBody: Encodable {
     
     let nickname: String?
     let bio: String?
+    let profilImageUrl: String?
     
 }

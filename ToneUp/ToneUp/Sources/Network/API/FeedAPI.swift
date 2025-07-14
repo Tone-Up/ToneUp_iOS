@@ -90,13 +90,8 @@ extension FeedAPI: TargetType {
     }
     
     var headers: [String: String]? {
-        switch self {
-        case .getRecentFeed, .getRankFeed,
-                .getDetailFeed, .deletePostFeed,
-                .postFeed, .editPostFeed,
-                .getReportFeed:
-            return [Header.contentTypeJson.key: Header.contentTypeJson.value,
-                    Header.authorization.key: Header.authorization.value]
-        }
+        return [Header.contentTypeJson.key: Header.contentTypeJson.value,
+                Header.authorization.key: Header.authorization.value]
+        
     }
 }

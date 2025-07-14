@@ -41,18 +41,18 @@ struct ProfileView: View {
                     ScrollView {
                         if selectedTab == .post {
                             ThreeColumnGrid(items: 14) { _ in
-                                FeedImageTile(image: .onboardingImage,
-                                              width: UIScreen.main.bounds.width / 3,
-                                              height: 200)
-                                .background(.white)
+//                                FeedImageTile(image: .onboardingImage,
+//                                              width: UIScreen.main.bounds.width / 3,
+//                                              height: 200)
+//                                .background(.white)
                             }
                         } else if selectedTab == .style {
                             ThreeColumnGrid(items: 7) { _ in
-                                FeedImageTile(image: .onboardingImage,
-                                              isFeed: false,
-                                              width: UIScreen.main.bounds.width / 3,
-                                              height: 180)
-                                .background(.white)
+//                                FeedImageTile(image: .onboardingImage,
+//                                              isFeed: false,
+//                                              width: UIScreen.main.bounds.width / 3,
+//                                              height: 180)
+//                                .background(.white)
                             }
                         }
                     }

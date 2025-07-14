@@ -24,7 +24,7 @@ struct HomeView: View {
                     
                     StyleRecordSection()
                     
-                    SharedStyleSection()
+                    SharedStyleSection(store: store)
                 }
             }
             .scrollContentBackground(.hidden)
@@ -36,6 +36,7 @@ struct HomeView: View {
                 
             }
         )
+        .onAppear { store.send(.onAppear) }
     }
     
 }

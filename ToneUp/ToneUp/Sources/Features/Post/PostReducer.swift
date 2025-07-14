@@ -73,7 +73,6 @@ struct Post: Reducer {
             case .postResponse(.success(let response)):
                 state.isLoading = false
                 state.didPostSuccess = true
-                print("성공성공성공성공성공성공성공성공")
                 return .none
             }
         }
